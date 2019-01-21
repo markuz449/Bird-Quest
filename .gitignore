@@ -11,6 +11,7 @@ Library/
 # ===================================== #
 ExportedObj/
 *.svd
+*.UserPrefs
 *.userprefs
 *.csproj
 *.pidb
