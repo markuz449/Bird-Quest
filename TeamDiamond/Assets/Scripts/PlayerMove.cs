@@ -1,69 +1,36 @@
-﻿/*
-    Created by: Lech Szymanski
-                lechszym@cs.otago.ac.nz
-                Jan 19, 2016            
-*/
-
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 
 public class PlayerMove : MonoBehaviour
 {
 
-    public float speed = 2;
-    public float jumpPower = 5;
+    public LayerMask whatIsGround;
+    public Transform groundCheck;
+    public bool isGrounded;
+    public float jumpForce;
+    public float speed;
+    Rigidbody2D rb;
 
-    private Rigidbody2D body = null;
-    private bool canJump = false;
-
-    // Use this for initialization
     void Start()
     {
-        //Get the reference to rigid body comonent
-        body = transform.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void Update()
     {
-        //If not in collisions with something, and not moving up and down then not airborne
-        float verticalSpeed = Mathf.Abs(body.velocity.y);
-        if (verticalSpeed < 0.001)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            canJump = true;
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isGrounded = false;
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        //If not in collision with something, then airborne
-        canJump = false;
-    }
-
-
-    // Update is called once per frame
     void FixedUpdate()
     {
-
-        //Get movement input
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-
-        //Only going up is allowed when jumping and
-        //only when not airborne
-        if (canJump && v > 0)
-        {
-            v = jumpPower;
-        }
-        else
-        {
-            v = 0;
-        }
-
-        if (body != null)
-        {
-            //Add movement forces to the body
-            body.AddForce(new Vector2(0, v), ForceMode2D.Impulse);
-            body.AddForce(new Vector2(h * 5, 0));
-        }
+        isGrounded = Physics2D.OverlapPoint(groundCheck.position, whatIsGround);
+        float x = Input.GetAxis("Horizontal");
+        Vector3 move = new Vector3(x * speed, rb.velocity.y, 0f);
+        rb.velocity = move;
     }
 }
