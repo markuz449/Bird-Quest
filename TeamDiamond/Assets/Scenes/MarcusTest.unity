@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: MarcusTest2
-  loadToColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
+  loadToColor: {r: 0.1714133, g: 0.19846927, b: 0.33962262, a: 1}
 --- !u!1 &318874225
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 318874227}
   - component: {fileID: 318874226}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Day
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
