@@ -4371,7 +4371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: MarcusTest
-  loadToColor: {r: 1, g: 1, b: 1, a: 1}
+  loadToColor: {r: 0.90588236, g: 0.304255, b: 0.23529409, a: 1}
 --- !u!1 &549812349
 GameObject:
   m_ObjectHideFlags: 0
@@ -5022,7 +5022,7 @@ GameObject:
   - component: {fileID: 1448821434}
   - component: {fileID: 1448821433}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Night
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
