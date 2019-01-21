@@ -17,10 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JaydinChickLevel2Test.unity
     guid: 72ab0980fa9834033877e4cdbba0f2a4
-  - enabled: 1
-    path: Assets/Scenes/JaydinChickLevel3Test.unity
-    guid: ed75f2692d5af4a7ebdeaca233411024
-  - enabled: 1
-    path: Assets/Scenes/JaydinChickLevel4Test.unity
-    guid: 4b59b4382d1b34bcc95d804aa81e7fd5
   m_configObjects: {}

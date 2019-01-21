@@ -23,17 +23,7 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("JaydinChickLevel2Test");
     }
 
-    public void StartChickLevel3()
-    {
-        // Load the "Level" scene
-        SceneManager.LoadScene("JaydinChickLevel3Test");
-    }
-
-    public void StartChickLevel4()
-    {
-        // Load the "Level" scene
-        SceneManager.LoadScene("JaydinChickLevel4Test");
-    }
+   
 
 
 
