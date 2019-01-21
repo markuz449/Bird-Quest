@@ -1,16 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class MainMenuManager : MonoBehaviour {
+public class MainMenuManager : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void StartNestLevel()
+    {
+        // Load the "Level" scene
+        SceneManager.LoadScene("JaydinNestLevelTest");
+    }
+
+    public void StartChickLevel1()
+    {
+        // Load the "Level" scene
+        SceneManager.LoadScene("JaydinChickLevel1Test");
+    }
+
+    public void StartChickLevel2()
+    {
+        // Load the "Level" scene
+        SceneManager.LoadScene("JaydinChickLevel2Test");
+    }
+
+    public void StartChickLevel3()
+    {
+        // Load the "Level" scene
+        SceneManager.LoadScene("JaydinChickLevel3Test");
+    }
+
+    public void StartChickLevel4()
+    {
+        // Load the "Level" scene
+        SceneManager.LoadScene("JaydinChickLevel4Test");
+    }
+
+
+
 }
