@@ -206,6 +206,7 @@ MonoBehaviour:
   loadToColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
   day: {fileID: 318874225}
   night: {fileID: 1382366046}
+  stateTime: 5
   state: 1
 --- !u!1 &318874225
 GameObject:

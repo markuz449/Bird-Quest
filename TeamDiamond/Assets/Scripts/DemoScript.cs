@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class DemoScript : MonoBehaviour {
     //name of the scene you want to load
@@ -6,26 +7,25 @@ public class DemoScript : MonoBehaviour {
 	public Color loadToColor = Color.white;
     public GameObject day;
     public GameObject night;
+    public float stateTime; 
     FadeObjectInOut fday;
     FadeObjectInOut fnight;
     public bool state = true;
 
-    private void Start()
-    {
-        //    day.SetActive(false);
-        //    night.SetActive(true);
+    private void Start(){
         fday = day.AddComponent<FadeObjectInOut>();
         fnight = day.AddComponent<FadeObjectInOut>();
         fday.FadeIn();
+        StartCoroutine(DayTime());
     }
 
-    void Update()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            StateChange();
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetButtonDown("Jump"))
+    //    {
+    //        StateChange();
+    //    }
+    //}
 
     public void StateChange(){
         if (state == true)
@@ -48,5 +48,14 @@ public class DemoScript : MonoBehaviour {
         foreach (Collider2D c in col){
             c.enabled = active;
         }
+    }
+
+    IEnumerator DayTime()
+    {
+        StateChange();
+        yield return new WaitForSecondsRealtime(stateTime);
+        StateChange();
+        yield return new WaitForSecondsRealtime(stateTime);
+        StartCoroutine(DayTime());
     }
 }
