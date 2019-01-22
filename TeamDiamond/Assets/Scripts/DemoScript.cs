@@ -6,12 +6,20 @@ public class DemoScript : MonoBehaviour {
 	public Color loadToColor = Color.white;
     public GameObject day;
     public GameObject night;
+    FadeObjectInOut fday;
+    FadeObjectInOut fnight;
+    //public FadeDay day = new FadeDay();
+    //public FadeNight night = new FadeNight();
     public bool state = true;
 
     private void Start()
     {
-        day.SetActive(false);
-        night.SetActive(true);
+        //    day.SetActive(false);
+        //    night.SetActive(true);
+        fday = day.AddComponent<FadeObjectInOut>();
+        fnight = day.AddComponent<FadeObjectInOut>();
+        fday.FadeIn();
+        //fnight.FadeOut();
     }
 
     void Update()
@@ -22,23 +30,32 @@ public class DemoScript : MonoBehaviour {
         }
     }
 
-    public void GoFade()
-    {
-        Initiate.Fade(scene, loadToColor, 1.0f);
-    }
-
     public void StateChange(){
         if (state == true)
         {
-            day.SetActive(false);
-            night.SetActive(true);
+            fday.FadeOut();
+            //SetAllCollidersStatus(day, false);
+
+            //night.SetActive(true);
+            //fnight.FadeIn();
+
             state = false;
         }
         else
         {
-            day.SetActive(true);
-            night.SetActive(false);
+            fday.FadeIn();
+            //fnight.FadeOut();
+            //night.SetActive(false);
+
+            //day.SetActive(true);
+
             state = true;
+        }
+    }
+
+    public void SetAllCollidersStatus(GameObject state, bool active){
+        foreach (Collider c in GetComponentsInChildren<Collider>()){
+            c.enabled = active;
         }
     }
 }
