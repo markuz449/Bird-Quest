@@ -23,7 +23,10 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("JaydinChickLevel2Test");
     }
 
-   
+    public void OpenPauseMenu(){
+
+
+    }
 
 
 
