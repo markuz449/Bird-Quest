@@ -72,4 +72,6 @@ public class PlayerMove : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+
 }
