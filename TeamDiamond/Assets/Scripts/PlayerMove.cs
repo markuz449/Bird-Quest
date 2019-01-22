@@ -15,7 +15,6 @@ public class PlayerMove : MonoBehaviour {
     private Rigidbody2D body = null;
     private bool canJump = false;
     public bool facingRight = true;
-    public bool isChild = false;
 
     // Use this for initialization
     void Start () {
@@ -53,10 +52,7 @@ public class PlayerMove : MonoBehaviour {
 
         if (body != null) {
             //Add movement forces to the body
-            if (!isChild)
-            {
-                body.AddForce(new Vector2(0, v), ForceMode2D.Impulse);
-            }
+            body.AddForce(new Vector2(0, v), ForceMode2D.Impulse);
             body.velocity = new Vector2(h * speed, GetComponent<Rigidbody2D>().velocity.y);
         }
         if (h > 0 && !facingRight)
