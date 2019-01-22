@@ -5,43 +5,41 @@ public class DemoScript : MonoBehaviour {
     //name of the scene you want to load
     public string scene;
 	public Color loadToColor = Color.white;
-    public GameObject background;
-    public GameObject backgroundNight;
-    public GameObject platforms;
-    public GameObject platformsNight;
+    public GameObject day;
+    public GameObject night;
     public bool state = true;
 
-    /*private void Start()
+    private void Start()
     {
-        background.SetActive(true);
-        backgroundNight.SetActive(false);
-        platforms.SetActive(true);
-        platformsNight.SetActive(false);
-    }*/
+        day.SetActive(false);
+        night.SetActive(true);
+    }
 
     void Update()
     {
         if (Input.GetButtonDown("Jump"))
         {
-            if (state == true)
-            {
-                background.SetActive(false);
-                backgroundNight.SetActive(true);
-                platforms.SetActive(false);
-                platformsNight.SetActive(true);
-                state = false;
-            } else{
-                background.SetActive(true);
-                backgroundNight.SetActive(false);
-                platforms.SetActive(true);
-                platformsNight.SetActive(false);
-                state = true;
-            }
+            StateChange();
         }
     }
 
     public void GoFade()
     {
         Initiate.Fade(scene, loadToColor, 1.0f);
+    }
+
+    public void StateChange(){
+        if (state == true)
+        {
+            day.SetActive(false);
+            night.SetActive(true);
+            state = false;
+        }
+        else
+        {
+            day.SetActive(true);
+            night.SetActive(false);
+            state = true;
+        }
     }
 }
