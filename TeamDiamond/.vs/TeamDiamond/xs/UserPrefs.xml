@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DemoScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/DemoScript.cs" Line="39" Column="28" />
+      <File FileName="Assets/Scripts/DemoScript.cs" Line="39" Column="29" />
       <File FileName="Assets/Scripts/FadeObjectInOut.cs" Line="149" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
