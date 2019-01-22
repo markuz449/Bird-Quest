@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControler: MonoBehaviour {
 
-    public float maxSpeed = 10f;
+    public float maxSpeed = 6f;
     public bool facingRight = true;
 
 
@@ -12,9 +12,11 @@ public class PlayerControler: MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// FixedUpdate is called once per frame
-	void FixedUpdate () {
+
+
+    // FixedUpdate is called once per frame
+    void FixedUpdate () {
+
         float move = Input.GetAxis("Horizontal");
 
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);

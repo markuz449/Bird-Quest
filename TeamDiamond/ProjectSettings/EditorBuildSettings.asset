@@ -6,29 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/MarcusTest2.unity
-    guid: dc58479acbfce4274881406c129416d4
-
-  - enabled: 1
-    path: Assets/Scenes/JaydinMainMenuTest.unity
-    guid: 76ce67f84b191410bbdbd2b2da0668ec
-
-  - enabled: 1
-    path: Assets/Scenes/JaydinNestLevelTest.unity
-    guid: 1a8ab200448e448f3979c0a0f1473bcf
-  - enabled: 1
-    path: Assets/Scenes/JaydinChickLevel1Test.unity
-    guid: f2ee771f929e34636b884e8975e108f4
-  - enabled: 1
-    path: Assets/Scenes/JaydinChickLevel2Test.unity
-    guid: 72ab0980fa9834033877e4cdbba0f2a4
-- enabled: 1
-    path: Assets/Scenes/MarcusTest.unity
-    guid: c13541e50a37f4a449423865119bc047
-  - enabled: 1
     path: Assets/Scenes/GraceTest.unity
     guid: d815ae54fb8a448a0b0fe7376a1d5ce3
   - enabled: 1
@@ -49,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JaydinStartScreenTest.unity
     guid: 047c1cfe45de3451fb6776b25febff61
+  - enabled: 1
+    path: Assets/Scenes/MarcusTest.unity
+    guid: c13541e50a37f4a449423865119bc047
+  - enabled: 1
+    path: Assets/Scenes/MarcusTest2.unity
+    guid: dc58479acbfce4274881406c129416d4
   m_configObjects: {}
