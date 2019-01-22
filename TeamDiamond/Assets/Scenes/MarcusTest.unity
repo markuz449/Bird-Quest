@@ -9050,6 +9050,7 @@ GameObject:
   - component: {fileID: 792552616}
   - component: {fileID: 792552618}
   - component: {fileID: 792552617}
+  - component: {fileID: 792552619}
   m_Layer: 0
   m_Name: Flower
   m_TagString: Untagged
@@ -9141,6 +9142,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &792552619
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 792552615}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.13}
+  serializedVersion: 2
+  m_Radius: 0.4
 --- !u!1 &1197668156
 GameObject:
   m_ObjectHideFlags: 0

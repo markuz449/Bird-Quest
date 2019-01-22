@@ -44,7 +44,8 @@ public class DemoScript : MonoBehaviour {
     }
 
     public void SetAllCollidersStatus(GameObject state, bool active){
-        foreach (Collider c in state.GetComponentsInChildren<Collider>()){
+        Collider2D[] col = state.GetComponentsInChildren<Collider2D>();
+        foreach (Collider2D c in col){
             c.enabled = active;
         }
     }
