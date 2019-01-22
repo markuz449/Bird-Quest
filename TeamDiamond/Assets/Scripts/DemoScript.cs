@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class DemoScript : MonoBehaviour {
     //name of the scene you want to load
