@@ -8,8 +8,6 @@ public class DemoScript : MonoBehaviour {
     public GameObject night;
     FadeObjectInOut fday;
     FadeObjectInOut fnight;
-    //public FadeDay day = new FadeDay();
-    //public FadeNight night = new FadeNight();
     public bool state = true;
 
     private void Start()
@@ -19,7 +17,6 @@ public class DemoScript : MonoBehaviour {
         fday = day.AddComponent<FadeObjectInOut>();
         fnight = day.AddComponent<FadeObjectInOut>();
         fday.FadeIn();
-        //fnight.FadeOut();
     }
 
     void Update()
@@ -33,28 +30,21 @@ public class DemoScript : MonoBehaviour {
     public void StateChange(){
         if (state == true)
         {
-            fday.FadeOut();
-            //SetAllCollidersStatus(day, false);
-
-            //night.SetActive(true);
-            //fnight.FadeIn();
-
+            fday.FadeOut(0.8f);
+            night.SetActive(true);
+            SetAllCollidersStatus(day, false);
             state = false;
         }
-        else
-        {
-            fday.FadeIn();
-            //fnight.FadeOut();
-            //night.SetActive(false);
-
-            //day.SetActive(true);
-
+        else {
+            fday.FadeIn(0.6f);
+            night.SetActive(false);
+            SetAllCollidersStatus(day, true);
             state = true;
         }
     }
 
     public void SetAllCollidersStatus(GameObject state, bool active){
-        foreach (Collider c in GetComponentsInChildren<Collider>()){
+        foreach (Collider c in state.GetComponentsInChildren<Collider>()){
             c.enabled = active;
         }
     }
