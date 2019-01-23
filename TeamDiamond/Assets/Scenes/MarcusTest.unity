@@ -207,7 +207,7 @@ MonoBehaviour:
   day: {fileID: 318874225}
   night: {fileID: 1382366046}
   stateTime: 5
-  state: 1
+  state: 0
 --- !u!1 &318874225
 GameObject:
   m_ObjectHideFlags: 0
