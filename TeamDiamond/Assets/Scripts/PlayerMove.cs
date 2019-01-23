@@ -11,48 +11,44 @@ public class PlayerMove : MonoBehaviour {
 
     public float speed = 2;
     public float jumpPower = 5;
+    public bool facingRight = true;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
 
     private Rigidbody2D body = null;
     private bool canJump = false;
-    public bool facingRight = true;
+    private bool grounded = false;
 
     // Use this for initialization
     void Start () {
         //Get the reference to rigid body comonent
         body = transform.GetComponent<Rigidbody2D> ();
+        canJump = true;
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
-        //If not in collisions with something, and not moving up and down then not airborne
-        float verticalSpeed = Mathf.Abs(body.velocity.y);
-        if(verticalSpeed < 0.001) {
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Ground")){
             canJump = true;
-        }   
-    }
-
-    void OnCollisionExit2D(Collision2D collision) {
-        //If not in collision with something, then airborne
-        canJump = false;
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate () {
 
+        grounded = Physics2D.OverlapCircle(groundCheck.position, 0.15f, groundLayer);
+
         //Get movement input
         float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis ("Vertical");
-
-        //Only going up is allowed when jumping and
-        //only when not airborne
-        if (canJump && v > 0) {
-            v = jumpPower;
-        } else {
-            v = 0;
-        }
 
         if (body != null) {
             //Add movement forces to the body
-            body.AddForce(new Vector2(0, v), ForceMode2D.Impulse);
+            if(Input.GetKey(KeyCode.UpArrow) && canJump){
+                body.velocity = new Vector2(0, jumpPower);
+                canJump = false;
+            }
+
+
             body.velocity = new Vector2(h * speed, GetComponent<Rigidbody2D>().velocity.y);
         }
         if (h > 0 && !facingRight)
