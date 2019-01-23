@@ -21,9 +21,8 @@ public class ChickFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");
         if (Vector2.Distance(transform.position, target.position) > stoppingDistance && !stay)
         {
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
@@ -37,11 +36,11 @@ public class ChickFollow : MonoBehaviour
         {
             stay = !stay;
         }
-        if (h > 0 && !facingRight)
+        if (target.position.x > transform.position.x && !facingRight)
         {
             Flip();
         }
-        else if (h < 0 && facingRight)
+        else if (target.position.x < transform.position.x && facingRight)
         {
             Flip();
         }
