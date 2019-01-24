@@ -11,8 +11,7 @@ public class ChickFollow : MonoBehaviour
     public bool facingRight = true;
 
     private Transform target;
-    private bool stay = false;
-    private bool jump = true;
+    private bool stay = true;
 
     // Use this for initialization
     void Start()
@@ -32,7 +31,7 @@ public class ChickFollow : MonoBehaviour
         {
             transform.position = this.transform.position;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Vector2.Distance(transform.position, target.position) < stoppingDistance && Input.GetKeyDown(KeyCode.Space))
         {
             stay = !stay;
         }
@@ -44,25 +43,16 @@ public class ChickFollow : MonoBehaviour
         {
             Flip();
         }
+
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Space))
-        {
-            stay = !stay;
-        }
-    }
-
-    // if collided with some wall or block, jump
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        // only check lateral collisions
-        if (Mathf.Abs(hit.normal.y) < 0.5)
-        {
-            jump = true; // jump if collided laterally
-        }
-    }
+    //private void OnCollisionStay(Collision collision)
+    //{
+    //    if (Vector2.Distance(transform.position, target.position) < stoppingDistance && Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        stay = !stay;
+    //    }
+    //}
 
     void Flip()
     {
@@ -71,4 +61,5 @@ public class ChickFollow : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
 }
