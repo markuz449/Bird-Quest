@@ -5,7 +5,6 @@ using UnityEngine;
 public class IgnoreCollision : MonoBehaviour {
 
     public GameObject object1;
-    public GameObject object2;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +14,7 @@ public class IgnoreCollision : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Physics2D.IgnoreCollision (object1.GetComponent<Collider2D>(), object2.GetComponent<Collider2D>());
+        Physics2D.IgnoreCollision (transform.GetComponent<Collider2D>(), object1.GetComponent<Collider2D>());
 
 	}
 }
