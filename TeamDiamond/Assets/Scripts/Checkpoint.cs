@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private GameMaster gm;
+
+    private void Start()
+    {
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+    }
+
+    void OnTriggerEnter2D(Collider2D other){
+        Debug.Log(other);
+        if(other.CompareTag("Player")){
+            gm.lastCheckpointPos = transform.position;
+
+        }
+
+
+    }
 }
