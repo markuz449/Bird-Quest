@@ -15,7 +15,7 @@ public class MainMenuManager : MonoBehaviour
     // Reference to panel's script object 
     PauseMenuManager pauseMenu;
 
-    public bool level1;
+    public  bool level1;
 
 
 

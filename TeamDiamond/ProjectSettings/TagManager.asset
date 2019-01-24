@@ -7,6 +7,8 @@ TagManager:
   - Chick
   - Ground
   - Box
+  - Checkpoint
+  - GM
   layers:
   - Default
   - TransparentFX
