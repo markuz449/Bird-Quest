@@ -13,8 +13,9 @@ public class IgnoreCollision : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        Physics2D.IgnoreCollision (transform.GetComponent<Collider2D>(), object1.GetComponent<Collider2D>());
-
+        if (object1 != null)
+        {
+            Physics2D.IgnoreCollision(transform.GetComponent<Collider2D>(), object1.GetComponent<Collider2D>());
+        }
 	}
 }
