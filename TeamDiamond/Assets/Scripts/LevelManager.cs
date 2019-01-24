@@ -14,13 +14,21 @@ public class LevelManager : MonoBehaviour {
 
     public void CompleteLevel1()
     {
-
+        MainMenuManager.UnlockLevel1();
         SceneManager.LoadScene("JaydinMainMenuTest");
 
 
 
 
 
+    }
+
+    public void ReloadLevel()
+    {
+        var currentScene = SceneManager.GetActiveScene();
+        var currentSceneName = currentScene.name;
+        // Load the "Level" scene
+        SceneManager.LoadScene(currentSceneName);
     }
 
     public void MainMenuOpen()
