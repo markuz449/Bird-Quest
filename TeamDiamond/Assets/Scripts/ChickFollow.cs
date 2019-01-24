@@ -12,7 +12,6 @@ public class ChickFollow : MonoBehaviour
 
     private Transform target;
     private bool stay = false;
-    private bool jump = true;
 
     // Use this for initialization
     void Start()
@@ -54,16 +53,6 @@ public class ChickFollow : MonoBehaviour
         }
     }
 
-    // if collided with some wall or block, jump
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        // only check lateral collisions
-        if (Mathf.Abs(hit.normal.y) < 0.5)
-        {
-            jump = true; // jump if collided laterally
-        }
-    }
-
     void Flip()
     {
         facingRight = !facingRight;
@@ -71,4 +60,5 @@ public class ChickFollow : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
 }

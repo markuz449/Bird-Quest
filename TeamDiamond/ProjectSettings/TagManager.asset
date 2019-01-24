@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Chick
   - Ground
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -49,9 +50,9 @@ TagManager:
   - name: Foreground
     uniqueID: 2234660817
     locked: 0
-  - name: UI
-    uniqueID: 3976651341
-    locked: 0
   - name: Ground
     uniqueID: 2154366275
+    locked: 0
+  - name: UI
+    uniqueID: 3976651341
     locked: 0
