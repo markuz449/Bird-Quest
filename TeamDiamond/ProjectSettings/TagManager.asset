@@ -9,6 +9,7 @@ TagManager:
   - Box
   - Checkpoint
   - GM
+  - LM
   layers:
   - Default
   - TransparentFX
