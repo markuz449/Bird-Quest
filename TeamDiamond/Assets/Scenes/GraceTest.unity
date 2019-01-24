@@ -124,7 +124,8 @@ GameObject:
   - component: {fileID: 241917597}
   - component: {fileID: 241917600}
   - component: {fileID: 241917601}
-  m_Layer: 0
+  - component: {fileID: 241917599}
+  m_Layer: 9
   m_Name: Shit pukeko
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -196,6 +197,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &241917599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 241917596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0795bfbbe91494e8a4d48107c27056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 0.6
+  boxMask:
+    serializedVersion: 2
+    m_Bits: 1335
 --- !u!50 &241917600
 Rigidbody2D:
   serializedVersion: 4
@@ -244,7 +260,7 @@ GameObject:
   - component: {fileID: 256205180}
   - component: {fileID: 256205181}
   - component: {fileID: 256205182}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CircleCollider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +317,7 @@ GameObject:
   - component: {fileID: 315842674}
   - component: {fileID: 315842675}
   - component: {fileID: 315842676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CircleCollider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +426,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.5
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9817,7 +9833,7 @@ GameObject:
   - component: {fileID: 1053369537}
   - component: {fileID: 1053369536}
   - component: {fileID: 1053369540}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -9832,7 +9848,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1053369535}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f07e15d5c00ce41c5afdb2097785fd61, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -9854,7 +9870,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 6200000, guid: 49259aec405b94ca4aa48ede7e12541f, type: 2}
+  m_Material: {fileID: 6200000, guid: f07e15d5c00ce41c5afdb2097785fd61, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -9918,21 +9934,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1053369540
-MonoBehaviour:
+--- !u!255 &1053369540
+FixedJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1053369535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0795bfbbe91494e8a4d48107c27056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  pull: 0
-  distanceX: 1
-  distanceY: 0.5
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 241917600}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -0.04, y: 3.27}
+  m_DampingRatio: 0
+  m_Frequency: 0
 --- !u!1 &1463044173
 GameObject:
   m_ObjectHideFlags: 0
@@ -10071,7 +10089,7 @@ GameObject:
   - component: {fileID: 1470332987}
   - component: {fileID: 1470332988}
   - component: {fileID: 1470332989}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CircleCollider6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10128,7 +10146,7 @@ GameObject:
   - component: {fileID: 1480156571}
   - component: {fileID: 1480156572}
   - component: {fileID: 1480156573}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CircleCollider4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10185,7 +10203,7 @@ GameObject:
   - component: {fileID: 1497008445}
   - component: {fileID: 1497008446}
   - component: {fileID: 1497008447}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CircleCollider3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10672,7 +10690,7 @@ GameObject:
   - component: {fileID: 1934481609}
   - component: {fileID: 1934481610}
   - component: {fileID: 1934481611}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CircleCollider5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
