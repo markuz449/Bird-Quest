@@ -14,7 +14,6 @@ public class LevelManager : MonoBehaviour {
 
     public void CompleteLevel1()
     {
-        MainMenuManager.UnlockLevel1();
         SceneManager.LoadScene("JaydinMainMenuTest");
 
 

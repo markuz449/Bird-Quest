@@ -31,7 +31,7 @@ public class ChickFollow : MonoBehaviour
         {
             transform.position = this.transform.position;
         }
-        if (Vector2.Distance(transform.position, target.position) < stoppingDistance && Input.GetKeyDown(KeyCode.Space))
+        if (Vector2.Distance(transform.position, target.position) < stoppingDistance && Input.GetKeyDown(KeyCode.E))
         {
             stay = !stay;
         }
