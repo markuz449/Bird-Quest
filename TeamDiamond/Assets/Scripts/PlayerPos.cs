@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerPos : MonoBehaviour {
     private GameMaster gm;
+    
 
 
 	// Use this for initialization
