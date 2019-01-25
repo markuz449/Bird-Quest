@@ -206,7 +206,6 @@ MonoBehaviour:
   loadToColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
   day: {fileID: 318874225}
   night: {fileID: 1382366046}
-  stateTime: 5
   state: 0
 --- !u!1 &318874225
 GameObject:
@@ -326,7 +325,7 @@ GameObject:
   - component: {fileID: 756590308}
   m_Layer: 0
   m_Name: Platforms
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7996,7 +7995,7 @@ GameObject:
   - component: {fileID: 771657401}
   m_Layer: 0
   m_Name: Platforms Night
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9054,7 +9053,7 @@ GameObject:
   - component: {fileID: 792552619}
   m_Layer: 0
   m_Name: Flower
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9307,8 +9306,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  jumpPower: 5
+  jumpPower: 9.5
   facingRight: 1
+  groundCheck: {fileID: 756590305}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &1482462045
 CircleCollider2D:
   m_ObjectHideFlags: 0
