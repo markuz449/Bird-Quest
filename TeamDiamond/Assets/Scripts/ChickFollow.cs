@@ -27,11 +27,13 @@ public class ChickFollow : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
 
         }
+
         else if (stay)
         {
             transform.position = this.transform.position;
         }
-        if (Vector2.Distance(transform.position, target.position) < stoppingDistance && Input.GetKeyDown(KeyCode.E))
+
+        if (Vector2.Distance(transform.position, target.position) < 2 * stoppingDistance && Input.GetKeyDown(KeyCode.E))
         {
             stay = !stay;
         }
@@ -45,14 +47,6 @@ public class ChickFollow : MonoBehaviour
         }
 
     }
-
-    //private void OnCollisionStay(Collision collision)
-    //{
-    //    if (Vector2.Distance(transform.position, target.position) < stoppingDistance && Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        stay = !stay;
-    //    }
-    //}
 
     void Flip()
     {
