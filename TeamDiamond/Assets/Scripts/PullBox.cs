@@ -18,15 +18,22 @@ public class PullBox : MonoBehaviour {
 
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
+        try
+        {
+            if (hit.collider != null && hit.collider.gameObject.tag == "Box" && Input.GetKeyDown(KeyCode.Space))
+            {
 
-        if(hit.collider != null && hit.collider.gameObject.tag == "Box" && Input.GetKeyDown(KeyCode.Space)){
+                box = hit.collider.gameObject;
+                box.GetComponent<FixedJoint2D>().enabled = true;
+                box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
 
-            box = hit.collider.gameObject;
-            box.GetComponent<FixedJoint2D>().enabled = true;
-            box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+            }
+            else if (Input.GetKeyUp(KeyCode.Space))
+            {
+                box.GetComponent<FixedJoint2D>().enabled = false;
+            }
+        }finally{
 
-        }else if(Input.GetKeyUp(KeyCode.Space)){
-            box.GetComponent<FixedJoint2D>().enabled = false;
         }
     }
 
@@ -36,4 +43,5 @@ public class PullBox : MonoBehaviour {
 
         Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.right * transform.localScale.x * distance);
     }
+
 }
