@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
 
     // Reference to UI panel that is our pause menu
     public GameObject pauseMenuPanel;
+    private LevelMaster game;
 
     // Reference to panel's script object 
     PauseMenuManager pauseMenu;
@@ -15,6 +16,8 @@ public class LevelManager : MonoBehaviour {
     public void CompleteLevel1()
     {
         SceneManager.LoadScene("JaydinMainMenuTest");
+        game.UnlockLevel1();
+
 
 
 
