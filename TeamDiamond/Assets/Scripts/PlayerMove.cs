@@ -43,7 +43,7 @@ public class PlayerMove : MonoBehaviour {
 
         if (body != null) {
             //Add movement forces to the body
-            if(Input.GetKey(KeyCode.UpArrow) && canJump){
+            if((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && canJump){
                 body.velocity = new Vector2(0, jumpPower);
                 canJump = false;
             }
