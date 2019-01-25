@@ -20,7 +20,7 @@ public class PullBox : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
         try
         {
-            if (hit.collider != null && hit.collider.gameObject.tag == "Box" && Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && hit.collider != null && hit.collider.gameObject.tag == "Box")
             {
 
                 box = hit.collider.gameObject;
@@ -28,9 +28,9 @@ public class PullBox : MonoBehaviour {
                 box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
 
             }
-            else if (Input.GetKeyUp(KeyCode.Space))
+            else if (hit.collider != null && hit.collider.gameObject.tag == "Box" && Input.GetKeyUp(KeyCode.Space))
             {
-                box.GetComponent<FixedJoint2D>().enabled = false;
+                  box.GetComponent<FixedJoint2D>().enabled = false;
             }
         }finally{
 
