@@ -21,7 +21,7 @@ public class DayNight : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             StateChange();
         }
