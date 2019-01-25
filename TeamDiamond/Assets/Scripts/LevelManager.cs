@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour {
     public void CompleteLevel1()
     {
         SceneManager.LoadScene("JaydinMainMenuTest");
+
         game.UnlockLevel1();
 
 
@@ -47,6 +48,9 @@ public class LevelManager : MonoBehaviour {
 
     private void Start()
     {
+
+        game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
+
         // Initialise the reference to the script object, which is a
         // component of the pause menu panel game object
         pauseMenu = pauseMenuPanel.GetComponent<PauseMenuManager>();

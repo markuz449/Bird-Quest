@@ -6,30 +6,32 @@ public class LevelMaster : MonoBehaviour {
 
     private static LevelMaster instance;
 
-    public GameObject Level1;
+    public bool Level1;
+
+    public bool getLevel1(){
+        return Level1;
 
 
+    }
+    
 
 
 
 
     private void Start()
     {
+        Level1 = false;
 
-        if (Level1 != null)
-        {
-            Level1.SetActive(false);
-
-        }
+       
     }
 
 
     public void UnlockLevel1(){
 
-        Level1.SetActive(true);
+        Level1 = true;
     }
 
-
+    
 
 
 
