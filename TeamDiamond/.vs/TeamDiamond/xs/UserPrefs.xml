@@ -1,14 +1,16 @@
 ﻿<Properties StartupConfiguration="{B8816680-4F1F-A3B5-4650-3F66A68695AE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerPos.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/KillPlayer.cs">
     <Files>
       <File FileName="Assets/Scripts/MainMenuManager.cs" Line="47" Column="9" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="23" Column="9" />
-      <File FileName="Assets/Scripts/GameMaster.cs" Line="11" Column="5" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="23" Column="1" />
+      <File FileName="Assets/Scripts/GameMaster.cs" Line="11" Column="1" />
       <File FileName="Assets/Scripts/PauseMenuManager.cs" Line="4" Column="34" />
       <File FileName="Assets/Scripts/LevelMaster.cs" Line="34" Column="5" />
       <File FileName="Assets/Scripts/Checkpoint.cs" Line="12" Column="6" />
       <File FileName="Assets/Scripts/PlayerPos.cs" Line="21" Column="76" />
+      <File FileName="Assets/Scripts/Respawn.cs" Line="12" Column="69" />
+      <File FileName="Assets/Scripts/KillPlayer.cs" Line="7" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
