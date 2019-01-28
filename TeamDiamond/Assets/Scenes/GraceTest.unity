@@ -431,7 +431,18 @@ Prefab:
       propertyPath: jump
       value: 0.2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114198680158696284, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
+        type: 2}
+      propertyPath: boxMask.m_Bits
+      value: 1335
+      objectReference: {fileID: 0}
+    - target: {fileID: 114198680158696284, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
+        type: 2}
+      propertyPath: distance
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114243947467226766, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &694606229

@@ -2,17 +2,11 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerMove.cs">
     <Files>
-      <File FileName="Assets/Scripts/ChickFollow.cs" Line="60" Column="9" NotebookId="1" />
-      <File FileName="Assets/Scripts/Box.cs" Line="8" Column="43" NotebookId="1" />
-      <File FileName="Assets/Scripts/PullBox.cs" Line="9" Column="30" NotebookId="1" />
+      <File FileName="Assets/Scripts/ChickFollow.cs" Line="64" Column="26" />
+      <File FileName="Assets/Scripts/Box.cs" Line="8" Column="43" />
+      <File FileName="Assets/Scripts/PullBox.cs" Line="9" Column="30" />
+      <File FileName="Assets/Scripts/PlayerMove.cs" Line="33" Column="11" />
     </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="406" Y="23" Width="791" Height="1310">
-        <Files>
-          <File FileName="Assets/Scripts/PlayerMove.cs" Line="33" Column="11" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
