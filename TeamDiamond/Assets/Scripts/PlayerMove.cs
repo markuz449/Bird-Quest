@@ -17,7 +17,7 @@ public class PlayerMove : MonoBehaviour {
     public float jump = 0.2f;
 
     private Rigidbody2D body = null;
-    private bool grounded = false;
+    //private bool grounded = false;
     private bool facingRight = true;
 
     // Use this for initialization
@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate () {
 
-        grounded = Physics2D.OverlapCircle(groundCheck.position, 0.15f, groundLayer);
+        //grounded = Physics2D.OverlapCircle(groundCheck.position, 0.15f, groundLayer);
 
         //Get movement input
         float h = Input.GetAxis("Horizontal");
