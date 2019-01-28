@@ -59,3 +59,12 @@ TagManager:
   - name: UI
     uniqueID: 3976651341
     locked: 0
+  - name: Items
+    uniqueID: 364700129
+    locked: 0
+  - name: Player
+    uniqueID: 2530635049
+    locked: 0
+  - name: Chick
+    uniqueID: 2994419459
+    locked: 0
