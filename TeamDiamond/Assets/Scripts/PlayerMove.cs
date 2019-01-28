@@ -11,26 +11,19 @@ public class PlayerMove : MonoBehaviour {
 
     public float speed = 2;
     public float jumpPower = 5;
-    public bool facingRight = true;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public float jumpDistanceFromGround = 0.5f;
 
     private Rigidbody2D body = null;
-    private bool canJump = false;
     private bool grounded = false;
+    private bool facingRight = true;
 
     // Use this for initialization
     void Start () {
         //Get the reference to rigid body comonent
         body = transform.GetComponent<Rigidbody2D> ();
-        canJump = true;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Ground")){
-            canJump = true;
-        }
+        Flip();
     }
 
     // Update is called once per frame
@@ -42,12 +35,10 @@ public class PlayerMove : MonoBehaviour {
         float h = Input.GetAxis("Horizontal");
 
         if (body != null) {
-            //Add movement forces to the body
-            if((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && canJump){
-                body.velocity = new Vector2(0, jumpPower);
-                canJump = false;
-            }
 
+            if((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && IsGrounded()){
+                body.velocity = new Vector2(0, jumpPower);
+            }
 
             body.velocity = new Vector2(h * speed, GetComponent<Rigidbody2D>().velocity.y);
         }
@@ -59,6 +50,43 @@ public class PlayerMove : MonoBehaviour {
         {
             Flip();
         }
+    }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Ground"))
+    //    {
+    //        canJump = true;
+    //    }
+    //}
+
+    bool IsGrounded()
+    {
+        bool final = false;
+        Vector2 position = transform.position;
+        Vector2 direction = new Vector2(0, -jumpDistanceFromGround);
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, jumpDistanceFromGround, groundLayer);
+
+        float range = 0.2f;
+        if(facingRight){
+            range = -0.2f;
+        }
+
+        for (float i = -0.3f + range; i < 0.3f + range; i+= 0.05f){
+            position = new Vector2(transform.position.x + i, transform.position.y);
+            Debug.DrawRay(position, direction, Color.green);
+            hit = Physics2D.Raycast(position, direction, jumpDistanceFromGround, groundLayer);
+            if (hit.collider != null)
+            {
+                final = true;
+            }
+        }
+
+        if (final)
+        {
+            return true;
+        }
+        return false;
     }
 
     void Flip()

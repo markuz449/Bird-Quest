@@ -31,7 +31,9 @@ public class ChickFollow : MonoBehaviour
     void FixedUpdate()
     {
         float xDistance = Mathf.Abs(transform.position.x - target.position.x);
-        if (Mathf.Abs(transform.position.y - target.position.y) < stoppingHeight && xDistance < tooFar)
+        float yDistance = Mathf.Abs(transform.position.y - target.position.y);
+
+        if (yDistance < stoppingHeight && xDistance < tooFar)
         {
             // Speed Up Distance
             // Moves at base speed when this far away
@@ -51,7 +53,7 @@ public class ChickFollow : MonoBehaviour
             }
             else if (xDistance > stoppingDistance && xDistance < tooFar - stoppingDistance &&!stay)
             {
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), 0.5f * speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), 0.4f * speed * Time.deltaTime);
 
             }
             // Stay
@@ -72,13 +74,16 @@ public class ChickFollow : MonoBehaviour
         {
             stay = !stay;
         }
-        if (target.position.x > transform.position.x && !facingRight)
+        if (xDistance < tooFar && yDistance < stoppingHeight)
         {
-            Flip();
-        }
-        else if (target.position.x < transform.position.x && facingRight)
-        {
-            Flip();
+            if (target.position.x > transform.position.x && !facingRight)
+            {
+                Flip();
+            }
+            else if (target.position.x < transform.position.x && facingRight)
+            {
+                Flip();
+            }
         }
 
     }
