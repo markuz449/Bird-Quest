@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviour {
     public Transform groundCheck;
     public LayerMask groundLayer;
     public float jumpDistanceFromGround = 0.5f;
+    public float jump = 0.2f;
 
     private Rigidbody2D body = null;
     private bool grounded = false;
@@ -67,12 +68,12 @@ public class PlayerMove : MonoBehaviour {
         Vector2 direction = new Vector2(0, -jumpDistanceFromGround);
         RaycastHit2D hit = Physics2D.Raycast(position, direction, jumpDistanceFromGround, groundLayer);
 
-        float range = 0.2f;
+        float range = jump + 0.02f;
         if(facingRight){
-            range = -0.2f;
+            range = -jump + 0.02f;
         }
 
-        for (float i = -0.3f + range; i < 0.3f + range; i+= 0.05f){
+        for (float i = -0.4f + range; i < 0.4f + range; i+= 0.1f){
             position = new Vector2(transform.position.x + i, transform.position.y);
             Debug.DrawRay(position, direction, Color.green);
             hit = Physics2D.Raycast(position, direction, jumpDistanceFromGround, groundLayer);
