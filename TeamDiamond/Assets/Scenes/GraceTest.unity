@@ -11683,7 +11683,7 @@ Prefab:
     - target: {fileID: 114122969518837228, guid: c7257dd0ce91b4c03b9fcfed15373fe4,
         type: 2}
       propertyPath: raylength
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 58264550602965318, guid: c7257dd0ce91b4c03b9fcfed15373fe4,
         type: 2}
