@@ -107,7 +107,6 @@ GameObject:
   - component: {fileID: 212676530776141828}
   - component: {fileID: 50725617636486996}
   - component: {fileID: 114198680158696284}
-  - component: {fileID: 114243947467226766}
   - component: {fileID: 114374337091681788}
   m_Layer: 9
   m_Name: Shit pukeko
@@ -365,24 +364,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   jumpPower: 11
-  groundCheck: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 1280
-  jumpDistanceFromGround: 0.6
-  jump: 0.2
---- !u!114 &114243947467226766
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1542198564743338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0795bfbbe91494e8a4d48107c27056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 0.6
+  jumpRayLength: 0.6
+  jumpOffset: 0.2
+  distance: 0.5
   boxMask:
     serializedVersion: 2
     m_Bits: 1335

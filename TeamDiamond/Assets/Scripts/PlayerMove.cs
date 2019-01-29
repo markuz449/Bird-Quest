@@ -23,6 +23,7 @@ public class PlayerMove : MonoBehaviour {
     // private Variables for pulling the box
     private GameObject box;
     private bool connected = false;
+    private bool dropBox = true;
 
     // Other private vairables
     private Rigidbody2D body = null;
@@ -41,16 +42,16 @@ public class PlayerMove : MonoBehaviour {
         //Get movement input
         float h = Input.GetAxis("Horizontal");
 
-        bool pull = PullBox();
+        int pull = PullBox();
 
         // Checks for Ridgidbody2D
         if (body != null) {
 
             // Moves Player. Jump if IsGrounded()
-            if((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && IsGrounded() && !pull){
+            if(IsGrounded() && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))){
                 body.velocity = new Vector2(0, jumpPower);
             }
-            if(pull){
+            if(pull != 0){
                 body.velocity = new Vector2(h * 0.5f * speed, GetComponent<Rigidbody2D>().velocity.y);
             }else{
                 body.velocity = new Vector2(h * speed, GetComponent<Rigidbody2D>().velocity.y);
@@ -58,39 +59,53 @@ public class PlayerMove : MonoBehaviour {
         }
 
         // Flips sprite
-        if (h > 0 && !facingRight && !pull)
+        if (h > 0 && !facingRight && pull == 0)
         {
             Flip();
         }
-        else if (h < 0 && facingRight && !pull)
+        else if (h < 0 && facingRight && pull == 0)
         {
             Flip();
         }
     }
 
     // Lets the character pull 'box' objects
-    bool PullBox(){
+    int PullBox()
+    {
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
 
-        if (Input.GetKeyDown(KeyCode.Space) && hit.collider != null && hit.collider.gameObject.tag == "Box")
+        // checks if the jump key has been released resets the dropBox vairable
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        {
+            dropBox = false;
+        // checks if the jump key is being pressed and drops the box
+        }else if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && connected)
+        {
+            box.GetComponent<FixedJoint2D>().enabled = false;
+            connected = false;
+            dropBox = true;
+            return 0;
+        }
+
+        // Attaches the box to the player if the dropBox button is not being pressed and the player is grounded
+        if (hit.collider != null && hit.collider.gameObject.tag == "Box" && !dropBox && IsGrounded())
         {
 
             box = hit.collider.gameObject;
             connected = true;
             box.GetComponent<FixedJoint2D>().enabled = true;
             box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
-            return true;
-
-        }else if (Input.GetKeyUp(KeyCode.Space) && connected) // hit.collider != null && hit.collider.gameObject.tag == "Box")
-        {
-            box.GetComponent<FixedJoint2D>().enabled = false;
-            connected = false;
-            return false;
-        }else if(connected){
-            return true;
+            return 1;
         }
-        return false;
+        else if (hit.collider != null && hit.collider.gameObject.tag == "Box" && !connected)
+        {
+            return 2;
+        }else if (connected){
+            return 1;
+        }
+
+        return 0;
     }
 
     // Draws line 
