@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 166349551}
   - component: {fileID: 166349550}
   - component: {fileID: 166349549}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: checkpoint
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -410,22 +410,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114282651135404108, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
-        type: 2}
-      propertyPath: object1
-      value: 
-      objectReference: {fileID: 1463044173}
-    - target: {fileID: 114014991899847598, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
-        type: 2}
-      propertyPath: object1
-      value: 
-      objectReference: {fileID: 1463044173}
-    - target: {fileID: 114966218455003380, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
-        type: 2}
-      propertyPath: object1
-      value: 
-      objectReference: {fileID: 1463044173}
-    - target: {fileID: 114501127224382944, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
+    - target: {fileID: 114818688178018094, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
         type: 2}
       propertyPath: object1
       value: 
@@ -435,7 +420,22 @@ Prefab:
       propertyPath: object1
       value: 
       objectReference: {fileID: 1463044173}
-    - target: {fileID: 114818688178018094, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
+    - target: {fileID: 114501127224382944, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
+        type: 2}
+      propertyPath: object1
+      value: 
+      objectReference: {fileID: 1463044173}
+    - target: {fileID: 114966218455003380, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
+        type: 2}
+      propertyPath: object1
+      value: 
+      objectReference: {fileID: 1463044173}
+    - target: {fileID: 114014991899847598, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
+        type: 2}
+      propertyPath: object1
+      value: 
+      objectReference: {fileID: 1463044173}
+    - target: {fileID: 114282651135404108, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
         type: 2}
       propertyPath: object1
       value: 
@@ -11130,6 +11130,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 0.47013813
       objectReference: {fileID: 0}
+    - target: {fileID: 61669853575077860, guid: 0d01bd735a7b04283931d761dd65df21,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: f07e15d5c00ce41c5afdb2097785fd61, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
   m_IsPrefabAsset: 0
@@ -11699,6 +11704,35 @@ Prefab:
         type: 2}
       propertyPath: m_Mass
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212637093195173568, guid: c7257dd0ce91b4c03b9fcfed15373fe4,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e980bcb1605e047e9b66b87de0991a76,
+        type: 3}
+    - target: {fileID: 4339120449941550, guid: c7257dd0ce91b4c03b9fcfed15373fe4, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339120449941550, guid: c7257dd0ce91b4c03b9fcfed15373fe4, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 58264550602965318, guid: c7257dd0ce91b4c03b9fcfed15373fe4,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.0859375
+      objectReference: {fileID: 0}
+    - target: {fileID: 58264550602965318, guid: c7257dd0ce91b4c03b9fcfed15373fe4,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.23127842
+      objectReference: {fileID: 0}
+    - target: {fileID: 58264550602965318, guid: c7257dd0ce91b4c03b9fcfed15373fe4,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.009150654
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7257dd0ce91b4c03b9fcfed15373fe4, type: 2}

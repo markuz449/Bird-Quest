@@ -3,7 +3,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerMove.cs">
     <Files>
       <File FileName="Assets/Scripts/ChickFollow.cs" Line="64" Column="26" />
-      <File FileName="Assets/Scripts/PlayerMove.cs" Line="94" Column="92" />
+      <File FileName="Assets/Scripts/PlayerMove.cs" Line="51" Column="29" />
       <File FileName="Assets/Scripts/Box.cs" Line="8" Column="43" />
       <File FileName="Assets/Scripts/PullBox.cs" Line="40" Column="4" />
     </Files>
