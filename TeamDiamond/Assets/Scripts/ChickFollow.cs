@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChickFollow : MonoBehaviour
 {
 
-    public float speed = 6f;
+    public float speed = 5f;
 
     public float jumpSpeed = 5f;
     public float stoppingHeight = 2.5f;
