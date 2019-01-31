@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour {
     public float jumpPower = 11;
     public LayerMask groundLayer;
     public float jumpRayLength = 0.6f;
-    public float jumpOffset = 0.2f;
+    public float jumpOffset = 0.3f;
 
     // public Vairables for pulling the box
     public float distance = 0.5f;
@@ -80,7 +80,7 @@ public class PlayerMove : MonoBehaviour {
         {
             dropBox = false;
         // checks if the jump key is being pressed and drops the box
-        }else if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && connected)
+        }else if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || !IsGrounded()) && connected)
         {
             box.GetComponent<FixedJoint2D>().enabled = false;
             connected = false;
@@ -126,14 +126,14 @@ public class PlayerMove : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(position, direction, jumpRayLength, groundLayer);
 
         // Adjusts for sprite flip
-        float range = jumpOffset + 0.02f;
+        float range = jumpOffset + 0f;
         if(facingRight){
-            range = -jumpOffset + 0.02f;
+            range = -jumpOffset + 0f;
         }
 
         // generates rays at players location
         // Player is allowed to jump when at least one ray is touching the groundLayer
-        for (float i = -0.4f + range; i < 0.4f + range; i+= 0.1f){
+        for (float i = -0.3f + range; i < 0.3f + range; i+= 0.1f){
             position = new Vector2(transform.position.x + i, transform.position.y);
             Debug.DrawRay(position, direction, Color.green);
             hit = Physics2D.Raycast(position, direction, jumpRayLength, groundLayer);
