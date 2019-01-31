@@ -9,58 +9,134 @@ using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
 
-    public float speed = 2;
-    public float jumpPower = 5;
-    public bool facingRight = true;
-    public Transform groundCheck;
+    // Vairables controlling speed and jumping
+    public float speed = 6;
+    public float pullSpeed = 0.6f;
+    public float jumpPower = 11;
     public LayerMask groundLayer;
+    public float jumpRayLength = 0.6f;
 
+    // public Vairables for pulling the box
+    public float distance = 0.5f;
+    public LayerMask boxMask;
+
+    // private Variables for pulling the box
+    private GameObject box;
+    private bool connected = false;
+
+    // Other private vairables
     private Rigidbody2D body = null;
-    private bool canJump = false;
-    private bool grounded = false;
+    private bool facingRight = true;
+    private float jumpOffset = 0.3f;
 
     // Use this for initialization
     void Start () {
         //Get the reference to rigid body comonent
         body = transform.GetComponent<Rigidbody2D> ();
-        canJump = true;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Ground")){
-            canJump = true;
-        }
+        Flip();
     }
 
     // Update is called once per frame
     void FixedUpdate () {
 
-        grounded = Physics2D.OverlapCircle(groundCheck.position, 0.15f, groundLayer);
-
         //Get movement input
         float h = Input.GetAxis("Horizontal");
 
+        int pull = PullBox();
+
+        // Checks for Ridgidbody2D
         if (body != null) {
-            //Add movement forces to the body
-            if((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && canJump){
+
+            // Moves Player. Jump if IsGrounded()
+            if(IsGrounded() && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))){
                 body.velocity = new Vector2(0, jumpPower);
-                canJump = false;
             }
-
-
-            body.velocity = new Vector2(h * speed, GetComponent<Rigidbody2D>().velocity.y);
+            if(pull != 0){
+                body.velocity = new Vector2(h * pullSpeed * speed, GetComponent<Rigidbody2D>().velocity.y);
+            }else{
+                body.velocity = new Vector2(h * speed, GetComponent<Rigidbody2D>().velocity.y);
+            }
         }
-        if (h > 0 && !facingRight)
+
+        // Flips sprite
+        if (h > 0 && !facingRight && pull == 0)
         {
             Flip();
         }
-        else if (h < 0 && facingRight)
+        else if (h < 0 && facingRight && pull == 0)
         {
             Flip();
         }
     }
 
+    // Lets the character pull 'box' objects
+    int PullBox()
+    {
+        Physics2D.queriesStartInColliders = false;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
+
+        // Drops the box if jumping or over an edge
+        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || !IsGrounded()) && connected)
+        {
+            box.GetComponent<FixedJoint2D>().enabled = false;
+            connected = false;
+            return 0;
+        // Attaches the box to the player if not jumping and on the ground
+        }else if (hit.collider != null && hit.collider.gameObject.tag == "Box" && IsGrounded())
+        {
+            box = hit.collider.gameObject;
+            connected = true;
+            box.GetComponent<FixedJoint2D>().enabled = true;
+            box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+            return 1;
+        }
+
+        return 0;
+    }
+
+    // Draws line 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+
+        Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.right * transform.localScale.x * distance);
+    }
+
+    // Jump function. Lets the Player jump good
+    bool IsGrounded()
+    {
+        // Setting variables for use outside of the for loop
+        bool final = false;
+        Vector2 position = transform.position;
+        Vector2 direction = new Vector2(0, -jumpRayLength);
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, jumpRayLength, groundLayer);
+
+        // Adjusts for sprite flip
+        float range = jumpOffset + 0f;
+        if(facingRight){
+            range = -jumpOffset + 0f;
+        }
+
+        // generates rays at players location
+        // Player is allowed to jump when at least one ray is touching the groundLayer
+        for (float i = -0.3f + range; i < 0.3f + range; i+= 0.1f){
+            position = new Vector2(transform.position.x + i, transform.position.y);
+            Debug.DrawRay(position, direction, Color.green);
+            hit = Physics2D.Raycast(position, direction, jumpRayLength, groundLayer);
+            if (hit.collider != null)
+            {
+                final = true;
+            }
+        }
+
+        if (final)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    // Flips the Player's sprtie
     void Flip()
     {
         facingRight = !facingRight;

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class IgnoreCollision : MonoBehaviour {
 
-    public GameObject object1;
+    private GameObject object1;
 
 	// Use this for initialization
 	void Start () {
-		
+        object1 = GameObject.FindGameObjectWithTag("Chick");
 	}
 	
 	// Update is called once per frame

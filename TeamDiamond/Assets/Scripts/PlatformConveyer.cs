@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlatformConveyer : MonoBehaviour {
 
-    public SurfaceEffector2D se2d;
     public Transform chick;
     private Transform target;
+    private SurfaceEffector2D se2d;
 
     // Use this for initialization
     void Start () {
