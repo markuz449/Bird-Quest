@@ -113,50 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &2795763
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2795764}
-  - component: {fileID: 2795765}
-  m_Layer: 10
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2795764
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2795763}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.124, y: -0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1921860327}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &2795765
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2795763}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.2735061, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1689136
 --- !u!1 &166349548
 GameObject:
   m_ObjectHideFlags: 0
@@ -11106,35 +11062,6 @@ Prefab:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 241917600}
-    - target: {fileID: 212551203543829664, guid: 0d01bd735a7b04283931d761dd65df21,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: 364700129
-      objectReference: {fileID: 0}
-    - target: {fileID: 212551203543829664, guid: 0d01bd735a7b04283931d761dd65df21,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1708147789720792, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 61669853575077860, guid: 0d01bd735a7b04283931d761dd65df21,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 0.08493093
-      objectReference: {fileID: 0}
-    - target: {fileID: 61669853575077860, guid: 0d01bd735a7b04283931d761dd65df21,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.47013813
-      objectReference: {fileID: 0}
-    - target: {fileID: 61669853575077860, guid: 0d01bd735a7b04283931d761dd65df21,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: f07e15d5c00ce41c5afdb2097785fd61, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
   m_IsPrefabAsset: 0
@@ -11571,71 +11498,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1889420058
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1889420059}
-  - component: {fileID: 1889420060}
-  m_Layer: 10
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1889420059
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1889420058}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.423, y: -0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1921860327}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1889420060
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1889420058}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.2735061, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1689136
---- !u!1 &1921860322 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1708147789720792, guid: 0d01bd735a7b04283931d761dd65df21,
-    type: 2}
-  m_PrefabInternal: {fileID: 1433835593}
---- !u!4 &1921860327 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4067253472082052, guid: 0d01bd735a7b04283931d761dd65df21,
-    type: 2}
-  m_PrefabInternal: {fileID: 1433835593}
---- !u!114 &1921860328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1921860322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 370e3eef8107c4bc69dc46661ec034dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1926477177
 Prefab:
   m_ObjectHideFlags: 0
