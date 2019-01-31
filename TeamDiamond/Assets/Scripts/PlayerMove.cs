@@ -11,10 +11,10 @@ public class PlayerMove : MonoBehaviour {
 
     // Vairables controlling speed and jumping
     public float speed = 6;
+    public float pullSpeed = 0.6f;
     public float jumpPower = 11;
     public LayerMask groundLayer;
     public float jumpRayLength = 0.6f;
-    public float jumpOffset = 0.3f;
 
     // public Vairables for pulling the box
     public float distance = 0.5f;
@@ -23,11 +23,11 @@ public class PlayerMove : MonoBehaviour {
     // private Variables for pulling the box
     private GameObject box;
     private bool connected = false;
-    private bool dropBox = true;
 
     // Other private vairables
     private Rigidbody2D body = null;
     private bool facingRight = true;
+    private float jumpOffset = 0.3f;
 
     // Use this for initialization
     void Start () {
@@ -52,7 +52,7 @@ public class PlayerMove : MonoBehaviour {
                 body.velocity = new Vector2(0, jumpPower);
             }
             if(pull != 0){
-                body.velocity = new Vector2(h * 0.5f * speed, GetComponent<Rigidbody2D>().velocity.y);
+                body.velocity = new Vector2(h * pullSpeed * speed, GetComponent<Rigidbody2D>().velocity.y);
             }else{
                 body.velocity = new Vector2(h * speed, GetComponent<Rigidbody2D>().velocity.y);
             }

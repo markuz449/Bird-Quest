@@ -91,11 +91,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpSpeed: 5
-  stoppingHeight: 2.5
-  speedUpDistance: 2
-  slowingDistance: 1
-  stoppingDistance: 0.4
-  tooFar: 10
   raylength: 0.8
   groundLayer:
     serializedVersion: 2

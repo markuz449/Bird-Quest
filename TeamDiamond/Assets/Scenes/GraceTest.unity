@@ -366,36 +366,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114818688178018094, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
-        type: 2}
-      propertyPath: object1
-      value: 
-      objectReference: {fileID: 1463044173}
-    - target: {fileID: 114438416993408630, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
-        type: 2}
-      propertyPath: object1
-      value: 
-      objectReference: {fileID: 1463044173}
-    - target: {fileID: 114501127224382944, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
-        type: 2}
-      propertyPath: object1
-      value: 
-      objectReference: {fileID: 1463044173}
-    - target: {fileID: 114966218455003380, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
-        type: 2}
-      propertyPath: object1
-      value: 
-      objectReference: {fileID: 1463044173}
-    - target: {fileID: 114014991899847598, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
-        type: 2}
-      propertyPath: object1
-      value: 
-      objectReference: {fileID: 1463044173}
-    - target: {fileID: 114282651135404108, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
-        type: 2}
-      propertyPath: object1
-      value: 
-      objectReference: {fileID: 1463044173}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0, type: 2}
   m_IsPrefabAsset: 0
@@ -9816,11 +9786,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1463044173 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1573658595293280, guid: c7257dd0ce91b4c03b9fcfed15373fe4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1926477177}
 --- !u!4 &1463044178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4339120449941550, guid: c7257dd0ce91b4c03b9fcfed15373fe4,
