@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1205699180560600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.018, y: -0.044, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4963678226774956}
@@ -152,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1471833305145798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.039, y: 0.023, z: 0}
+  m_LocalPosition: {x: 0.047, y: 0.028, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4963678226774956}
@@ -178,7 +178,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1419478228202560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.016, y: -0.011, z: 0}
+  m_LocalPosition: {x: 0.02, y: 0.021, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4963678226774956}
@@ -204,7 +204,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964170365143392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.025, y: -0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4963678226774956}
@@ -217,7 +217,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1542198564743338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.823, y: -1.426, z: 0}
+  m_LocalPosition: {x: 10.798, y: -1.415, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4270558728935782}
@@ -261,9 +261,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3352236, y: -0.28338283}
+  m_Offset: {x: -0.3352236, y: -0.31898755}
   serializedVersion: 2
-  m_Radius: 0.16750202
+  m_Radius: 0.13189727
 --- !u!58 &58223252352820486
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -276,9 +276,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12195778, y: 0.06001699}
+  m_Offset: {x: -0.16824389, y: 0.1060766}
   serializedVersion: 2
-  m_Radius: 0.2844782
+  m_Radius: 0.24152613
 --- !u!58 &58224233758435084
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -291,9 +291,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08107233, y: -0.27440134}
+  m_Offset: {x: -0.08107233, y: -0.30466527}
   serializedVersion: 2
-  m_Radius: 0.16322565
+  m_Radius: 0.13296169
 --- !u!58 &58402168511797550
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -306,9 +306,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.031186908, y: 0.22103912}
+  m_Offset: {x: 0.024596155, y: 0.20566028}
   serializedVersion: 2
-  m_Radius: 0.17686763
+  m_Radius: 0.19883722
 --- !u!58 &58475202336627652
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -321,9 +321,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.23078156, y: 0.35198873}
+  m_Offset: {x: 0.20661476, y: 0.34320074}
   serializedVersion: 2
-  m_Radius: 0.13398331
+  m_Radius: 0.16693811
 --- !u!58 &58765336281564156
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -367,9 +367,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1280
-  jumpRayLength: 0.6
+  jumpRayLength: 0.5
   jumpOffset: 0.2
-  distance: 0.5
+  distance: 0.4
   boxMask:
     serializedVersion: 2
     m_Bits: 1335
