@@ -26,24 +26,23 @@ public class DayNight : MonoBehaviour {
     //    }
     //}
 
-    private void OnTriggerEnter2D(Collider2D collision){
-        StateChange();
-        Destroy(gameObject);
-    }
-
-    public void StateChange(){
-        if (dayTime == true)
+    public void StateChange(bool currentState){
+        if (currentState != dayTime)
         {
-            fday.FadeOut(0.8f);
-            night.SetActive(true);
-            SetAllCollidersStatus(day, false);
-            dayTime = false;
-        }
-        else {
-            fday.FadeIn(0.6f);
-            night.SetActive(false);
-            SetAllCollidersStatus(day, true);
-            dayTime = true;
+            if (dayTime == true)
+            {
+                fday.FadeOut(0.8f);
+                night.SetActive(true);
+                SetAllCollidersStatus(day, false);
+                dayTime = false;
+            }
+            else
+            {
+                fday.FadeIn(0.6f);
+                night.SetActive(false);
+                SetAllCollidersStatus(day, true);
+                dayTime = true;
+            }
         }
     }
 
