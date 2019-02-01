@@ -366,6 +366,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114198680158696284, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
+        type: 2}
+      propertyPath: distance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114198680158696284, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
+        type: 2}
+      propertyPath: facingRight
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0, type: 2}
   m_IsPrefabAsset: 0
@@ -9783,7 +9793,29 @@ Prefab:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 241917600}
-    m_RemovedComponents: []
+    - target: {fileID: 114316726971707084, guid: 0d01bd735a7b04283931d761dd65df21,
+        type: 2}
+      propertyPath: groundLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888670113140164, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
+      propertyPath: m_TagString
+      value: Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796737324574486, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
+      propertyPath: m_TagString
+      value: Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796737324574486, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888670113140164, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114763690040117670, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1463044178 stripped
