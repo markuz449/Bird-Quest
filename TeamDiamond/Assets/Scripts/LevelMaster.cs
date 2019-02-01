@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelMaster : MonoBehaviour {
 
     private static LevelMaster instance;
+    public bool hasreset;
 
     public bool Level1;
 
@@ -13,14 +14,31 @@ public class LevelMaster : MonoBehaviour {
 
 
     }
-    
+
+    public void PlayerReset(){
+        hasreset = true;
+
+    }
+
+    public void ClearReset(){
+
+        hasreset = false;
+
+    }
 
 
+    public bool getReset()
+    {
+        return hasreset;
+
+
+    }
 
 
     private void Start()
     {
         Level1 = false;
+        hasreset = false;
 
        
     }
@@ -31,7 +49,9 @@ public class LevelMaster : MonoBehaviour {
         Level1 = true;
     }
 
-    
+
+
+
 
 
 
