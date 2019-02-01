@@ -3,7 +3,6 @@ using System.Collections;
 
 public class DayNight : MonoBehaviour {
     //name of the scene you want to load
-	public Color loadToColor = Color.white;
     public GameObject day;
     public GameObject night;
     //public float stateTime; 
@@ -22,7 +21,7 @@ public class DayNight : MonoBehaviour {
     //{
     //    if (Input.GetKeyDown(KeyCode.N))
     //    {
-    //        StateChange();
+    //        StateChange(!dayTime);
     //    }
     //}
 
