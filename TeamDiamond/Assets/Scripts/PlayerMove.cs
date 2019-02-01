@@ -88,7 +88,7 @@ public class PlayerMove : MonoBehaviour {
             connected = false;
             return 0;
         // Attaches the box to the player if not jumping and on the ground
-        }else if (hit.collider != null && hit.collider.gameObject.tag == "Box" && IsGrounded())
+        }else if (hit.collider != null && (hit.collider.gameObject.tag == "Box" || hit.collider.gameObject.tag == "Log") && IsGrounded())
         {
             box = hit.collider.gameObject;
             connected = true;

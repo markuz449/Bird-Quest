@@ -11,6 +11,7 @@ TagManager:
   - GM
   - LM
   - StateChange
+  - Log
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Items
   - Player
   - Ground
-  - 
+  - Log
   - 
   - 
   - 
