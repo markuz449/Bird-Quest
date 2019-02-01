@@ -15,6 +15,7 @@ public class PlayerMove : MonoBehaviour {
     public float jumpPower = 11;
     public LayerMask groundLayer;
     public float jumpRayLength = 0.6f;
+    public bool facingRight = true;
 
     // public Vairables for pulling the box
     public float distance = 0.5f;
@@ -26,14 +27,19 @@ public class PlayerMove : MonoBehaviour {
 
     // Other private vairables
     private Rigidbody2D body = null;
-    private bool facingRight = true;
-    private float jumpOffset = 0.3f;
+    private float jumpOffset = 0.2f;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         //Get the reference to rigid body comonent
-        body = transform.GetComponent<Rigidbody2D> ();
-        Flip();
+        body = transform.GetComponent<Rigidbody2D>();
+        if (!facingRight)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
     }
 
     // Update is called once per frame
@@ -106,15 +112,15 @@ public class PlayerMove : MonoBehaviour {
     bool IsGrounded()
     {
         // Setting variables for use outside of the for loop
-        bool final = false;
+        float final = 0;
         Vector2 position = transform.position;
         Vector2 direction = new Vector2(0, -jumpRayLength);
         RaycastHit2D hit = Physics2D.Raycast(position, direction, jumpRayLength, groundLayer);
 
         // Adjusts for sprite flip
-        float range = jumpOffset + 0f;
+        float range = jumpOffset;
         if(facingRight){
-            range = -jumpOffset + 0f;
+            range = -jumpOffset;
         }
 
         // generates rays at players location
@@ -125,11 +131,11 @@ public class PlayerMove : MonoBehaviour {
             hit = Physics2D.Raycast(position, direction, jumpRayLength, groundLayer);
             if (hit.collider != null)
             {
-                final = true;
+                final++;
             }
         }
 
-        if (final)
+        if (final > 1)
         {
             return true;
         }
