@@ -28,7 +28,13 @@ public class PlayerPos : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if(Input.GetKeyDown(KeyCode.R)){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            var currentScene = SceneManager.GetActiveScene();
+            var currentSceneName = currentScene.name;
+
+            lm.PlayerReset();
+
+            // Load the "Level" scene
+            SceneManager.LoadScene(currentSceneName);
 
         }
 	}
