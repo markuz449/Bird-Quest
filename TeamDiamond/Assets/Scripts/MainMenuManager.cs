@@ -26,7 +26,7 @@ public class MainMenuManager : MonoBehaviour
     public void StartNestLevel()
     {
         // Load the "Level" scene
-        SceneManager.LoadScene("JaydinNestLevelTest");
+        SceneManager.LoadScene("NestTutorial");
     }
 
     public void MainMenuOpen()
