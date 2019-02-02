@@ -9,7 +9,7 @@
       <File FileName="Assets/Scripts/PlatformConveyer.cs" Line="5" Column="46" />
       <File FileName="Assets/Scripts/IgnoreCollision.cs" Line="22" Column="120" />
       <File FileName="Assets/Scripts/PlayerPos.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/LogTilelayer.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/LogTilelayer.cs" Line="10" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
