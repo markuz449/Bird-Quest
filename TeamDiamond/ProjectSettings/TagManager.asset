@@ -58,9 +58,6 @@ TagManager:
   - name: Ground
     uniqueID: 2154366275
     locked: 0
-  - name: UI
-    uniqueID: 3976651341
-    locked: 0
   - name: Items
     uniqueID: 364700129
     locked: 0
@@ -69,4 +66,7 @@ TagManager:
     locked: 0
   - name: Chick
     uniqueID: 2994419459
+    locked: 0
+  - name: UI
+    uniqueID: 3976651341
     locked: 0
