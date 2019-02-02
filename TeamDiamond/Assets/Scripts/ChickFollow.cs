@@ -6,24 +6,21 @@ public class ChickFollow : MonoBehaviour
 {
 
     public float speed = 5f;
-
     public float jumpSpeed = 5f;
-    public float stoppingHeight = 2.5f;
-
-    public float speedUpDistance = 3f;
-    public float slowingDistance = 1f;
-    public float stoppingDistance = 0.4f;
-    public float tooFar = 8f;
 
     public float raylength = 1f;
     public LayerMask groundLayer;
-
     public float stayButtonDistance = 5f;
 
     private bool facingRight = true;
     private Transform target;
     private bool stay = false;
-   
+
+    private float stoppingHeight = 2.5f;
+    private float speedUpDistance = 2f;
+    private float slowingDistance = 1f;
+    private float stoppingDistance = 0.4f;
+    private float tooFar = 10f;
 
     // Use this for initialization
     void Start()

@@ -3,14 +3,12 @@ using System.Collections;
 
 public class DayNight : MonoBehaviour {
     //name of the scene you want to load
-    public string scene;
-	public Color loadToColor = Color.white;
     public GameObject day;
     public GameObject night;
     //public float stateTime; 
     FadeObjectInOut fday;
     FadeObjectInOut fnight;
-    public bool state = true;
+    public bool dayTime = true;
 
     private void Start(){
         fday = day.AddComponent<FadeObjectInOut>();
@@ -19,27 +17,31 @@ public class DayNight : MonoBehaviour {
         //StartCoroutine(DayTime());
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            StateChange();
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.N))
+    //    {
+    //        StateChange(!dayTime);
+    //    }
+    //}
 
-    public void StateChange(){
-        if (state == true)
+    public void StateChange(bool currentState){
+        if (currentState != dayTime)
         {
-            fday.FadeOut(0.8f);
-            night.SetActive(true);
-            SetAllCollidersStatus(day, false);
-            state = false;
-        }
-        else {
-            fday.FadeIn(0.6f);
-            night.SetActive(false);
-            SetAllCollidersStatus(day, true);
-            state = true;
+            if (dayTime == true)
+            {
+                fday.FadeOut(0.8f);
+                night.SetActive(true);
+                SetAllCollidersStatus(day, false);
+                dayTime = false;
+            }
+            else
+            {
+                fday.FadeIn(0.6f);
+                night.SetActive(false);
+                SetAllCollidersStatus(day, true);
+                dayTime = true;
+            }
         }
     }
 

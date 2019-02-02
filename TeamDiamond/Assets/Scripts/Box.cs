@@ -17,12 +17,8 @@ public class Box : MonoBehaviour {
         GetComponent<Rigidbody2D>().gravityScale = 3;
 
         GetComponent<FixedJoint2D>().enabled = false;
-        transform.tag = "Box";
         gameObject.layer = 8;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+
 }
