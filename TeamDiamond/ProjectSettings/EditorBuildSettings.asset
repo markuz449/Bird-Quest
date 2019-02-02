@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/JaydinMainMenuTest.unity
     guid: 76ce67f84b191410bbdbd2b2da0668ec
   - enabled: 0
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/NestTutorial.unity
+    guid: 26eb71bd55b1c4af0b8cbc0eee2c937d
   m_configObjects: {}
