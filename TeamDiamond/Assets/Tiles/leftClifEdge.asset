@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Day
+  m_Name: leftClifEdge
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 9f483f7394ef745c2898d8e982cfc7bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4aabde856e6346deb43a1cd635dcc44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
