@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject levelCompletePanel;
     public Text numResets;
     private LevelMaster game;
-    private GameObject text1;
+    //private GameObject text1;
 
     // Reference to panel's script object 
     PauseMenuManager pauseMenu;

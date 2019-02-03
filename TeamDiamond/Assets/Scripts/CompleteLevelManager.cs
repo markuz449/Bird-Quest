@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class CompleteLevelManager : MonoBehaviour {
 
-    public Text numResets = null;
+    //public Text numResets = null;
     private LevelMaster game;
 
-    public GameObject endGameResets;
+    //public GameObject endGameResets;
 
 
 
@@ -26,7 +26,7 @@ public class CompleteLevelManager : MonoBehaviour {
         completelevel.SetActive(false);
         game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
 
-        endGameResets = GameObject.FindGameObjectWithTag("Resets");
+        //endGameResets = GameObject.FindGameObjectWithTag("Resets");
 
 
     }
