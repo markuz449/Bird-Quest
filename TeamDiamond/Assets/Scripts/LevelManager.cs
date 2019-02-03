@@ -18,25 +18,15 @@ public class LevelManager : MonoBehaviour {
     PauseMenuManager pauseMenu;
     CompleteLevelManager levelComplete;
 
-
-
-    public void CompleteLevel1()
-    {
+    public void CompleteLevel1(){
         SceneManager.LoadScene("JaydinMainMenuTest");
         game.ClearReset();
 
         game.UnlockLevel1();
-
-
-
-
-
-
     }
 
-
     public void LevelFinish(){
-        levelComplete = levelCompletePanel.GetComponent<CompleteLevelManager>();
+        //levelComplete = levelCompletePanel.GetComponent<CompleteLevelManager>();
         int numresets = game.getNumResets();
 
         numResets.text = "Total Resets: " + numresets.ToString();
@@ -49,11 +39,9 @@ public class LevelManager : MonoBehaviour {
         //= numresets.ToString();
 
         levelComplete.ShowMenu();
-
     }
 
-    public void ReloadLevel()
-    {
+    public void ReloadLevel(){
         var currentScene = SceneManager.GetActiveScene();
         var currentSceneName = currentScene.name;
 
@@ -63,35 +51,29 @@ public class LevelManager : MonoBehaviour {
         SceneManager.LoadScene(currentSceneName);
     }
 
-    public void RetryLevel()
-    {
+    public void RetryLevel(){
         game.ClearReset();
 
         var currentScene = SceneManager.GetActiveScene();
         var currentSceneName = currentScene.name;
 
-
         // Load the "Level" scene
         SceneManager.LoadScene(currentSceneName);
     }
 
-    public void MainMenuOpen()
-    {
+    public void MainMenuOpen(){
         game.ClearReset();
 
         // Load the "Level" scene
         SceneManager.LoadScene("JaydinMainMenuTest");
     }
 
-    public void OpenPauseMenu()
-    {
+    public void OpenPauseMenu(){
         pauseMenu.ShowPause();
 
     }
 
-    private void Start()
-    {
-
+    private void Start(){
         game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
 
         // Initialise the reference to the script object, which is a

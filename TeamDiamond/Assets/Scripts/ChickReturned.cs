@@ -5,7 +5,6 @@ using UnityEngine;
 public class ChickReturned : MonoBehaviour {
 
     LevelManager lm;
-    public GameObject nest;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,10 +16,9 @@ public class ChickReturned : MonoBehaviour {
         }
     }
 
-
-
     private void Start()
     {
-        lm = nest.AddComponent<LevelManager>();
+        //lm = GetComponent<LevelManager>();
+        lm = FindObjectOfType(typeof(LevelManager)) as LevelManager;
     }
 }
