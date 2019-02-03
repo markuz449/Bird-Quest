@@ -12,6 +12,9 @@ TagManager:
   - LM
   - StateChange
   - Log
+  - Resets
+  - Nest
+  - TutorialChick
   layers:
   - Default
   - TransparentFX

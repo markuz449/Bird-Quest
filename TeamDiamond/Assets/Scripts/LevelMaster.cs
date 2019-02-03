@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class LevelMaster : MonoBehaviour {
 
     private static LevelMaster instance;
     public bool hasreset;
+    public int resets;
 
     public bool Level1;
 
@@ -17,6 +20,13 @@ public class LevelMaster : MonoBehaviour {
 
     public void PlayerReset(){
         hasreset = true;
+        resets++;
+
+    }
+
+    public int getNumResets(){
+
+        return resets;
 
     }
 
@@ -49,8 +59,7 @@ public class LevelMaster : MonoBehaviour {
         Level1 = true;
     }
 
-
-
+   
 
 
 

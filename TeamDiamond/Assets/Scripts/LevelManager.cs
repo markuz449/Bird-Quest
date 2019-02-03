@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
- 
+using UnityEngine.UI;
+
+
 
 public class LevelManager : MonoBehaviour {
 
     // Reference to UI panel that is our pause menu
     public GameObject pauseMenuPanel;
     public GameObject levelCompletePanel;
+    public Text numResets;
     private LevelMaster game;
+    //private GameObject text1;
 
     // Reference to panel's script object 
     PauseMenuManager pauseMenu;
@@ -19,6 +23,7 @@ public class LevelManager : MonoBehaviour {
     public void CompleteLevel1()
     {
         SceneManager.LoadScene("JaydinMainMenuTest");
+        game.ClearReset();
 
         game.UnlockLevel1();
 
@@ -32,7 +37,17 @@ public class LevelManager : MonoBehaviour {
 
     public void LevelFinish(){
         levelComplete = levelCompletePanel.GetComponent<CompleteLevelManager>();
-        game.ClearReset();
+        int numresets = game.getNumResets();
+
+        numResets.text = "Total Resets: " + numresets.ToString();
+        //GameObject resetText;
+        //text1 = GameObject.FindGameObjectWithTag("Resets");
+
+        //resetText = GameObject.FindGameObjectWithTag("Resets").GetComponent<GameObject>();
+        //Debug.Log(text1.GetType()); 
+
+        //= numresets.ToString();
+
         levelComplete.ShowMenu();
 
     }
@@ -50,6 +65,8 @@ public class LevelManager : MonoBehaviour {
 
     public void RetryLevel()
     {
+        game.ClearReset();
+
         var currentScene = SceneManager.GetActiveScene();
         var currentSceneName = currentScene.name;
 
@@ -60,6 +77,8 @@ public class LevelManager : MonoBehaviour {
 
     public void MainMenuOpen()
     {
+        game.ClearReset();
+
         // Load the "Level" scene
         SceneManager.LoadScene("JaydinMainMenuTest");
     }
