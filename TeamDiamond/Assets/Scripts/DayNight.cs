@@ -11,7 +11,7 @@ public class DayNight : MonoBehaviour {
     public bool dayTime = true;
 
     //jack code
-    GameObject[] nightObjects = GameObject.FindGameObjectsWithTag("Night");
+    //GameObject[] nightObjects = GameObject.FindGameObjectsWithTag("Night");
 
     private void Start(){
         fday = day.AddComponent<FadeObjectInOut>();
@@ -44,9 +44,9 @@ public class DayNight : MonoBehaviour {
                 //jack adding code in here 
 
 
-                foreach (GameObject n in nightObjects) {
-                    transform.Translate(Vector3.up * Time.deltaTime);
-                }
+                //foreach (GameObject n in nightObjects) {
+                //    transform.Translate(Vector3.up * Time.deltaTime);
+                //}
 
 
                 //jack stopped adding code here
