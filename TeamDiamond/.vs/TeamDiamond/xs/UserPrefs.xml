@@ -1,15 +1,20 @@
 ﻿<Properties StartupConfiguration="{B8816680-4F1F-A3B5-4650-3F66A68695AE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChickReturned.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/StateChangeTrigger.cs" Line="7" Column="12" />
-      <File FileName="Assets/Scripts/DayNight.cs" Line="6" Column="27" />
-      <File FileName="Assets/Scripts/ChickReturned.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="29" Column="11" />
-      <File FileName="Assets/Scripts/CompleteLevelManager.cs" Line="40" Column="15" />
+      <File FileName="Assets/Scripts/MainMenuManager.cs" Line="44" Column="4" />
+      <File FileName="Assets/Scripts/LevelMaster.cs" Line="6" Column="1" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="101" Column="9" />
+      <File FileName="Assets/Scripts/GameMaster.cs" Line="10" Column="5" />
+      <File FileName="Assets/Scripts/PauseMenuManager.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/Checkpoint.cs" Line="15" Column="9" />
+      <File FileName="Assets/Scripts/CompleteLevelManager.cs" Line="10" Column="5" />
+      <File FileName="Assets/Scripts/StateChangeTrigger.cs" Line="14" Column="6" />
+      <File FileName="Assets/Scripts/ChickReturned.cs" Line="21" Column="5" />
+      <File FileName="Assets/Scripts/DayNight.cs" Line="15" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
