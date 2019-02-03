@@ -15,6 +15,7 @@ TagManager:
   - Resets
   - Nest
   - TutorialChick
+  - Night
   layers:
   - Default
   - TransparentFX
