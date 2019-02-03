@@ -33,10 +33,7 @@ public class CompleteLevelManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        //endGameResets.AddComponent. = "Total Resets: " + game.resets;
-
-
-		
+        //endGameResets.AddComponent. = "Total Resets: " + game.resets;	
 	}
 
     public void ShowMenu(){

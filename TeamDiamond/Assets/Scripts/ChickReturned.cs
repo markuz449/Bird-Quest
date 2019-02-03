@@ -4,23 +4,14 @@ using UnityEngine;
 
 public class ChickReturned : MonoBehaviour {
 
-    LevelManager lm;
-    public GameObject nest;
+    public GameObject levelCompleteScreen;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("TutorialChick") || collision.CompareTag("Chick"))
+        if (collision.CompareTag("Nest"))
         {
-            lm.LevelFinish();
-
+            levelCompleteScreen.SetActive(true);
 
         }
-    }
-
-
-
-    private void Start()
-    {
-        lm = nest.AddComponent<LevelManager>();
     }
 }

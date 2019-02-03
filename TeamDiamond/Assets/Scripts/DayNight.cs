@@ -10,6 +10,9 @@ public class DayNight : MonoBehaviour {
     FadeObjectInOut fnight;
     public bool dayTime = true;
 
+    //jack code
+    //GameObject[] nightObjects = GameObject.FindGameObjectsWithTag("Night");
+
     private void Start(){
         fday = day.AddComponent<FadeObjectInOut>();
         fnight = day.AddComponent<FadeObjectInOut>();
@@ -37,6 +40,16 @@ public class DayNight : MonoBehaviour {
             }
             else
             {
+
+                //jack adding code in here 
+
+
+                //foreach (GameObject n in nightObjects) {
+                //    transform.Translate(Vector3.up * Time.deltaTime);
+                //}
+
+
+                //jack stopped adding code here
                 fday.FadeIn(0.6f);
                 night.SetActive(false);
                 SetAllCollidersStatus(day, true);
