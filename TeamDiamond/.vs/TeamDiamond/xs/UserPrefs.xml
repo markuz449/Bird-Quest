@@ -1,18 +1,17 @@
 ﻿<Properties StartupConfiguration="{B8816680-4F1F-A3B5-4650-3F66A68695AE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LogTilelayer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/ChickFollow.cs" Line="10" Column="1" />
-      <File FileName="Assets/Scripts/PlayerMove.cs" Line="96" Column="95" />
-      <File FileName="Assets/Scripts/Box.cs" Line="17" Column="54" />
-      <File FileName="Assets/Scripts/PullBox.cs" Line="40" Column="4" />
-      <File FileName="Assets/Scripts/PlatformConveyer.cs" Line="5" Column="46" />
-      <File FileName="Assets/Scripts/IgnoreCollision.cs" Line="22" Column="120" />
-      <File FileName="Assets/Scripts/PlayerPos.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/LogTilelayer.cs" Line="10" Column="3" />
+      <File FileName="Assets/Scripts/MainMenuManager.cs" Line="62" Column="83" />
+      <File FileName="Assets/Scripts/LevelMaster.cs" Line="63" Column="5" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="38" Column="31" />
+      <File FileName="Assets/Scripts/GameMaster.cs" Line="11" Column="1" />
+      <File FileName="Assets/Scripts/PauseMenuManager.cs" Line="3" Column="19" />
+      <File FileName="Assets/Scripts/Checkpoint.cs" Line="11" Column="65" />
+      <File FileName="Assets/Scripts/CompleteLevelManager.cs" Line="33" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

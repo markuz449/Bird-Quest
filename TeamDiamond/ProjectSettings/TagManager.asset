@@ -12,6 +12,7 @@ TagManager:
   - LM
   - StateChange
   - Log
+  - Resets
   layers:
   - Default
   - TransparentFX
