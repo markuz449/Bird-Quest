@@ -16,6 +16,7 @@ TagManager:
   - Nest
   - TutorialChick
   - Night
+  - Day
   layers:
   - Default
   - TransparentFX
