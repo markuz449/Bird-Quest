@@ -3458,7 +3458,7 @@ GameObject:
   - component: {fileID: 1642719956}
   - component: {fileID: 1642719955}
   - component: {fileID: 1642719958}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3561,6 +3561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuPanel: {fileID: 1087548147}
   levelCompletePanel: {fileID: 1932458325}
+  numResets: {fileID: 843262960}
 --- !u!1 &1649953648
 GameObject:
   m_ObjectHideFlags: 0
@@ -7810,6 +7811,49 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1795481920}
   m_CullTransparentMesh: 0
+--- !u!1 &1864480933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1864480935}
+  - component: {fileID: 1864480934}
+  m_Layer: 0
+  m_Name: LevelMaster
+  m_TagString: LM
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1864480934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1864480933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e54919837694b129441f6a9f2e7206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasreset: 0
+  resets: 0
+  Level1: 0
+--- !u!4 &1864480935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1864480933}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5371287, y: -3.0188062, z: -0.003612955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1910249346
 GameObject:
   m_ObjectHideFlags: 0
@@ -8760,7 +8804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1932458326
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9118,7 +9162,7 @@ GameObject:
   - component: {fileID: 2051050859}
   - component: {fileID: 2051050861}
   - component: {fileID: 2051050860}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

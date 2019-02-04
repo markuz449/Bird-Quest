@@ -4,14 +4,14 @@
     <Files>
       <File FileName="Assets/Scripts/MainMenuManager.cs" Line="44" Column="4" />
       <File FileName="Assets/Scripts/LevelMaster.cs" Line="6" Column="1" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="101" Column="9" />
-      <File FileName="Assets/Scripts/GameMaster.cs" Line="10" Column="5" />
-      <File FileName="Assets/Scripts/PauseMenuManager.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="48" Column="1" />
+      <File FileName="Assets/Scripts/GameMaster.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/PauseMenuManager.cs" Line="7" Column="1" />
       <File FileName="Assets/Scripts/Checkpoint.cs" Line="15" Column="9" />
-      <File FileName="Assets/Scripts/CompleteLevelManager.cs" Line="10" Column="5" />
+      <File FileName="Assets/Scripts/CompleteLevelManager.cs" Line="10" Column="1" />
       <File FileName="Assets/Scripts/StateChangeTrigger.cs" Line="14" Column="6" />
-      <File FileName="Assets/Scripts/ChickReturned.cs" Line="21" Column="5" />
-      <File FileName="Assets/Scripts/DayNight.cs" Line="15" Column="19" />
+      <File FileName="Assets/Scripts/ChickReturned.cs" Line="18" Column="1" />
+      <File FileName="Assets/Scripts/DayNight.cs" Line="15" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
