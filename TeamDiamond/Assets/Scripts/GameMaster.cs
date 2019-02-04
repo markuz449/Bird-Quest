@@ -11,9 +11,12 @@ public class GameMaster : MonoBehaviour
 
 
 
-    public Vector2 lastCheckpointPos;
+    public Vector3 lastCheckpointPos;
 
+    public Vector3 playerCoords(){
 
+        return lastCheckpointPos;
+    }
 
 
 
