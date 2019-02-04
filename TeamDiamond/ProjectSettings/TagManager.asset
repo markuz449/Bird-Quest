@@ -16,7 +16,10 @@ TagManager:
   - Nest
   - TutorialChick
   - Night
-  - Day
+  - Items
+  - CompleteMenu
+  - PauseMenu
+  - PauseManu
   layers:
   - Default
   - TransparentFX

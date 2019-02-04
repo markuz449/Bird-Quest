@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class KillPlayer : MonoBehaviour {
 
+    private LevelMaster game;
+
+
     [SerializeField] Transform spawnPoint;
 
     void OnCollisionEnter2D(Collision2D col){
