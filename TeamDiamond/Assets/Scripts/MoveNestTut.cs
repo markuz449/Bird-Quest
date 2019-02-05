@@ -18,7 +18,9 @@ public class MoveNestTut : MonoBehaviour {
 
     private int section = 0;
     private bool setLocation = true;
-    public GameObject levelCompleteScreen;
+
+    private LevelMaster game;
+    private GameMaster gm;
 
     private GameObject player;
     private GameObject chick;
@@ -26,6 +28,10 @@ public class MoveNestTut : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
+        game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+
+
         chick = GameObject.FindGameObjectWithTag("Chick");
 
         transform.position = nest1;
@@ -36,12 +42,16 @@ public class MoveNestTut : MonoBehaviour {
     private void FixedUpdate()
     {
         if(section == 1 && setLocation){
+            gm.chickLastCheckpoint = chick2;
+            gm.lastCheckpointPos = player2;
             transform.position = nest2;
             player.transform.position = player2;
             chick.transform.position = chick2;
             setLocation = false;
         }
         else if(section == 2 && setLocation){
+            gm.chickLastCheckpoint = chick3;
+            gm.lastCheckpointPos = player3;
             transform.position = nest3;
             player.transform.position = player3;
             chick.transform.position = chick3;
@@ -49,7 +59,8 @@ public class MoveNestTut : MonoBehaviour {
         }
         else if(section > 2 && setLocation){
             setLocation = false;
-            levelCompleteScreen.SetActive(true);
+
+            game.LevelFinish();
         }
     }
 
