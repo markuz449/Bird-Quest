@@ -82,14 +82,29 @@ public class PlayerMove : MonoBehaviour {
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
 
+        bool push = true;
+        float side;
+        float direction;
+        if(hit.collider != null && (hit.collider.gameObject.tag == "Box" || hit.collider.gameObject.tag == "Log")){
+            box = hit.collider.gameObject;
+            side = box.transform.position.x - transform.position.x;
+            direction = Input.GetAxis("Horizontal");
+            if((side > 0 && direction > 0) || (side < 0 && direction < 0)){
+                push = true;
+            }else{
+                push = false;
+            }
+        }
+
         // Drops the box if jumping or over an edge
-        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || !IsGrounded()) && connected)
+        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || !IsGrounded() || Input.GetKey(KeyCode.Space)) && connected && push)
         {
             box.GetComponent<FixedJoint2D>().enabled = false;
             connected = false;
             return 0;
         // Attaches the box to the player if not jumping and on the ground
-        }else if (hit.collider != null && (hit.collider.gameObject.tag == "Box" || hit.collider.gameObject.tag == "Log") && IsGrounded())
+        }else if (hit.collider != null && (hit.collider.gameObject.tag == "Box" || hit.collider.gameObject.tag == "Log") 
+                  && IsGrounded() && !push)
         {
             box = hit.collider.gameObject;
             connected = true;
