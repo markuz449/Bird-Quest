@@ -24,6 +24,8 @@ public class PauseMenuManager : MonoBehaviour {
 
     }
 
+
+
     public void ShowOptions()
     {
 
