@@ -26,7 +26,7 @@ public class MainMenuManager : MonoBehaviour
     public void StartNestLevel()
     {
         // Load the "Level" scene
-        SceneManager.LoadScene("NestTutorial");
+        SceneManager.LoadScene("GraceTest");
     }
 
     public void MainMenuOpen()
@@ -39,14 +39,19 @@ public class MainMenuManager : MonoBehaviour
     public void StartChickLevel1()
     {
         // Load the "Level" scene
+        SceneManager.LoadScene("NestTutorial");
+
+    }
+
+    public void StartChickLevel2()
+    {
+        // Load the "Level" scene
 
         SceneManager.LoadScene("TestLevel");
     }
 
-   
 
-
-public  void UnlockLevel1(){
+    public  void UnlockLevel1(){
         level1 = game.GetLevel1();
 
 
