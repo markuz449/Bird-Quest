@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class DayNight : MonoBehaviour {
-    //name of the scene you want to load
+    //name of the gameobject you want to transition between
     public GameObject day;
     public GameObject night;
     //public float stateTime; 
@@ -30,11 +30,8 @@ public class DayNight : MonoBehaviour {
     //}
 
     public void StateChange(bool currentState){
-        if (currentState != dayTime)
-        {
-            if (dayTime == true)
-            {
-
+        if (currentState != dayTime){
+            if (dayTime == true){
                 //foreach (GameObject d in dayObjects) {
                 //    d.transform.Translate(Vector3.down * Time.deltaTime);
                 //}
@@ -44,8 +41,7 @@ public class DayNight : MonoBehaviour {
                 SetAllCollidersStatus(day, false);
                 dayTime = false;
             }
-            else
-            {
+            else {
                 ////jack adding code in here 
                 //foreach (GameObject n in nightObjects) {
                 //    n.transform.Translate(Vector3.up * Time.deltaTime);
