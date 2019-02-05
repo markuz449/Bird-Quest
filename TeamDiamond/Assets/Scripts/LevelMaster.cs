@@ -91,17 +91,29 @@ public class LevelMaster : MonoBehaviour {
     {
         SceneManager.LoadScene("JaydinMainMenuTest");
         ClearReset();
+        Time.timeScale = 1f;
+
 
         UnlockLevel1();
     }
 
     public void LevelFinish()
     {
+        Time.timeScale = 0;
+
         int numresets = GetNumResets();
         numResets.text = "Total Resets: " + numresets.ToString();
-        float time = Time.timeSinceLevelLoad;
+        float time = Mathf.Round(Time.timeSinceLevelLoad);
+        float timeFirst = Mathf.Floor(time / 60);
+        float timeSeconds = time % 60;
+        string temp = "";
+        if (timeSeconds < 10){
 
-        timeTaken.text = "Time Taken: " + Mathf.Round(time) + " Seconds";
+            temp = "0";
+
+        }
+
+        timeTaken.text = "Time Taken: " + timeFirst + ":" + temp +  timeSeconds;
 
         levelCompletePanel.SetActive(true);
     }
