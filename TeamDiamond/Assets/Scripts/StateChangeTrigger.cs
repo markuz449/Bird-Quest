@@ -8,6 +8,8 @@ public class StateChangeTrigger : MonoBehaviour {
     public bool daytime;
 
     public void OnTriggerEnter2D(Collider2D collision){
+
+
         stateControl.StateChange(daytime);
         // maybe don't destroy them??
         //Destroy(gameObject);
