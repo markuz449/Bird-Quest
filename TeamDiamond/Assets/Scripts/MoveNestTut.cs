@@ -1,0 +1,67 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MoveNestTut : MonoBehaviour {
+
+    private Vector3 nest1 = new Vector3(-46.1f, -3.6f, 0);
+    private Vector3 nest2 = new Vector3(-3.9f, -3.6f, 0);
+    private Vector3 nest3 = new Vector3(32f, -3.6f, 0);
+
+    private Vector3 player1 = new Vector3(-46f, -2.4f, 0);
+    private Vector3 player2 = new Vector3(-3.7f, -2.4f, 0);
+    private Vector3 player3 = new Vector3(32.1f, -2.4f, 0);
+
+    private Vector3 chick1 = new Vector3(-14f, -1.6f, 0);
+    private Vector3 chick2 = new Vector3(15.3f, -3.5f, 0);
+    private Vector3 chick3 = new Vector3(69f, -3.5f, 0);
+
+    private int section = 0;
+    private bool setLocation = true;
+    public GameObject levelCompleteScreen;
+
+    private GameObject player;
+    private GameObject chick;
+
+	// Use this for initialization
+	void Start () {
+        player = GameObject.FindGameObjectWithTag("Player");
+        chick = GameObject.FindGameObjectWithTag("Chick");
+
+        transform.position = nest1;
+        player.transform.position = player1;
+        chick.transform.position = chick1;
+	}
+
+    private void FixedUpdate()
+    {
+        if(section == 1 && setLocation){
+            transform.position = nest2;
+            player.transform.position = player2;
+            chick.transform.position = chick2;
+            setLocation = false;
+        }
+        else if(section == 2 && setLocation){
+            transform.position = nest3;
+            player.transform.position = player3;
+            chick.transform.position = chick3;
+            setLocation = false;
+        }
+        else if(section > 2 && setLocation){
+            setLocation = false;
+            levelCompleteScreen.SetActive(true);
+        }
+    }
+
+    // Update is called once per frame
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Chick") && transform.position == nest1){
+            section = 1;setLocation = true;
+        }else if(collision.CompareTag("Chick") && transform.position == nest2) {
+            section = 2;setLocation = true;
+        }else if(collision.CompareTag("Chick") && transform.position == nest3) {
+            section = 3;setLocation = true;
+        }
+    }
+}
