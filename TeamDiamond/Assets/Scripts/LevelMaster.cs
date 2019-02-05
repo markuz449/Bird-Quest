@@ -114,7 +114,8 @@ public class LevelMaster : MonoBehaviour {
             boxes[j].transform.position = boxesStart[j];
         }
 
-        player.transform.localPosition = gm.playerCoords();
+        player.transform.localPosition = gm.PlayerCoords();
+        chick.transform.localPosition = gm.ChickCoords();
 
 
 
@@ -199,8 +200,13 @@ public class LevelMaster : MonoBehaviour {
         }
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
+
+
+
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
             player = GameObject.FindGameObjectWithTag("Player");
+            chick = GameObject.FindGameObjectWithTag("Chick");
+
 
             if (numResets == null)
             {
