@@ -68,6 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c5bcd3d32ca46d088031f54571052f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  day: {fileID: 0}
+  night: {fileID: 0}
   stateControl: {fileID: 0}
   daytime: 0
 --- !u!212 &212555179433747732

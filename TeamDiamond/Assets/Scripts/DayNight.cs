@@ -35,11 +35,11 @@ public class DayNight : MonoBehaviour {
                 //foreach (GameObject d in dayObjects) {
                 //    d.transform.Translate(Vector3.down * Time.deltaTime);
                 //}
-
+                dayTime = false;
                 fday.FadeOut(0.8f);
                 night.SetActive(true);
                 SetAllCollidersStatus(day, false);
-                dayTime = false;
+
             }
             else {
                 ////jack adding code in here 
@@ -47,10 +47,10 @@ public class DayNight : MonoBehaviour {
                 //    n.transform.Translate(Vector3.up * Time.deltaTime);
                 //}
                 ////jack stopped adding code here
+                dayTime = true;
                 fday.FadeIn(0.6f);
                 night.SetActive(false);
                 SetAllCollidersStatus(day, true);
-                dayTime = true;
             }
         }
     }
