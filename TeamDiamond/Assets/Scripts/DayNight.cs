@@ -11,8 +11,8 @@ public class DayNight : MonoBehaviour {
     public bool dayTime = true;
 
     //jack code
-    public GameObject[] nightObjects = GameObject.FindGameObjectsWithTag("Night");
-    public GameObject[] dayObjects = GameObject.FindGameObjectsWithTag("Day");
+    //public GameObject[] nightObjects = GameObject.FindGameObjectsWithTag("Night");
+    //public GameObject[] dayObjects = GameObject.FindGameObjectsWithTag("Day");
 
     private void Start(){
         fday = day.AddComponent<FadeObjectInOut>();
@@ -35,9 +35,9 @@ public class DayNight : MonoBehaviour {
             if (dayTime == true)
             {
 
-                foreach (GameObject d in dayObjects) {
-                    d.transform.Translate(Vector3.down * Time.deltaTime);
-                }
+                //foreach (GameObject d in dayObjects) {
+                //    d.transform.Translate(Vector3.down * Time.deltaTime);
+                //}
 
                 fday.FadeOut(0.8f);
                 night.SetActive(true);
@@ -46,11 +46,11 @@ public class DayNight : MonoBehaviour {
             }
             else
             {
-                //jack adding code in here 
-                foreach (GameObject n in nightObjects) {
-                    n.transform.Translate(Vector3.up * Time.deltaTime);
-                }
-                //jack stopped adding code here
+                ////jack adding code in here 
+                //foreach (GameObject n in nightObjects) {
+                //    n.transform.Translate(Vector3.up * Time.deltaTime);
+                //}
+                ////jack stopped adding code here
                 fday.FadeIn(0.6f);
                 night.SetActive(false);
                 SetAllCollidersStatus(day, true);

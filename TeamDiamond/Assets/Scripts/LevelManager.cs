@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour {
 
     // Reference to panel's script object 
     PauseMenuManager pauseMenu;
-    CompleteLevelManager levelComplete;
+    //CompleteLevelManager levelComplete;
 
     public void CompleteLevel1(){
         SceneManager.LoadScene("JaydinMainMenuTest");
@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour {
         numResets.text = "Total Resets: " + numresets.ToString();
 
 
-        levelComplete.ShowMenu();
+        levelCompletePanel.SetActive(true);
     }
 
     public void ReloadLevel(){
@@ -56,7 +56,8 @@ public class LevelManager : MonoBehaviour {
         {
             boxes[j].transform.position = boxesStart[j];
         }
-        player.transform.localPosition = gm.playerCoords();
+        player.transform.localPosition = gm.PlayerCoords();
+        chick.transform.localPosition = gm.ChickCoords();
 
 
         game.PlayerReset();
@@ -91,6 +92,8 @@ public class LevelManager : MonoBehaviour {
 
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         player = GameObject.FindGameObjectWithTag("Player");
+        chick = GameObject.FindGameObjectWithTag("Chick");
+
 
 
         boxes = GameObject.FindGameObjectsWithTag("Box");
@@ -106,12 +109,13 @@ public class LevelManager : MonoBehaviour {
             boxesStart[i] = boxes[i].transform.position;
         }
 
+
         game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
 
         // Initialise the reference to the script object, which is a
         // component of the pause menu panel game object
 
-        levelComplete = levelCompletePanel.GetComponent<CompleteLevelManager>();
+        //levelComplete = levelCompletePanel.GetComponent<CompleteLevelManager>();
 
         pauseMenu = pauseMenuPanel.GetComponent<PauseMenuManager>();
         //pauseMenu.Hide();

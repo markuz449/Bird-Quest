@@ -6,12 +6,22 @@ public class ChickReturned : MonoBehaviour {
 
     public GameObject levelCompleteScreen;
 
+    private LevelMaster lm;
+
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Nest"))
         {
-            levelCompleteScreen.SetActive(true);
 
+
+            lm.LevelFinish();
         }
+    }
+
+    private void Start()
+    {
+        lm = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
+
     }
 }

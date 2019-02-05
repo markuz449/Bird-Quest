@@ -29,7 +29,7 @@ public class LevelMaster : MonoBehaviour {
 
     // Reference to panel's script object 
     PauseMenuManager pauseMenu;
-    CompleteLevelManager levelComplete;
+    //CompleteLevelManager levelComplete;
 
     public bool hasreset;
     public int resets;
@@ -97,8 +97,7 @@ public class LevelMaster : MonoBehaviour {
         int numresets = GetNumResets();
         numResets.text = "Total Resets: " + numresets.ToString();
 
-
-        levelComplete.ShowMenu();
+        levelCompletePanel.SetActive(true);
     }
 
     public void ReloadLevel()
@@ -114,7 +113,8 @@ public class LevelMaster : MonoBehaviour {
             boxes[j].transform.position = boxesStart[j];
         }
 
-        player.transform.localPosition = gm.playerCoords();
+        player.transform.localPosition = gm.PlayerCoords();
+        chick.transform.localPosition = gm.ChickCoords();
 
 
 
@@ -171,7 +171,7 @@ public class LevelMaster : MonoBehaviour {
         // Initialise the reference to the script object, which is a
         // component of the pause menu panel game object
 
-        levelComplete = levelCompletePanel.GetComponent<CompleteLevelManager>();
+        //levelComplete = levelCompletePanel.GetComponent<CompleteLevelManager>();
 
         pauseMenu = pauseMenuPanel.GetComponent<PauseMenuManager>();
         //pauseMenu.Hide();
@@ -199,8 +199,13 @@ public class LevelMaster : MonoBehaviour {
         }
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
+
+
+
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
             player = GameObject.FindGameObjectWithTag("Player");
+            chick = GameObject.FindGameObjectWithTag("Chick");
+
 
             if (numResets == null)
             {
