@@ -12,7 +12,18 @@ public class LevelManager : MonoBehaviour {
     public GameObject levelCompletePanel;
     public Text numResets;
     private LevelMaster game;
+
+    private GameMaster gm;
+
+
+    private GameObject[] boxes;
+    private Vector3[] boxesStart;
+    private GameObject[] logs;
+    private Vector3[] logsStart;
     //private GameObject text1;
+
+    private GameObject player;
+    private GameObject chick;
 
     // Reference to panel's script object 
     PauseMenuManager pauseMenu;
@@ -26,29 +37,32 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void LevelFinish(){
-        //levelComplete = levelCompletePanel.GetComponent<CompleteLevelManager>();
-        int numresets = game.getNumResets();
+        int numresets = game.GetNumResets();
 
         numResets.text = "Total Resets: " + numresets.ToString();
-        //GameObject resetText;
-        //text1 = GameObject.FindGameObjectWithTag("Resets");
 
-        //resetText = GameObject.FindGameObjectWithTag("Resets").GetComponent<GameObject>();
-        //Debug.Log(text1.GetType()); 
-
-        //= numresets.ToString();
 
         levelComplete.ShowMenu();
     }
 
     public void ReloadLevel(){
-        var currentScene = SceneManager.GetActiveScene();
-        var currentSceneName = currentScene.name;
+        //var currentScene = SceneManager.GetActiveScene();
+        //var currentSceneName = currentScene.name;
+        for (int i = 0; i < logs.Length; i++)
+        {
+            logs[i].transform.position = logsStart[i];
+        }
+        for (int j = 0; j < boxes.Length; j++)
+        {
+            boxes[j].transform.position = boxesStart[j];
+        }
+        player.transform.localPosition = gm.playerCoords();
+
 
         game.PlayerReset();
 
         // Load the "Level" scene
-        SceneManager.LoadScene(currentSceneName);
+        //SceneManager.LoadScene(currentSceneName);
     }
 
     public void RetryLevel(){
@@ -74,6 +88,24 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void Start(){
+
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        player = GameObject.FindGameObjectWithTag("Player");
+
+
+        boxes = GameObject.FindGameObjectsWithTag("Box");
+        logs = GameObject.FindGameObjectsWithTag("Log");
+        boxesStart = new Vector3[boxes.Length];
+        logsStart = new Vector3[logs.Length];
+
+        for (int i = 0; i < logs.Length; i++){
+            logsStart[i] = logs[i].transform.position;
+        }
+        for (int i = 0; i < boxes.Length; i++)
+        {
+            boxesStart[i] = boxes[i].transform.position;
+        }
+
         game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
 
         // Initialise the reference to the script object, which is a
@@ -82,6 +114,6 @@ public class LevelManager : MonoBehaviour {
         levelComplete = levelCompletePanel.GetComponent<CompleteLevelManager>();
 
         pauseMenu = pauseMenuPanel.GetComponent<PauseMenuManager>();
-        pauseMenu.Hide();
+        //pauseMenu.Hide();
     }
 }

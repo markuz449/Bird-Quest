@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerPos : MonoBehaviour {
     private GameMaster gm;
     private LevelMaster lm;
-    
+
 
 
 	// Use this for initialization
@@ -16,26 +16,11 @@ public class PlayerPos : MonoBehaviour {
 
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
 
-        if(lm.getReset()){
+        if(lm.GetReset()){
             transform.position = gm.lastCheckpointPos;
-
-
         }
-
-
     }
 	
 	// Update is called once per frame
-	void Update () {
-        if(Input.GetKeyDown(KeyCode.R)){
-            var currentScene = SceneManager.GetActiveScene();
-            var currentSceneName = currentScene.name;
-
-            lm.PlayerReset();
-
-            // Load the "Level" scene
-            SceneManager.LoadScene(currentSceneName);
-
-        }
-	}
+	
 }

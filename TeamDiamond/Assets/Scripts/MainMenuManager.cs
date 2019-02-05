@@ -31,6 +31,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void MainMenuOpen()
     {
+
         // Load the "Level" scene
         SceneManager.LoadScene("JaydinMainMenuTest");
     }
@@ -38,14 +39,15 @@ public class MainMenuManager : MonoBehaviour
     public void StartChickLevel1()
     {
         // Load the "Level" scene
-        SceneManager.LoadScene("JaydinChickLevel1Test");
+
+        SceneManager.LoadScene("TestLevel");
     }
 
    
 
 
 public  void UnlockLevel1(){
-        level1 = game.getLevel1();
+        level1 = game.GetLevel1();
 
 
 
@@ -69,7 +71,7 @@ public void OpenPauseMenu(){
 
     private void Update()
     {
-        level1 = game.getLevel1();
+        level1 = game.GetLevel1();
 
         if (level1){
 
