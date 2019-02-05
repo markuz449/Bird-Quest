@@ -2,15 +2,13 @@ using UnityEngine;
 using System.Collections;
 
 public class DayNight : MonoBehaviour {
-    //name of the scene you want to load
+    //name of the gameobject you want to transition between
     public GameObject day;
     public GameObject night;
     //public float stateTime; 
     FadeObjectInOut fday;
     FadeObjectInOut fnight;
     public bool dayTime = true;
-
-    public FlowerGrowShrink flower;
 
     //jack code
     //public GameObject[] nightObjects = GameObject.FindGameObjectsWithTag("Night");
@@ -21,12 +19,6 @@ public class DayNight : MonoBehaviour {
         fnight = day.AddComponent<FadeObjectInOut>();
         fday.FadeIn();
         //StartCoroutine(DayTime());
-
-        flower = new FlowerGrowShrink();
-    }
-
-    public bool GetState() {
-        return dayTime;
     }
 
     //void Update()
@@ -38,27 +30,27 @@ public class DayNight : MonoBehaviour {
     //}
 
     public void StateChange(bool currentState){
-        if (currentState != dayTime)
-        {
-            if (dayTime == true)
-            {
-
-                flower.Change();               
-
+        if (currentState != dayTime){
+            if (dayTime == true){
+                //foreach (GameObject d in dayObjects) {
+                //    d.transform.Translate(Vector3.down * Time.deltaTime);
+                //}
+                dayTime = false;
                 fday.FadeOut(0.8f);
                 night.SetActive(true);
                 SetAllCollidersStatus(day, false);
-                dayTime = false;
+
             }
-            else
-            {
-
-                flower.Change();
-
+            else {
+                ////jack adding code in here 
+                //foreach (GameObject n in nightObjects) {
+                //    n.transform.Translate(Vector3.up * Time.deltaTime);
+                //}
+                ////jack stopped adding code here
+                dayTime = true;
                 fday.FadeIn(0.6f);
                 night.SetActive(false);
                 SetAllCollidersStatus(day, true);
-                dayTime = true;
             }
         }
     }

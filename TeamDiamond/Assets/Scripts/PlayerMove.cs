@@ -54,7 +54,8 @@ public class PlayerMove : MonoBehaviour {
         if (body != null) {
 
             // Moves Player. Jump if IsGrounded()
-            if(IsGrounded() && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))){
+            if(IsGrounded() && (Input.GetKey(KeyCode.UpArrow) || 
+                                Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))){
                 body.velocity = new Vector2(0, jumpPower);
             }
             if(pull != 0){
