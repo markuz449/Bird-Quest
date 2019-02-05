@@ -13,12 +13,23 @@ public class GameMaster : MonoBehaviour
 
     public Vector3 lastCheckpointPos;
 
-    public Vector3 playerCoords(){
+    public Vector3 chickLastCheckpoint;
+
+
+
+
+
+
+    public Vector3 PlayerCoords(){
 
         return lastCheckpointPos;
     }
 
+    public Vector3 ChickCoords()
+    {
 
+        return chickLastCheckpoint;
+    }
 
 
 
