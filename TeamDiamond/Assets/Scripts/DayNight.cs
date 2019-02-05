@@ -12,13 +12,18 @@ public class DayNight : MonoBehaviour {
 
     //jack code
     //public GameObject[] nightObjects = GameObject.FindGameObjectsWithTag("Night");
-    //public GameObject[] dayObjects = GameObject.FindGameObjectsWithTag("Day");
+    //public GameObject[] dayObjects = GameObject.FindGameObjectsWithTag("Day"); 
 
     private void Start(){
         fday = day.AddComponent<FadeObjectInOut>();
         fnight = day.AddComponent<FadeObjectInOut>();
         fday.FadeIn();
         //StartCoroutine(DayTime());
+    }
+
+
+    public bool GetState() {
+        return dayTime;
     }
 
     //void Update()
@@ -32,9 +37,7 @@ public class DayNight : MonoBehaviour {
     public void StateChange(bool currentState){
         if (currentState != dayTime){
             if (dayTime == true){
-                //foreach (GameObject d in dayObjects) {
-                //    d.transform.Translate(Vector3.down * Time.deltaTime);
-                //}
+
                 dayTime = false;
                 fday.FadeOut(0.8f);
                 night.SetActive(true);
@@ -42,11 +45,7 @@ public class DayNight : MonoBehaviour {
 
             }
             else {
-                ////jack adding code in here 
-                //foreach (GameObject n in nightObjects) {
-                //    n.transform.Translate(Vector3.up * Time.deltaTime);
-                //}
-                ////jack stopped adding code here
+
                 dayTime = true;
                 fday.FadeIn(0.6f);
                 night.SetActive(false);
