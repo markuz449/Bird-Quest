@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
+
 
 
 
@@ -12,14 +14,15 @@ public class LevelMaster : MonoBehaviour {
     public GameObject pauseMenuPanel;
     public GameObject levelCompletePanel;
     public Text numResets;
+    public Text timeTaken;
     private static LevelMaster instance;
     private GameMaster gm;
 
 
-    private GameObject[] boxes;
-    private Vector3[] boxesStart;
-    private GameObject[] logs;
-    private Vector3[] logsStart;
+    public GameObject[] boxes;
+    public Vector3[] boxesStart;
+    public GameObject[] logs;
+    public Vector3[] logsStart;
     private GameObject player;
     private GameObject chick;
      
@@ -96,6 +99,9 @@ public class LevelMaster : MonoBehaviour {
     {
         int numresets = GetNumResets();
         numResets.text = "Total Resets: " + numresets.ToString();
+        float time = Time.timeSinceLevelLoad;
+
+        timeTaken.text = "Time Taken: " + Mathf.Round(time) + " Seconds";
 
         levelCompletePanel.SetActive(true);
     }
@@ -104,15 +110,18 @@ public class LevelMaster : MonoBehaviour {
     {
         //var currentScene = SceneManager.GetActiveScene();
         //var currentSceneName = currentScene.name;
-        for (int i = 0; i < logs.Length; i++)
-        {
-            logs[i].transform.position = logsStart[i];
-        }
-        for (int j = 0; j < boxes.Length; j++)
-        {
-            boxes[j].transform.position = boxesStart[j];
-        }
 
+        if (logs != null && boxes != null && logsStart != null && boxesStart != null)
+        {
+            for (int i = 0; i < logs.Length; i++)
+            {
+                logs[i].transform.position = logsStart[i];
+            }
+            for (int j = 0; j < boxes.Length; j++)
+            {
+                boxes[j].transform.position = boxesStart[j];
+            }
+        }
         player.transform.localPosition = gm.PlayerCoords();
         chick.transform.localPosition = gm.ChickCoords();
 
@@ -179,11 +188,13 @@ public class LevelMaster : MonoBehaviour {
 
     void Update()
     {
-       
-        if (logs.Length == 0)
+
+        if (logs.Length == 0 || logs[0] == null)
         {
             boxes = GameObject.FindGameObjectsWithTag("Box");
             logs = GameObject.FindGameObjectsWithTag("Log");
+            boxesStart = new Vector3[boxes.Length];
+            logsStart = new Vector3[logs.Length];
             boxesStart = new Vector3[boxes.Length];
             logsStart = new Vector3[logs.Length];
 
@@ -205,7 +216,10 @@ public class LevelMaster : MonoBehaviour {
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
             player = GameObject.FindGameObjectWithTag("Player");
             chick = GameObject.FindGameObjectWithTag("Chick");
+            if(timeTaken == null){
 
+                timeTaken = GameObject.FindGameObjectWithTag("TimeTakenText").GetComponent<Text>();
+            }
 
             if (numResets == null)
             {
