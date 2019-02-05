@@ -46,11 +46,11 @@ public class DayNight : MonoBehaviour {
             }
             else
             {
-                //jack adding code in here 
-                foreach (GameObject n in nightObjects) {
-                    n.transform.Translate(Vector3.up * Time.deltaTime);
-                }
-                //jack stopped adding code here
+                ////jack adding code in here 
+                //foreach (GameObject n in nightObjects) {
+                //    n.transform.Translate(Vector3.up * Time.deltaTime);
+                //}
+                ////jack stopped adding code here
                 fday.FadeIn(0.6f);
                 night.SetActive(false);
                 SetAllCollidersStatus(day, true);
