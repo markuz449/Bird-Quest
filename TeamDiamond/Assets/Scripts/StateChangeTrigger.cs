@@ -14,16 +14,16 @@ public class StateChangeTrigger : MonoBehaviour {
 
         //if (daytime != stateControl.dayTime){
             stateControl.StateChange(daytime);
-            if (daytime == true){
-                foreach (Flower bloom in flower){
-                    bloom.Bloom();
-                }
-            }
-            else{
-                foreach (Flower bloom in flower){
-                    bloom.Debloom();
-                }
-            }
+            //if (daytime == true){
+            //    foreach (Flower bloom in flower){
+            //        bloom.Bloom();
+            //    }
+            //}
+            //else{
+            //    foreach (Flower bloom in flower){
+            //        bloom.Debloom();
+            //    }
+            //}
         //}
         // maybe don't destroy them??
         //Destroy(gameObject);

@@ -1,21 +1,20 @@
 ﻿<Properties StartupConfiguration="{B8816680-4F1F-A3B5-4650-3F66A68695AE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DayNight.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChickReturned.cs">
     <Files>
-      <File FileName="Assets/Scripts/ChickReturned.cs" Line="24" Column="1" />
-      <File FileName="Assets/Scripts/ChickFollow.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerMove.cs" Line="100" Column="118" />
-      <File FileName="Assets/Scripts/PlayerPos.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/MoveNestTut.cs" Line="64" Column="44" />
-      <File FileName="Assets/Scripts/StateChangeTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MainMenuManager.cs" Line="24" Column="5" />
-      <File FileName="Assets/Scripts/FlowerGrowShrink.cs" Line="25" Column="19" />
-      <File FileName="Assets/Scripts/DayNight.cs" Line="15" Column="81" />
+      <File FileName="Assets/Scripts/DayNight.cs" Line="11" Column="1" />
+      <File FileName="Assets/Scripts/StateChangeTrigger.cs" Line="20" Column="20" NotebookId="1" />
+      <File FileName="Assets/Scripts/ChickReturned.cs" Line="24" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/FlowerGrowShrink.cs" Line="24" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/Flower.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/PlayerPos.cs" Line="15" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/scratch/jbcosc360/Birds/TeamDiamond/Assets/Scripts/FlowerGrowShrink.cs" relfile="Assets/Scripts/FlowerGrowShrink.cs" line="24" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
