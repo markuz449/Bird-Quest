@@ -10,15 +10,23 @@ public class DayNight : MonoBehaviour {
     FadeObjectInOut fnight;
     public bool dayTime = true;
 
+    //FlowerGrowShrink flower;
+
     //jack code
     //public GameObject[] nightObjects = GameObject.FindGameObjectsWithTag("Night");
-    //public GameObject[] dayObjects = GameObject.FindGameObjectsWithTag("Day");
+    //public GameObject[] dayObjects = GameObject.FindGameObjectsWithTag("Day"); 
 
     private void Start(){
         fday = day.AddComponent<FadeObjectInOut>();
         fnight = day.AddComponent<FadeObjectInOut>();
         fday.FadeIn();
         //StartCoroutine(DayTime());
+        //flower = new FlowerGrowShrink();
+    }
+
+
+    public bool GetState() {
+        return dayTime;
     }
 
     //void Update()
@@ -32,25 +40,32 @@ public class DayNight : MonoBehaviour {
     public void StateChange(bool currentState){
         if (currentState != dayTime){
             if (dayTime == true){
-                //foreach (GameObject d in dayObjects) {
-                //    d.transform.Translate(Vector3.down * Time.deltaTime);
-                //}
+
+                //flower.Change();
+
+
+
                 dayTime = false;
                 fday.FadeOut(0.8f);
                 night.SetActive(true);
                 SetAllCollidersStatus(day, false);
 
+
+
             }
             else {
-                ////jack adding code in here 
-                //foreach (GameObject n in nightObjects) {
-                //    n.transform.Translate(Vector3.up * Time.deltaTime);
-                //}
-                ////jack stopped adding code here
+
+                //flower.Change();
+
+
+
+
                 dayTime = true;
                 fday.FadeIn(0.6f);
                 night.SetActive(false);
                 SetAllCollidersStatus(day, true);
+
+
             }
         }
     }

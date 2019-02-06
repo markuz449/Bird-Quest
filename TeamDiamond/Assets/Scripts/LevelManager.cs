@@ -29,11 +29,26 @@ public class LevelManager : MonoBehaviour {
     PauseMenuManager pauseMenu;
     //CompleteLevelManager levelComplete;
 
-    public void CompleteLevel1(){
+    public void CompleteTutorial()
+    {
         SceneManager.LoadScene("JaydinMainMenuTest");
         game.ClearReset();
+        Time.timeScale = 1f;
+
 
         game.UnlockLevel1();
+    }
+
+
+
+    public void CompleteLevel1()
+    {
+        SceneManager.LoadScene("JaydinMainMenuTest");
+        game.ClearReset();
+        Time.timeScale = 1f;
+
+
+        //UnlockLevel2();
     }
 
     public void LevelFinish(){
@@ -68,6 +83,7 @@ public class LevelManager : MonoBehaviour {
 
     public void RetryLevel(){
         game.ClearReset();
+        Time.timeScale = 1f;
 
         var currentScene = SceneManager.GetActiveScene();
         var currentSceneName = currentScene.name;

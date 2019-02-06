@@ -11,7 +11,7 @@ public class PlayerMove : MonoBehaviour {
 
     // Vairables controlling speed and jumping
     public float speed = 6;
-    public float pullSpeed = 0.6f;
+    public float pullSpeed = 0.5f;
     public float jumpPower = 11;
     public LayerMask groundLayer;
     public float jumpRayLength = 0.6f;
@@ -54,7 +54,8 @@ public class PlayerMove : MonoBehaviour {
         if (body != null) {
 
             // Moves Player. Jump if IsGrounded()
-            if(IsGrounded() && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))){
+            if(IsGrounded() && (Input.GetKey(KeyCode.UpArrow) || 
+                                Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))){
                 body.velocity = new Vector2(0, jumpPower);
             }
             if(pull != 0){
@@ -81,22 +82,39 @@ public class PlayerMove : MonoBehaviour {
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
 
+        bool push = true;
+        float side;
+        float direction;
+        if(hit.collider != null && (hit.collider.gameObject.tag == "Box" || hit.collider.gameObject.tag == "Log")){
+            box = hit.collider.gameObject;
+            side = box.transform.position.x - transform.position.x;
+            direction = Input.GetAxis("Horizontal");
+            if((side > 0 && direction > 0) || (side < 0 && direction < 0)){
+                push = true;
+            }else{
+                push = false;
+            }
+        }
+
         // Drops the box if jumping or over an edge
-        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || !IsGrounded()) && connected)
+        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space) || !IsGrounded() || push) 
+            && connected)
         {
             box.GetComponent<FixedJoint2D>().enabled = false;
             connected = false;
             return 0;
         // Attaches the box to the player if not jumping and on the ground
-        }else if (hit.collider != null && (hit.collider.gameObject.tag == "Box" || hit.collider.gameObject.tag == "Log") && IsGrounded())
+        }else if (hit.collider != null && (hit.collider.gameObject.tag == "Box" || hit.collider.gameObject.tag == "Log") 
+                  && IsGrounded() && !push)
         {
             box = hit.collider.gameObject;
             connected = true;
             box.GetComponent<FixedJoint2D>().enabled = true;
             box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
             return 1;
+        }else if(hit.collider != null && (hit.collider.gameObject.tag == "Box" || hit.collider.gameObject.tag == "Log")) {
+            return 1;
         }
-
         return 0;
     }
 
