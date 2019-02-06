@@ -1,15 +1,16 @@
 ﻿<Properties StartupConfiguration="{B8816680-4F1F-A3B5-4650-3F66A68695AE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameMaster.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelMaster.cs">
     <Files>
       <File FileName="Assets/Scripts/ChickFollow.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerMove.cs" Line="109" Column="34" />
-      <File FileName="Assets/Scripts/MoveNestTut.cs" Line="41" Column="5" />
+      <File FileName="Assets/Scripts/PlayerMove.cs" Line="117" Column="10" />
+      <File FileName="Assets/Scripts/MoveNestTut.cs" Line="13" Column="60" />
       <File FileName="Assets/Scripts/PlayerPos.cs" Line="15" Column="1" />
       <File FileName="Assets/Scripts/LevelManager.cs" Line="129" Column="1" />
-      <File FileName="Assets/Scripts/ChickReturned.cs" Line="24" Column="1" />
-      <File FileName="Assets/Scripts/KillPlayer.cs" Line="14" Column="80" />
+      <File FileName="Assets/Scripts/ChickReturned.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/KillPlayer.cs" Line="10" Column="7" />
       <File FileName="Assets/Scripts/GameMaster.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelMaster.cs" Line="243" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />

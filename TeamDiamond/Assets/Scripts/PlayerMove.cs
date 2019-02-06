@@ -11,7 +11,7 @@ public class PlayerMove : MonoBehaviour {
 
     // Vairables controlling speed and jumping
     public float speed = 6;
-    public float pullSpeed = 0.6f;
+    public float pullSpeed = 0.5f;
     public float jumpPower = 11;
     public LayerMask groundLayer;
     public float jumpRayLength = 0.6f;
@@ -112,8 +112,9 @@ public class PlayerMove : MonoBehaviour {
             box.GetComponent<FixedJoint2D>().enabled = true;
             box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
             return 1;
+        }else if(hit.collider != null && (hit.collider.gameObject.tag == "Box" || hit.collider.gameObject.tag == "Log")) {
+            return 1;
         }
-
         return 0;
     }
 
