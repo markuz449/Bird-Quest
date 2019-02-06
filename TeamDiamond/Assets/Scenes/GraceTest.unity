@@ -1475,36 +1475,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378382007}
   m_CullTransparentMesh: 0
---- !u!1 &391547973 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1796737324574486, guid: 0d01bd735a7b04283931d761dd65df21,
-    type: 2}
-  m_PrefabInternal: {fileID: 1433835593}
---- !u!61 &391547976
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 391547973}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.4308777, y: 0.39951062}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.019382477, y: 0.17456532}
-  m_EdgeRadius: 0
 --- !u!1 &415145655
 GameObject:
   m_ObjectHideFlags: 0
@@ -96715,7 +96685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73e40b289a764c0587bcda212e1eddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1249406566}
 --- !u!251 &1007398291
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -97883,36 +97852,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1345408998}
   m_CullTransparentMesh: 0
---- !u!1 &1361648251 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1888670113140164, guid: 0d01bd735a7b04283931d761dd65df21,
-    type: 2}
-  m_PrefabInternal: {fileID: 1433835593}
---- !u!61 &1361648254
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1361648251}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.11513138, y: 0.40702403}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.015834808, y: 0.16614127}
-  m_EdgeRadius: 0
 --- !u!1 &1381598737
 GameObject:
   m_ObjectHideFlags: 0
@@ -98145,11 +98084,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4067253472082052, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -23.36
+      value: -23.378
       objectReference: {fileID: 0}
     - target: {fileID: 4067253472082052, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.256
+      value: 2.318
       objectReference: {fileID: 0}
     - target: {fileID: 4067253472082052, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
       propertyPath: m_LocalPosition.z

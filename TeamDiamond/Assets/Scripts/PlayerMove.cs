@@ -97,7 +97,8 @@ public class PlayerMove : MonoBehaviour {
         }
 
         // Drops the box if jumping or over an edge
-        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || !IsGrounded() || Input.GetKey(KeyCode.Space)) && connected && push)
+        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space) || !IsGrounded() || push) 
+            && connected)
         {
             box.GetComponent<FixedJoint2D>().enabled = false;
             connected = false;
