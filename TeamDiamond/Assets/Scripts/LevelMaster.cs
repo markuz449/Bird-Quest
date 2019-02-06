@@ -85,6 +85,16 @@ public class LevelMaster : MonoBehaviour {
         Level1 = true;
     }
 
+    public void CompleteTutorial()
+    {
+        SceneManager.LoadScene("JaydinMainMenuTest");
+        ClearReset();
+        Time.timeScale = 1f;
+
+
+        UnlockLevel1();
+    }
+
 
 
     public void CompleteLevel1()
@@ -94,7 +104,7 @@ public class LevelMaster : MonoBehaviour {
         Time.timeScale = 1f;
 
 
-        UnlockLevel1();
+        //UnlockLevel2();
     }
 
     public void LevelFinish()
