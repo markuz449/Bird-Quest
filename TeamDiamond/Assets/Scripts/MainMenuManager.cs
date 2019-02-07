@@ -11,13 +11,18 @@ public class MainMenuManager : MonoBehaviour
     // Reference to UI panel that is our pause menu
     public GameObject pauseMenuPanel;
     public GameObject level1Icon;
+    public GameObject level2Icon;
+
     private LevelMaster game;
 
     // Reference to panel's script object 
     PauseMenuManager pauseMenu;
 
     public  bool level1;
-    
+
+    public bool level2;
+
+
 
 
 
@@ -59,7 +64,16 @@ public class MainMenuManager : MonoBehaviour
 
 }
 
-public void OpenPauseMenu(){
+    public void UnlockLevel2()
+    {
+        level2 = game.GetLevel2();
+
+
+
+
+    }
+
+    public void OpenPauseMenu(){
         pauseMenu.ShowPause();
 
     }
@@ -77,6 +91,7 @@ public void OpenPauseMenu(){
     private void Update()
     {
         level1 = game.GetLevel1();
+        level2 = game.GetLevel2();
 
         if (level1){
 
@@ -84,6 +99,16 @@ public void OpenPauseMenu(){
         } else if(!level1){
 
             level1Icon.SetActive(false);
+        }
+
+        if(level2){
+            level2Icon.SetActive(true);
+
+        }
+        else if (!level2)
+        {
+            level2Icon.SetActive(false);
+
         }
     }
 
