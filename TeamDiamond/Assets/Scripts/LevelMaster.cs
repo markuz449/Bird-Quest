@@ -18,6 +18,9 @@ public class LevelMaster : MonoBehaviour {
     private static LevelMaster instance;
     private GameMaster gm;
 
+    private Vector3 player1Nest = new Vector3(1.38f, -0.7920535f, 0);
+    private Vector3 ChickNest = new Vector3(72.61f, -2.322112f, 0);
+
 
     public GameObject[] boxes;
     public Vector3[] boxesStart;
@@ -211,6 +214,12 @@ public class LevelMaster : MonoBehaviour {
     void Update()
     {
 
+        if(SceneManager.GetActiveScene().name == "NestTutorial" && hasreset == false){
+            gm.lastCheckpointPos = player1Nest;
+            gm.chickLastCheckpoint = ChickNest;
+
+        }
+
         if (logs.Length == 0 || logs[0] == null)
         {
             boxes = GameObject.FindGameObjectsWithTag("Box");
@@ -234,11 +243,14 @@ public class LevelMaster : MonoBehaviour {
         {
 
 
+            //levelCompletePanel.SetActive(true);
+           // pauseMenuPanel.SetActive(true);
 
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
             player = GameObject.FindGameObjectWithTag("Player");
             chick = GameObject.FindGameObjectWithTag("Chick");
             if(timeTaken == null){
+                //levelCompletePanel.SetActive(true);
 
                 timeTaken = GameObject.FindGameObjectWithTag("TimeTakenText").GetComponent<Text>();
             }
@@ -254,6 +266,8 @@ public class LevelMaster : MonoBehaviour {
             }
             if (pauseMenuPanel == null)
             {
+                //pauseMenuPanel.SetActive(true);
+
                 pauseMenuPanel = GameObject.FindGameObjectWithTag("PauseMenu");
                 pauseMenuPanel.SetActive(false);
             }
