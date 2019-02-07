@@ -30,7 +30,6 @@ public class LevelMaster : MonoBehaviour {
     private GameObject chick;
      
 
-     public Vector2 lastCheckpointPos;
     //private GameObject text1;
 
     // Reference to panel's script object 
@@ -41,9 +40,18 @@ public class LevelMaster : MonoBehaviour {
     public int resets;
 
     public bool Level1;
+    public bool Level2;
+
 
     public bool GetLevel1(){
         return Level1;
+
+
+    }
+
+    public bool GetLevel2()
+    {
+        return Level2;
 
 
     }
@@ -79,8 +87,12 @@ public class LevelMaster : MonoBehaviour {
 
     }
 
+    public void UnlockLevel2()
+    {
 
-   
+        Level2 = true;
+    }
+
 
 
     public void UnlockLevel1(){
@@ -107,7 +119,7 @@ public class LevelMaster : MonoBehaviour {
         Time.timeScale = 1f;
 
 
-        //UnlockLevel2();
+        UnlockLevel2();
     }
 
     public void LevelFinish()
