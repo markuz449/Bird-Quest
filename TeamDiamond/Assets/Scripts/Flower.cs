@@ -8,6 +8,7 @@ public class Flower : MonoBehaviour {
     private Animator anim;
     // Refrence to the flower's ridgidbody
     private Rigidbody2D body = null;
+    private bool bloomed;
 
     // Use this for initialization
     void Start () {
@@ -15,15 +16,27 @@ public class Flower : MonoBehaviour {
         anim = GetComponent<Animator>();
         body = transform.GetComponent<Rigidbody2D>();
         anim.SetTrigger("Bloom");
+        bloomed = true;
     }
 	
     public void Bloom(){
         anim.SetTrigger("Bloom");
-        body.transform.Translate(Vector3.up * 1);
+        //moveColliders(true);
     }
 
     public void Debloom(){
         anim.SetTrigger("Debloom");
-        body.transform.Translate(Vector3.down * 1);
+        //moveColliders(false);
     }
+
+    //private void moveColliders(bool blooming){
+    //    if (blooming != bloomed && blooming == true){
+    //        body.transform.Translate(Vector3.up * 6);
+    //        bloomed = true;
+    //    } 
+    //    else if(blooming != bloomed && blooming == false){
+    //        body.transform.Translate(Vector3.down * 6);
+    //        bloomed = false;
+    //    }
+    //}
 }
