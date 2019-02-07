@@ -57,10 +57,10 @@ public class DayNight : MonoBehaviour {
     }
 
     public void SetAllCollidersStatus(GameObject state, bool active){
-        Collider2D[] col = state.GetComponentsInChildren<Collider2D>();
-        foreach (Collider2D c in col){
-            c.enabled = active;
-        }
+        //Collider2D[] col = state.GetComponentsInChildren<Collider2D>();
+        //foreach (Collider2D c in col){
+        //    c.enabled = active;
+        //}
     }
 
     //IEnumerator DayTime()

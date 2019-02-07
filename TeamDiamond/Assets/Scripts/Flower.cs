@@ -21,22 +21,24 @@ public class Flower : MonoBehaviour {
 	
     public void Bloom(){
         anim.SetTrigger("Bloom");
-        //moveColliders(true);
+        moveColliders(true);
     }
 
     public void Debloom(){
         anim.SetTrigger("Debloom");
-        //moveColliders(false);
+        moveColliders(false);
     }
 
-    //private void moveColliders(bool blooming){
-    //    if (blooming != bloomed && blooming == true){
-    //        body.transform.Translate(Vector3.up * 6);
-    //        bloomed = true;
-    //    } 
-    //    else if(blooming != bloomed && blooming == false){
-    //        body.transform.Translate(Vector3.down * 6);
-    //        bloomed = false;
-    //    }
-    //}
+
+    //Here the rigid body gets moved down for day and night
+    private void moveColliders(bool blooming){
+        if (blooming != bloomed && blooming == true){
+            body.transform.Translate(Vector3.up * 5);
+            bloomed = true;
+        } 
+        else if(blooming != bloomed && blooming == false){
+            body.transform.Translate(Vector3.down * 5);
+            bloomed = false;
+        }
+    }
 }
