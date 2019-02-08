@@ -8,6 +8,11 @@ public class ChickReturned : MonoBehaviour {
 
     private LevelMaster lm;
 
+    private void Start()
+    {
+        lm = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
+
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,10 +23,4 @@ public class ChickReturned : MonoBehaviour {
             lm.LevelFinish();
         }
     }
-
-    private void Start()
-    {
-        lm = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
-
     }
-}

@@ -18,6 +18,9 @@ public class LevelMaster : MonoBehaviour {
     private static LevelMaster instance;
     private GameMaster gm;
 
+    private Vector3 player1Nest = new Vector3(1.38f, -0.7920535f, 0);
+    private Vector3 ChickNest = new Vector3(72.61f, -2.322112f, 0);
+
 
     public GameObject[] boxes;
     public Vector3[] boxesStart;
@@ -27,7 +30,6 @@ public class LevelMaster : MonoBehaviour {
     private GameObject chick;
      
 
-     public Vector2 lastCheckpointPos;
     //private GameObject text1;
 
     // Reference to panel's script object 
@@ -38,9 +40,18 @@ public class LevelMaster : MonoBehaviour {
     public int resets;
 
     public bool Level1;
+    public bool Level2;
+
 
     public bool GetLevel1(){
         return Level1;
+
+
+    }
+
+    public bool GetLevel2()
+    {
+        return Level2;
 
 
     }
@@ -76,8 +87,12 @@ public class LevelMaster : MonoBehaviour {
 
     }
 
+    public void UnlockLevel2()
+    {
 
-   
+        Level2 = true;
+    }
+
 
 
     public void UnlockLevel1(){
@@ -104,7 +119,7 @@ public class LevelMaster : MonoBehaviour {
         Time.timeScale = 1f;
 
 
-        //UnlockLevel2();
+        UnlockLevel2();
     }
 
     public void LevelFinish()
@@ -211,6 +226,12 @@ public class LevelMaster : MonoBehaviour {
     void Update()
     {
 
+        if(SceneManager.GetActiveScene().name == "NestTutorial" && hasreset == false){
+            gm.lastCheckpointPos = player1Nest;
+            gm.chickLastCheckpoint = ChickNest;
+
+        }
+
         if (logs.Length == 0 || logs[0] == null)
         {
             boxes = GameObject.FindGameObjectsWithTag("Box");
@@ -234,11 +255,14 @@ public class LevelMaster : MonoBehaviour {
         {
 
 
+            //levelCompletePanel.SetActive(true);
+           // pauseMenuPanel.SetActive(true);
 
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
             player = GameObject.FindGameObjectWithTag("Player");
             chick = GameObject.FindGameObjectWithTag("Chick");
             if(timeTaken == null){
+                //levelCompletePanel.SetActive(true);
 
                 timeTaken = GameObject.FindGameObjectWithTag("TimeTakenText").GetComponent<Text>();
             }
@@ -254,6 +278,8 @@ public class LevelMaster : MonoBehaviour {
             }
             if (pauseMenuPanel == null)
             {
+                //pauseMenuPanel.SetActive(true);
+
                 pauseMenuPanel = GameObject.FindGameObjectWithTag("PauseMenu");
                 pauseMenuPanel.SetActive(false);
             }

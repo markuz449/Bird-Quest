@@ -40,41 +40,27 @@ public class DayNight : MonoBehaviour {
     public void StateChange(bool currentState){
         if (currentState != dayTime){
             if (dayTime == true){
-
                 //flower.Change();
-
-
-
                 dayTime = false;
                 fday.FadeOut(0.8f);
                 night.SetActive(true);
                 SetAllCollidersStatus(day, false);
-
-
-
             }
             else {
-
                 //flower.Change();
-
-
-
-
                 dayTime = true;
                 fday.FadeIn(0.6f);
                 night.SetActive(false);
                 SetAllCollidersStatus(day, true);
-
-
             }
         }
     }
 
     public void SetAllCollidersStatus(GameObject state, bool active){
-        Collider2D[] col = state.GetComponentsInChildren<Collider2D>();
-        foreach (Collider2D c in col){
-            c.enabled = active;
-        }
+        //Collider2D[] col = state.GetComponentsInChildren<Collider2D>();
+        //foreach (Collider2D c in col){
+        //    c.enabled = active;
+        //}
     }
 
     //IEnumerator DayTime()

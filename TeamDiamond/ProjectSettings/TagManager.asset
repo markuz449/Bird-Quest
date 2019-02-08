@@ -21,7 +21,7 @@ TagManager:
   - PauseMenu
   - PauseManu
   - TimeTakenText
-  - GameMaster
+  - Worm
   layers:
   - Default
   - TransparentFX

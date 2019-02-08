@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class MoveNestTut : MonoBehaviour {
 
-    private Vector3 nest1 = new Vector3(-46.1f, -3.6f, 0);
+    private Vector3 nest1 = new Vector3(-66.6f, -3.6f, 0);
     private Vector3 nest2 = new Vector3(-3.9f, -3.6f, 0);
-    private Vector3 nest3 = new Vector3(32f, -3.6f, 0);
+    private Vector3 nest3 = new Vector3(42.2f, -3.6f, 0);
 
-    private Vector3 player1 = new Vector3(-46f, -2.4f, 0);
+    private Vector3 player1 = new Vector3(-66.4f, -2.4f, 0);
     private Vector3 player2 = new Vector3(-3.7f, -2.4f, 0);
-    private Vector3 player3 = new Vector3(32.1f, -2.4f, 0);
+    private Vector3 player3 = new Vector3(42.1f, -2.4f, 0);
 
-    private Vector3 chick1 = new Vector3(-14f, -1.6f, 0);
+    private Vector3 chick1 = new Vector3(-34f, -1.6f, 0);
     private Vector3 chick2 = new Vector3(15.3f, -3.5f, 0);
     private Vector3 chick3 = new Vector3(69f, -3.5f, 0);
 
