@@ -28,6 +28,7 @@ public class PlayerMove : MonoBehaviour {
     // Other private vairables
     private Rigidbody2D body = null;
     private float jumpOffset = 0.2f;
+    private Animator anim;
 
     // Use this for initialization
     void Start()
@@ -40,6 +41,9 @@ public class PlayerMove : MonoBehaviour {
             theScale.x *= -1;
             transform.localScale = theScale;
         }
+        //Set start animation
+        anim = GetComponent<Animator>();
+        anim.SetTrigger("Idle");
     }
 
     // Update is called once per frame
