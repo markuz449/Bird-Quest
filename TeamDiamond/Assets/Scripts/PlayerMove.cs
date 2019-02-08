@@ -67,6 +67,7 @@ public class PlayerMove : MonoBehaviour {
             }else{
                 body.velocity = new Vector2(h * speed, GetComponent<Rigidbody2D>().velocity.y);
             }
+            anim.SetFloat("runSpeed", Mathf.Abs(h));
         }
 
         // Flips sprite
