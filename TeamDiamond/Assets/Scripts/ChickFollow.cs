@@ -78,7 +78,7 @@ public class ChickFollow : MonoBehaviour
                 count++;
             }
         }
-        if(count > 10){
+        if(count > 15){
             return false;
         }
         return true;

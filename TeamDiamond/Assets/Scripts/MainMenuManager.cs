@@ -31,20 +31,20 @@ public class MainMenuManager : MonoBehaviour
     public void StartNestLevel()
     {
         // Load the "Level" scene
-        SceneManager.LoadScene("GraceTest");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void MainMenuOpen()
     {
 
         // Load the "Level" scene
-        SceneManager.LoadScene("JaydinMainMenuTest");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void StartChickLevel1()
     {
         // Load the "Level" scene
-        SceneManager.LoadScene("NestTutorial");
+        SceneManager.LoadScene("Level1");
 
     }
 

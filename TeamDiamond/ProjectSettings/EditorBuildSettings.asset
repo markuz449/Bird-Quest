@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/JaydinMainMenuTest.unity
+    path: Assets/Scenes/GameScenes/MainMenu.unity
     guid: 76ce67f84b191410bbdbd2b2da0668ec
   - enabled: 1
-    path: Assets/Scenes/GraceTest.unity
+    path: Assets/Scenes/GameScenes/Tutorial.unity
     guid: d815ae54fb8a448a0b0fe7376a1d5ce3
   - enabled: 1
-    path: Assets/Scenes/NestTutorial.unity
+    path: Assets/Scenes/GameScenes/Level1.unity
     guid: f3002794e0df745bb8f89994ff128471
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestLevel.unity
     guid: b8359f62983f2488c97f35dbd8db349a
   - enabled: 0

@@ -19,7 +19,7 @@ public class LevelMaster : MonoBehaviour {
     private GameMaster gm;
 
     private Vector3 player1Nest = new Vector3(1.38f, -0.7920535f, 0);
-    private Vector3 ChickNest = new Vector3(72.61f, -2.322112f, 0);
+    private Vector3 ChickNest = new Vector3(70.4f, 0f, 0);
 
 
     public GameObject[] boxes;
@@ -102,7 +102,7 @@ public class LevelMaster : MonoBehaviour {
 
     public void CompleteTutorial()
     {
-        SceneManager.LoadScene("JaydinMainMenuTest");
+        SceneManager.LoadScene("MainMenu");
         ClearReset();
         Time.timeScale = 1f;
 
@@ -114,7 +114,7 @@ public class LevelMaster : MonoBehaviour {
 
     public void CompleteLevel1()
     {
-        SceneManager.LoadScene("JaydinMainMenuTest");
+        SceneManager.LoadScene("MainMenu");
         ClearReset();
         Time.timeScale = 1f;
 
@@ -185,7 +185,7 @@ public class LevelMaster : MonoBehaviour {
     {
         ClearReset();
         // Load the "Level" scene
-        SceneManager.LoadScene("JaydinMainMenuTest");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void OpenPauseMenu()
@@ -226,7 +226,7 @@ public class LevelMaster : MonoBehaviour {
     void Update()
     {
 
-        if(SceneManager.GetActiveScene().name == "NestTutorial" && hasreset == false){
+        if(SceneManager.GetActiveScene().name == "Level1" && hasreset == false){
             gm.lastCheckpointPos = player1Nest;
             gm.chickLastCheckpoint = ChickNest;
 
