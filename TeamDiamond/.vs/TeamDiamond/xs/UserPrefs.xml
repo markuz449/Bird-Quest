@@ -7,7 +7,7 @@
       <File FileName="Assets/Scripts/DayNight.cs" Line="60" Column="9" />
       <File FileName="Assets/Scripts/StateChangeTrigger.cs" Line="26" Column="45" />
       <File FileName="Assets/Scripts/Flower.cs" Line="16" Column="9" />
-      <File FileName="Assets/Scripts/PlayerMove.cs" Line="68" Column="96" />
+      <File FileName="Assets/Scripts/PlayerMove.cs" Line="68" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
