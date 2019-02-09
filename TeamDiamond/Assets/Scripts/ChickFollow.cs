@@ -70,7 +70,7 @@ public class ChickFollow : MonoBehaviour
             range = 0.1f;
         }
 
-        for (float i = -0.2f + range; i < 0.2f + range; i += 0.05f){
+        for (float i = -0.25f + range; i < 0.25f + range; i += 0.02f){
             position = new Vector2(transform.position.x + i, transform.position.y);
             Debug.DrawRay(position, direction, Color.green);
             hit = Physics2D.Raycast(position, direction, raylength, groundLayer);
@@ -78,7 +78,7 @@ public class ChickFollow : MonoBehaviour
                 count++;
             }
         }
-        if(count > 2){
+        if(count > 15){
             return false;
         }
         return true;
