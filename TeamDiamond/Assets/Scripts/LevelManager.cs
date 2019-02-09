@@ -82,6 +82,8 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void RetryLevel(){
+        game.checkpointReached = false;
+
         game.ClearReset();
         Time.timeScale = 1f;
 

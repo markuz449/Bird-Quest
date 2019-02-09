@@ -35,7 +35,7 @@ public class LevelMaster : MonoBehaviour {
     // Reference to panel's script object 
     PauseMenuManager pauseMenu;
     //CompleteLevelManager levelComplete;
-
+    public bool checkpointReached;
     public bool hasreset;
     public int resets;
 
@@ -59,6 +59,7 @@ public class LevelMaster : MonoBehaviour {
 
 
     public void PlayerReset(){
+
         hasreset = true;
         resets++;
 
@@ -145,6 +146,7 @@ public class LevelMaster : MonoBehaviour {
 
     public void ReloadLevel()
     {
+
         //var currentScene = SceneManager.GetActiveScene();
         //var currentSceneName = currentScene.name;
 
@@ -172,6 +174,7 @@ public class LevelMaster : MonoBehaviour {
 
     public void RetryLevel()
     {
+        checkpointReached = false;
         ClearReset();
 
         var currentScene = SceneManager.GetActiveScene();
@@ -226,7 +229,7 @@ public class LevelMaster : MonoBehaviour {
     void Update()
     {
 
-        if(SceneManager.GetActiveScene().name == "Level1" && hasreset == false){
+        if(SceneManager.GetActiveScene().name == "Level1" && hasreset == false && checkpointReached == false){
             gm.lastCheckpointPos = player1Nest;
             gm.chickLastCheckpoint = ChickNest;
 
@@ -234,6 +237,8 @@ public class LevelMaster : MonoBehaviour {
 
         if (logs.Length == 0 || logs[0] == null)
         {
+            checkpointReached = false;
+
             boxes = GameObject.FindGameObjectsWithTag("Box");
             logs = GameObject.FindGameObjectsWithTag("Log");
             boxesStart = new Vector3[boxes.Length];
