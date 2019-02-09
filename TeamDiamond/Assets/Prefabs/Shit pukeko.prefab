@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1542198564743338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.25, y: -3.18, z: 0}
+  m_LocalPosition: {x: 1.38, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4270558728935782}
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  pullSpeed: 0.7
+  pullSpeed: 0.5
   jumpPower: 11
   groundLayer:
     serializedVersion: 2
@@ -279,7 +279,7 @@ MonoBehaviour:
   distance: 0.45
   boxMask:
     serializedVersion: 2
-    m_Bits: 1335
+    m_Bits: 3383
 --- !u!114 &114438416993408630
 MonoBehaviour:
   m_ObjectHideFlags: 1
