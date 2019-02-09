@@ -1818,10 +1818,14 @@ MonoBehaviour:
   levelCompletePanel: {fileID: 0}
   numResets: {fileID: 0}
   timeTaken: {fileID: 0}
+  star: {fileID: 21300000, guid: 912cc197e279a4ed1be33f997dbd7be6, type: 3}
   boxes: []
   boxesStart: []
   logs: []
   logsStart: []
+  menuChick: {fileID: 0}
+  menuWorm: {fileID: 0}
+  menuReset: {fileID: 0}
   checkpointReached: 0
   hasreset: 0
   resets: 0

@@ -17,6 +17,7 @@ public class LevelMaster : MonoBehaviour {
     public Text timeTaken;
     private static LevelMaster instance;
     private GameMaster gm;
+    public Sprite star;
 
     private Vector3 player1Nest = new Vector3(1.38f, -0.7920535f, 0);
     private Vector3 ChickNest = new Vector3(70.4f, 0f, 0);
@@ -26,6 +27,11 @@ public class LevelMaster : MonoBehaviour {
     public Vector3[] boxesStart;
     public GameObject[] logs;
     public Vector3[] logsStart;
+    public Image menuChick;
+    public Image menuWorm;
+    public Image menuReset;
+
+
     private GameObject player;
     private GameObject chick;
      
@@ -94,6 +100,8 @@ public class LevelMaster : MonoBehaviour {
         Level2 = true;
     }
 
+    
+
 
 
     public void UnlockLevel1(){
@@ -139,6 +147,8 @@ public class LevelMaster : MonoBehaviour {
 
         }
 
+        //menuChick.sprite = star;
+
         timeTaken.text = "Time Taken: " + timeFirst + ":" + temp +  timeSeconds;
 
         levelCompletePanel.SetActive(true);
@@ -147,8 +157,6 @@ public class LevelMaster : MonoBehaviour {
     public void ReloadLevel()
     {
 
-        //var currentScene = SceneManager.GetActiveScene();
-        //var currentSceneName = currentScene.name;
 
         if (logs != null && boxes != null && logsStart != null && boxesStart != null)
         {
@@ -168,8 +176,6 @@ public class LevelMaster : MonoBehaviour {
 
         PlayerReset();
 
-        // Load the "Level" scene
-        //SceneManager.LoadScene(currentSceneName);
     }
 
     public void RetryLevel()
@@ -215,15 +221,8 @@ public class LevelMaster : MonoBehaviour {
             boxesStart[i] = boxes[i].transform.position;
         }
 
-        //game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
-
-        // Initialise the reference to the script object, which is a
-        // component of the pause menu panel game object
-
-        //levelComplete = levelCompletePanel.GetComponent<CompleteLevelManager>();
-
+     
         pauseMenu = pauseMenuPanel.GetComponent<PauseMenuManager>();
-        //pauseMenu.Hide();
     }
 
     void Update()
@@ -239,7 +238,9 @@ public class LevelMaster : MonoBehaviour {
         {
             checkpointReached = false;
 
-            boxes = GameObject.FindGameObjectsWithTag("Box");
+
+
+    boxes = GameObject.FindGameObjectsWithTag("Box");
             logs = GameObject.FindGameObjectsWithTag("Log");
             boxesStart = new Vector3[boxes.Length];
             logsStart = new Vector3[logs.Length];
@@ -260,9 +261,9 @@ public class LevelMaster : MonoBehaviour {
         {
 
 
-            //levelCompletePanel.SetActive(true);
-           // pauseMenuPanel.SetActive(true);
-
+            //menuChick = GameObject.FindGameObjectWithTag("menuChick").GetComponent<Image>();
+            //menuWorm = GameObject.FindGameObjectWithTag("menuWorm").GetComponent<Image>();
+            //menuReset = GameObject.FindGameObjectWithTag("menureset").GetComponent<Image>();
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
             player = GameObject.FindGameObjectWithTag("Player");
             chick = GameObject.FindGameObjectWithTag("Chick");
@@ -283,7 +284,6 @@ public class LevelMaster : MonoBehaviour {
             }
             if (pauseMenuPanel == null)
             {
-                //pauseMenuPanel.SetActive(true);
 
                 pauseMenuPanel = GameObject.FindGameObjectWithTag("PauseMenu");
                 pauseMenuPanel.SetActive(false);
@@ -292,14 +292,10 @@ public class LevelMaster : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            // var currentScene = SceneManager.GetActiveScene();
-            //var currentSceneName = currentScene.name;
 
-            //lm.PlayerReset();
 
             ReloadLevel();
-            // Load the "Level" scene
-            //SceneManager.LoadScene(currentSceneName);
+         
 
         }
     }
