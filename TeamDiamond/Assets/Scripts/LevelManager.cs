@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour {
 
     public void CompleteTutorial()
     {
-        SceneManager.LoadScene("JaydinMainMenuTest");
+        SceneManager.LoadScene("MainMenu");
         game.ClearReset();
         Time.timeScale = 1f;
 
@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour {
 
     public void CompleteLevel1()
     {
-        SceneManager.LoadScene("JaydinMainMenuTest");
+        SceneManager.LoadScene("MainMenu");
         game.ClearReset();
         Time.timeScale = 1f;
 
@@ -96,7 +96,7 @@ public class LevelManager : MonoBehaviour {
         game.ClearReset();
 
         // Load the "Level" scene
-        SceneManager.LoadScene("JaydinMainMenuTest");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void OpenPauseMenu(){

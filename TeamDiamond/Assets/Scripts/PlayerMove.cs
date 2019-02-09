@@ -64,17 +64,23 @@ public class PlayerMove : MonoBehaviour {
                 
             {
                 body.velocity = new Vector2(0, jumpPower);
+                // triggers jump animation
                 anim.SetTrigger("Jump");
             }
             if (pull != 0)
             {
                 body.velocity = new Vector2(h * pullSpeed * speed, GetComponent<Rigidbody2D>().velocity.y);
+                // pulling box code here
             }
             else
             {
                 body.velocity = new Vector2(h * speed, GetComponent<Rigidbody2D>().velocity.y);
+                // pulling box code here
             }
+            // sets the runspeed vairable for animation
             anim.SetFloat("runSpeed", Mathf.Abs(h));
+
+            // animation layers. checks if grounded and swaps between ground and air animation layers
             if (!IsGrounded())
             {
                 anim.SetLayerWeight(1, 1);
@@ -83,6 +89,7 @@ public class PlayerMove : MonoBehaviour {
             else {
                 anim.SetLayerWeight(1, 0);
                 anim.SetLayerWeight(0, 1);
+                // turns off jump 
                 anim.ResetTrigger("Jump");
             }
         }
