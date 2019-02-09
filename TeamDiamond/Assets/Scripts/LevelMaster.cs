@@ -120,7 +120,7 @@ public class LevelMaster : MonoBehaviour {
         Time.timeScale = 1f;
 
 
-        UnlockLevel2();
+        //UnlockLevel2();
     }
 
     public void LevelFinish()

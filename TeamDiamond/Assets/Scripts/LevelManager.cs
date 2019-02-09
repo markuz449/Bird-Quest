@@ -48,7 +48,7 @@ public class LevelManager : MonoBehaviour {
         Time.timeScale = 1f;
 
 
-        game.UnlockLevel2();
+        //game.UnlockLevel2();
     }
 
     public void LevelFinish(){
