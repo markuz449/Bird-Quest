@@ -21,11 +21,13 @@ public class Flower : MonoBehaviour {
 	
     public void Bloom(){
         anim.SetTrigger("Bloom");
+        anim.ResetTrigger("DeBloom");
         //moveColliders(true);
     }
 
     public void Debloom(){
         anim.SetTrigger("Debloom");
+        anim.ResetTrigger("Bloom");
         //moveColliders(false);
     }
 
