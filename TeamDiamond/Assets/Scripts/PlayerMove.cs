@@ -55,43 +55,39 @@ public class PlayerMove : MonoBehaviour {
         int pull = PullBox();
 
         // Checks for Ridgidbody2D
-        if (body != null)
-        {
+        if (body != null){
+
+            //Changes animation layer if you are on ground or not
+            HandleLayers();
+
+            //Checks to see if you are falling
+            if (body.velocity.y < 0){
+                anim.SetBool("Land", true);
+            }
 
             // Moves Player. Jump if IsGrounded()
             if (IsGrounded() && (Input.GetKey(KeyCode.UpArrow) ||
-                                Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)))
-                
+                                Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)))   
             {
                 body.velocity = new Vector2(0, jumpPower);
-                // triggers jump animation
                 anim.SetTrigger("Jump");
             }
-            if (pull != 0)
-            {
+            if (pull != 0){
                 body.velocity = new Vector2(h * pullSpeed * speed, GetComponent<Rigidbody2D>().velocity.y);
-                // pulling box code here
             }
-            else
-            {
+            else{
                 body.velocity = new Vector2(h * speed, GetComponent<Rigidbody2D>().velocity.y);
-                // pulling box code here
             }
-            // sets the runspeed vairable for animation
             anim.SetFloat("runSpeed", Mathf.Abs(h));
-
-            // animation layers. checks if grounded and swaps between ground and air animation layers
-            if (!IsGrounded())
-            {
-                anim.SetLayerWeight(1, 1);
-                anim.SetLayerWeight(0, 0);
-            }
-            else {
-                anim.SetLayerWeight(1, 0);
-                anim.SetLayerWeight(0, 1);
-                // turns off jump 
-                anim.ResetTrigger("Jump");
-            }
+            //if (!IsGrounded()){
+            ////    anim.SetLayerWeight(1, 1);
+            ////    anim.SetLayerWeight(0, 0);
+            ////}
+            ////else {
+            ////    anim.SetLayerWeight(1, 0);
+            ////    anim.SetLayerWeight(0, 1);
+            ////    anim.ResetTrigger("Jump");
+            //}
         }
 
         // Flips sprite
@@ -182,8 +178,10 @@ public class PlayerMove : MonoBehaviour {
             }
         }
 
-        if (final > 1)
-        {
+        if (final > 1){
+            //Set's animation settings when on the ground
+            anim.ResetTrigger("Jump");
+            anim.SetBool("Land", false);
             return true;
         }
         return false;
@@ -198,5 +196,13 @@ public class PlayerMove : MonoBehaviour {
         transform.localScale = theScale;
     }
 
-
+    //Marcus code for handling jumping animation
+    private void HandleLayers(){
+        if (!IsGrounded()){
+            anim.SetLayerWeight(1, 1);
+        } 
+        else {
+            anim.SetLayerWeight(1, 0);
+        }
+    }
 }
