@@ -79,15 +79,6 @@ public class PlayerMove : MonoBehaviour {
                 body.velocity = new Vector2(h * speed, GetComponent<Rigidbody2D>().velocity.y);
             }
             anim.SetFloat("runSpeed", Mathf.Abs(h));
-            //if (!IsGrounded()){
-            ////    anim.SetLayerWeight(1, 1);
-            ////    anim.SetLayerWeight(0, 0);
-            ////}
-            ////else {
-            ////    anim.SetLayerWeight(1, 0);
-            ////    anim.SetLayerWeight(0, 1);
-            ////    anim.ResetTrigger("Jump");
-            //}
         }
 
         // Flips sprite
@@ -114,10 +105,14 @@ public class PlayerMove : MonoBehaviour {
             box = hit.collider.gameObject;
             side = box.transform.position.x - transform.position.x;
             direction = Input.GetAxis("Horizontal");
-            if((side > 0 && direction > 0) || (side < 0 && direction < 0)){
+            //Setting push/pull animation here - Marcus
+            if ((side > 0 && direction > 0) || (side < 0 && direction < 0)){
                 push = true;
-            }else{
+                anim.SetBool("pushingBox", true);
+            }
+            else{
                 push = false;
+                anim.SetBool("pushingBox", false);
             }
         }
 
