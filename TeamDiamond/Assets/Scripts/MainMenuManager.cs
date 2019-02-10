@@ -52,7 +52,7 @@ public class MainMenuManager : MonoBehaviour
     {
         // Load the "Level" scene
 
-        SceneManager.LoadScene("TestLevel");
+        SceneManager.LoadScene("Level2");
     }
 
 

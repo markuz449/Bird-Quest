@@ -21,11 +21,19 @@ public class LevelMaster : MonoBehaviour {
     private Vector3 player1Nest = new Vector3(1.38f, -0.7920535f, 0);
     private Vector3 ChickNest = new Vector3(70.4f, 0f, 0);
 
-
+    public bool levelComplete;
     public GameObject[] boxes;
     public Vector3[] boxesStart;
     public GameObject[] logs;
     public Vector3[] logsStart;
+    public GameObject menuChick;
+    public GameObject menuWorm;
+    public GameObject menuReset;
+    public GameObject menuChickStar;
+    public GameObject menuWormStar;
+    public GameObject menuResetStar;
+
+
     private GameObject player;
     private GameObject chick;
      
@@ -35,7 +43,7 @@ public class LevelMaster : MonoBehaviour {
     // Reference to panel's script object 
     PauseMenuManager pauseMenu;
     //CompleteLevelManager levelComplete;
-
+    public bool checkpointReached;
     public bool hasreset;
     public int resets;
 
@@ -59,6 +67,7 @@ public class LevelMaster : MonoBehaviour {
 
 
     public void PlayerReset(){
+
         hasreset = true;
         resets++;
 
@@ -93,6 +102,8 @@ public class LevelMaster : MonoBehaviour {
         Level2 = true;
     }
 
+    
+
 
 
     public void UnlockLevel1(){
@@ -119,14 +130,26 @@ public class LevelMaster : MonoBehaviour {
         Time.timeScale = 1f;
 
 
-        UnlockLevel2();
+        //UnlockLevel2();
     }
 
     public void LevelFinish()
     {
+
+
+        levelComplete = true;
+        menuChick.SetActive(false);
+        menuChickStar.SetActive(true);
+
         Time.timeScale = 0;
 
         int numresets = GetNumResets();
+
+        if (numresets ==0)
+        {
+            menuReset.SetActive(false);
+            menuResetStar.SetActive(true);
+        }
         numResets.text = "Total Resets: " + numresets.ToString();
         float time = Mathf.Round(Time.timeSinceLevelLoad);
         float timeFirst = Mathf.Floor(time / 60);
@@ -138,6 +161,8 @@ public class LevelMaster : MonoBehaviour {
 
         }
 
+        //menuChick.sprite = star;
+
         timeTaken.text = "Time Taken: " + timeFirst + ":" + temp +  timeSeconds;
 
         levelCompletePanel.SetActive(true);
@@ -145,8 +170,7 @@ public class LevelMaster : MonoBehaviour {
 
     public void ReloadLevel()
     {
-        //var currentScene = SceneManager.GetActiveScene();
-        //var currentSceneName = currentScene.name;
+
 
         if (logs != null && boxes != null && logsStart != null && boxesStart != null)
         {
@@ -166,12 +190,13 @@ public class LevelMaster : MonoBehaviour {
 
         PlayerReset();
 
-        // Load the "Level" scene
-        //SceneManager.LoadScene(currentSceneName);
     }
 
     public void RetryLevel()
     {
+        levelComplete = false;
+
+        checkpointReached = false;
         ClearReset();
 
         var currentScene = SceneManager.GetActiveScene();
@@ -212,21 +237,14 @@ public class LevelMaster : MonoBehaviour {
             boxesStart[i] = boxes[i].transform.position;
         }
 
-        //game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
-
-        // Initialise the reference to the script object, which is a
-        // component of the pause menu panel game object
-
-        //levelComplete = levelCompletePanel.GetComponent<CompleteLevelManager>();
-
+     
         pauseMenu = pauseMenuPanel.GetComponent<PauseMenuManager>();
-        //pauseMenu.Hide();
     }
 
     void Update()
     {
 
-        if(SceneManager.GetActiveScene().name == "Level1" && hasreset == false){
+        if(SceneManager.GetActiveScene().name == "Level1" && hasreset == false && checkpointReached == false){
             gm.lastCheckpointPos = player1Nest;
             gm.chickLastCheckpoint = ChickNest;
 
@@ -234,7 +252,13 @@ public class LevelMaster : MonoBehaviour {
 
         if (logs.Length == 0 || logs[0] == null)
         {
-            boxes = GameObject.FindGameObjectsWithTag("Box");
+            levelComplete = false;
+
+            checkpointReached = false;
+
+
+
+    boxes = GameObject.FindGameObjectsWithTag("Box");
             logs = GameObject.FindGameObjectsWithTag("Log");
             boxesStart = new Vector3[boxes.Length];
             logsStart = new Vector3[logs.Length];
@@ -254,9 +278,30 @@ public class LevelMaster : MonoBehaviour {
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
 
+            float time = Mathf.Round(Time.timeSinceLevelLoad);
 
-            //levelCompletePanel.SetActive(true);
-           // pauseMenuPanel.SetActive(true);
+            if (menuWormStar != null && levelComplete != true && time <=10){
+
+
+                menuWormStar.SetActive(false);
+                menuChickStar.SetActive(false);
+                menuResetStar.SetActive(false);
+
+            } else if (menuChick == null) {
+
+                menuChick = GameObject.FindGameObjectWithTag("menuChick").GetComponent<GameObject>();
+                menuWorm = GameObject.FindGameObjectWithTag("menuWorm").GetComponent<GameObject>();
+                menuReset = GameObject.FindGameObjectWithTag("menuReset").GetComponent<GameObject>();
+                menuChickStar = GameObject.FindGameObjectWithTag("menuChickStar").GetComponent<GameObject>();
+                menuWormStar = GameObject.FindGameObjectWithTag("menuWormStar").GetComponent<GameObject>();
+                menuResetStar = GameObject.FindGameObjectWithTag("menuResetStar").GetComponent<GameObject>();
+
+            }
+
+
+
+
+
 
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
             player = GameObject.FindGameObjectWithTag("Player");
@@ -278,7 +323,6 @@ public class LevelMaster : MonoBehaviour {
             }
             if (pauseMenuPanel == null)
             {
-                //pauseMenuPanel.SetActive(true);
 
                 pauseMenuPanel = GameObject.FindGameObjectWithTag("PauseMenu");
                 pauseMenuPanel.SetActive(false);
@@ -287,14 +331,10 @@ public class LevelMaster : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            // var currentScene = SceneManager.GetActiveScene();
-            //var currentSceneName = currentScene.name;
 
-            //lm.PlayerReset();
 
             ReloadLevel();
-            // Load the "Level" scene
-            //SceneManager.LoadScene(currentSceneName);
+         
 
         }
     }

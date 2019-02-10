@@ -14,12 +14,14 @@ public class LevelManager : MonoBehaviour {
     private LevelMaster game;
 
     private GameMaster gm;
+   
 
 
     private GameObject[] boxes;
     private Vector3[] boxesStart;
     private GameObject[] logs;
     private Vector3[] logsStart;
+   
     //private GameObject text1;
 
     private GameObject player;
@@ -48,13 +50,15 @@ public class LevelManager : MonoBehaviour {
         Time.timeScale = 1f;
 
 
-        game.UnlockLevel2();
+        //game.UnlockLevel2();
     }
 
     public void LevelFinish(){
         int numresets = game.GetNumResets();
 
         numResets.text = "Total Resets: " + numresets.ToString();
+
+        //game.menuChick.sprite = star;
 
 
         levelCompletePanel.SetActive(true);
@@ -82,6 +86,10 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void RetryLevel(){
+        game.checkpointReached = false;
+        game.levelComplete = false;
+
+
         game.ClearReset();
         Time.timeScale = 1f;
 
@@ -106,9 +114,17 @@ public class LevelManager : MonoBehaviour {
 
     private void Start(){
 
+        
+
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         player = GameObject.FindGameObjectWithTag("Player");
         chick = GameObject.FindGameObjectWithTag("Chick");
+
+
+
+        //game.menuChick = GameObject.FindGameObjectWithTag("menuChick").GetComponent<Image>();
+        //game.menuWorm = GameObject.FindGameObjectWithTag("menuWorm").GetComponent<Image>();
+        //game.menuReset = GameObject.FindGameObjectWithTag("menureset").GetComponent<Image>();
 
 
 
@@ -127,6 +143,18 @@ public class LevelManager : MonoBehaviour {
 
 
         game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
+
+
+
+        game.menuChick = GameObject.FindGameObjectWithTag("menuChick");
+        game.menuWorm = GameObject.FindGameObjectWithTag("menuWorm");
+        game.menuReset = GameObject.FindGameObjectWithTag("menuReset");
+        game.menuChickStar = GameObject.FindGameObjectWithTag("menuChickStar");
+        game.menuWormStar = GameObject.FindGameObjectWithTag("menuWormStar");
+        game.menuResetStar = GameObject.FindGameObjectWithTag("menuResetStar");
+
+
+        game.levelComplete = false;
 
         // Initialise the reference to the script object, which is a
         // component of the pause menu panel game object
