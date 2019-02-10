@@ -56,9 +56,9 @@ GameObject:
   - component: {fileID: 212676530776141828}
   - component: {fileID: 50725617636486996}
   - component: {fileID: 114198680158696284}
-  - component: {fileID: 114374337091681788}
   - component: {fileID: 58479714437598786}
   - component: {fileID: 114545435159613242}
+  - component: {fileID: 95180625671572932}
   m_Layer: 9
   m_Name: Shit pukeko
   m_TagString: Player
@@ -90,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1471833305145798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.047, y: 0.028, z: 0}
+  m_LocalPosition: {x: 0.052, y: 0.064, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4963678226774956}
@@ -103,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1419478228202560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0.021, z: 0}
+  m_LocalPosition: {x: 0.015, y: 0.053, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4963678226774956}
@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1542198564743338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.77, y: -2.07, z: 0}
+  m_LocalPosition: {x: 1.38, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4270558728935782}
@@ -228,6 +228,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.47655106, y: 0.5386454}
   m_EdgeRadius: 0
+--- !u!95 &95180625671572932
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1542198564743338}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13f9f8d3a5b5143e9983b4db84b0706e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114014991899847598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,8 +268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bcab0aaa6c634ee18fd5f8f5c9f166b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  pullSpeed: 0.7
+  speed: 8
+  pullSpeed: 0.5
   jumpPower: 11
   groundLayer:
     serializedVersion: 2
@@ -261,18 +279,7 @@ MonoBehaviour:
   distance: 0.45
   boxMask:
     serializedVersion: 2
-    m_Bits: 1335
---- !u!114 &114374337091681788
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1542198564743338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 749dcdfa88f7d40efbe6ce669152369c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    m_Bits: 3383
 --- !u!114 &114438416993408630
 MonoBehaviour:
   m_ObjectHideFlags: 1

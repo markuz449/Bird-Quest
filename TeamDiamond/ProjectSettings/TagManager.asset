@@ -22,6 +22,9 @@ TagManager:
   - PauseManu
   - TimeTakenText
   - Worm
+  - menuChick
+  - menuWorm
+  - menuReset
   layers:
   - Default
   - TransparentFX
