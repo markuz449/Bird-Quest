@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{B8816680-4F1F-A3B5-4650-3F66A68695AE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameMaster.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelMaster.cs">
     <Files>
-      <File FileName="Assets/Scripts/LevelMaster.cs" Line="234" Column="1" />
-      <File FileName="Assets/Scripts/Checkpoint.cs" Line="22" Column="1" />
+      <File FileName="Assets/Scripts/LevelMaster.cs" Line="150" Column="11" />
+      <File FileName="Assets/Scripts/Checkpoint.cs" Line="27" Column="13" />
       <File FileName="Assets/Scripts/GameMaster.cs" Line="19" Column="1" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="36" Column="29" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="61" Column="11" />
       <File FileName="Assets/Scripts/PauseMenuManager.cs" Line="80" Column="24" />
-      <File FileName="Assets/Scripts/MainMenuManager.cs" Line="102" Column="10" />
+      <File FileName="Assets/Scripts/MainMenuManager.cs" Line="50" Column="5" />
       <File FileName="Assets/Scripts/MoveNestTut.cs" Line="11" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
