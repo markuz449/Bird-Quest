@@ -14,12 +14,14 @@ public class LevelManager : MonoBehaviour {
     private LevelMaster game;
 
     private GameMaster gm;
+    public Sprite star;
 
 
     private GameObject[] boxes;
     private Vector3[] boxesStart;
     private GameObject[] logs;
     private Vector3[] logsStart;
+   
     //private GameObject text1;
 
     private GameObject player;
@@ -48,13 +50,15 @@ public class LevelManager : MonoBehaviour {
         Time.timeScale = 1f;
 
 
-        game.UnlockLevel2();
+        //game.UnlockLevel2();
     }
 
     public void LevelFinish(){
         int numresets = game.GetNumResets();
 
         numResets.text = "Total Resets: " + numresets.ToString();
+
+        //game.menuChick.sprite = star;
 
 
         levelCompletePanel.SetActive(true);
@@ -82,6 +86,8 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void RetryLevel(){
+        game.checkpointReached = false;
+
         game.ClearReset();
         Time.timeScale = 1f;
 
@@ -109,6 +115,10 @@ public class LevelManager : MonoBehaviour {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         player = GameObject.FindGameObjectWithTag("Player");
         chick = GameObject.FindGameObjectWithTag("Chick");
+
+        //game.menuChick = GameObject.FindGameObjectWithTag("menuChick").GetComponent<Image>();
+        //game.menuWorm = GameObject.FindGameObjectWithTag("menuWorm").GetComponent<Image>();
+        //game.menuReset = GameObject.FindGameObjectWithTag("menureset").GetComponent<Image>();
 
 
 

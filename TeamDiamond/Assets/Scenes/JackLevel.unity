@@ -162,6 +162,11 @@ Prefab:
       propertyPath: stateControl
       value: 
       objectReference: {fileID: 1829123073}
+    - target: {fileID: 114636852047357718, guid: b9eedac15c5b84322a8d935283398015,
+        type: 2}
+      propertyPath: day
+      value: 
+      objectReference: {fileID: 1259011271}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9eedac15c5b84322a8d935283398015, type: 2}
   m_IsPrefabAsset: 0
