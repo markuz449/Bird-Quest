@@ -144,7 +144,6 @@ public class LevelManager : MonoBehaviour {
 
         game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
 
-        GameObject levelmenu = GameObject.FindGameObjectWithTag("CompleteMenu");
 
 
         game.menuChick = GameObject.FindGameObjectWithTag("menuChick");
