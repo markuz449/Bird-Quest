@@ -20,14 +20,12 @@ public class Flower : MonoBehaviour {
     }
 	
     public void Bloom(){
-        anim.SetTrigger("Bloom");
-        anim.ResetTrigger("DeBloom");
+        anim.SetBool("Bloomed", true);
         //moveColliders(true);
     }
 
     public void Debloom(){
-        anim.SetTrigger("Debloom");
-        anim.ResetTrigger("Bloom");
+        anim.SetBool("Bloomed", false);
         //moveColliders(false);
     }
 

@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{B8816680-4F1F-A3B5-4650-3F66A68695AE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChickFollow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Flower.cs">
     <Files>
       <File FileName="Assets/Scripts/DayNight.cs" Line="65" Column="1" />
       <File FileName="Assets/Scripts/StateChangeTrigger.cs" Line="26" Column="45" />
       <File FileName="Assets/Scripts/Flower.cs" Line="30" Column="26" />
-      <File FileName="Assets/Scripts/PlayerMove.cs" Line="51" Column="5" />
+      <File FileName="Assets/Scripts/PlayerMove.cs" Line="51" Column="1" />
       <File FileName="Assets/Scripts/ChickFollow.cs" Line="85" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
