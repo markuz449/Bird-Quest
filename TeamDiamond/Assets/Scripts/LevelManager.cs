@@ -88,6 +88,7 @@ public class LevelManager : MonoBehaviour {
     public void RetryLevel(){
         game.checkpointReached = false;
         game.levelComplete = false;
+        game.collectibleFound = false;
 
 
         game.ClearReset();
@@ -155,6 +156,8 @@ public class LevelManager : MonoBehaviour {
 
 
         game.levelComplete = false;
+        game.collectibleFound = false;
+
 
         // Initialise the reference to the script object, which is a
         // component of the pause menu panel game object

@@ -33,6 +33,8 @@ public class LevelMaster : MonoBehaviour {
     public GameObject menuWormStar;
     public GameObject menuResetStar;
 
+    public bool collectibleFound;
+
 
     private GameObject player;
     private GameObject chick;
@@ -136,9 +138,8 @@ public class LevelMaster : MonoBehaviour {
     public void LevelFinish()
     {
 
-
         levelComplete = true;
-        menuChick.SetActive(false);
+        //menuChick.SetActive(false);
         menuChickStar.SetActive(true);
 
         Time.timeScale = 0;
@@ -147,8 +148,14 @@ public class LevelMaster : MonoBehaviour {
 
         if (numresets ==0)
         {
-            menuReset.SetActive(false);
+            //menuReset.SetActive(false);
             menuResetStar.SetActive(true);
+        }
+
+        if (collectibleFound){
+            //menuWorm.SetActive(false);
+            menuWormStar.SetActive(true);
+
         }
         numResets.text = "Total Resets: " + numresets.ToString();
         float time = Mathf.Round(Time.timeSinceLevelLoad);
@@ -194,6 +201,8 @@ public class LevelMaster : MonoBehaviour {
 
     public void RetryLevel()
     {
+        collectibleFound = false;
+
         levelComplete = false;
 
         checkpointReached = false;
