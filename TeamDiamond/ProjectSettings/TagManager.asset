@@ -28,6 +28,7 @@ TagManager:
   - menuChickStar
   - menuResetStar
   - menuWormStar
+  - Day
   layers:
   - Default
   - TransparentFX
@@ -64,6 +65,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: stars
+    uniqueID: 3171503759
     locked: 0
   - name: Background
     uniqueID: 665690765

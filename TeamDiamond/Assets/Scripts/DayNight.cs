@@ -5,6 +5,7 @@ public class DayNight : MonoBehaviour {
     //name of the gameobject you want to transition between
     public GameObject day;
     public GameObject night;
+    public GameObject cameraNight;
     //public float stateTime; 
     FadeObjectInOut fday;
     FadeObjectInOut fnight;
@@ -44,6 +45,7 @@ public class DayNight : MonoBehaviour {
                 dayTime = false;
                 fday.FadeOut(0.8f);
                 night.SetActive(true);
+                cameraNight.SetActive(true);
                 SetAllCollidersStatus(day, false);
             }
             else {
@@ -51,6 +53,7 @@ public class DayNight : MonoBehaviour {
                 dayTime = true;
                 fday.FadeIn(0.6f);
                 night.SetActive(false);
+                cameraNight.SetActive(false);
                 SetAllCollidersStatus(day, true);
             }
         }
