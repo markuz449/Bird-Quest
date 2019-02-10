@@ -59,6 +59,11 @@ public class MoveNestTut : MonoBehaviour {
         }
         else if(section > 2 && setLocation){
             setLocation = false;
+            gm.chickLastCheckpoint = chick1;
+            gm.lastCheckpointPos = player1;
+            transform.position = nest1;
+            player.transform.position = player1;
+            chick.transform.position = chick1;
 
             game.LevelFinish();
         }

@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour {
     private LevelMaster game;
 
     private GameMaster gm;
-    public Sprite star;
+   
 
 
     private GameObject[] boxes;
@@ -87,6 +87,8 @@ public class LevelManager : MonoBehaviour {
 
     public void RetryLevel(){
         game.checkpointReached = false;
+        game.levelComplete = false;
+
 
         game.ClearReset();
         Time.timeScale = 1f;
@@ -112,9 +114,13 @@ public class LevelManager : MonoBehaviour {
 
     private void Start(){
 
+        
+
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         player = GameObject.FindGameObjectWithTag("Player");
         chick = GameObject.FindGameObjectWithTag("Chick");
+
+
 
         //game.menuChick = GameObject.FindGameObjectWithTag("menuChick").GetComponent<Image>();
         //game.menuWorm = GameObject.FindGameObjectWithTag("menuWorm").GetComponent<Image>();
@@ -137,6 +143,18 @@ public class LevelManager : MonoBehaviour {
 
 
         game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
+
+
+
+        game.menuChick = GameObject.FindGameObjectWithTag("menuChick");
+        game.menuWorm = GameObject.FindGameObjectWithTag("menuWorm");
+        game.menuReset = GameObject.FindGameObjectWithTag("menuReset");
+        game.menuChickStar = GameObject.FindGameObjectWithTag("menuChickStar");
+        game.menuWormStar = GameObject.FindGameObjectWithTag("menuWormStar");
+        game.menuResetStar = GameObject.FindGameObjectWithTag("menuResetStar");
+
+
+        game.levelComplete = false;
 
         // Initialise the reference to the script object, which is a
         // component of the pause menu panel game object

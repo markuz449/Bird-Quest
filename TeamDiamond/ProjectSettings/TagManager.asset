@@ -25,6 +25,9 @@ TagManager:
   - menuChick
   - menuWorm
   - menuReset
+  - menuChickStar
+  - menuResetStar
+  - menuWormStar
   layers:
   - Default
   - TransparentFX
