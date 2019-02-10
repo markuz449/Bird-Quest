@@ -17,6 +17,9 @@ public class PlayerMove : MonoBehaviour {
     public float jumpRayLength = 0.6f;
     public bool facingRight = true;
 
+    //public variables for pushing box
+    public GameObject pushCollider;
+
     // public Vairables for pulling the box
     public float distance = 0.5f;
     public LayerMask boxMask;
@@ -71,12 +74,18 @@ public class PlayerMove : MonoBehaviour {
             {
                 body.velocity = new Vector2(0, jumpPower);
                 anim.SetTrigger("Jump");
+                anim.SetBool("pushingBox", false);
+                anim.SetBool("pullingBox", false);
+                pushCollider.SetActive(false);
             }
             if (pull != 0){
                 body.velocity = new Vector2(h * pullSpeed * speed, GetComponent<Rigidbody2D>().velocity.y);
             }
             else{
                 body.velocity = new Vector2(h * speed, GetComponent<Rigidbody2D>().velocity.y);
+                anim.SetBool("pushingBox", false);
+                anim.SetBool("pullingBox", false);
+                pushCollider.SetActive(false);
             }
             anim.SetFloat("runSpeed", Mathf.Abs(h));
         }
@@ -101,7 +110,9 @@ public class PlayerMove : MonoBehaviour {
         bool push = true;
         float side;
         float direction;
-        if(hit.collider != null && (hit.collider.gameObject.tag == "Box" || hit.collider.gameObject.tag == "Log")){
+
+        if (hit.collider != null && (hit.collider.gameObject.tag == "Box" || hit.collider.gameObject.tag == "Log")){
+            pushCollider.SetActive(true);
             box = hit.collider.gameObject;
             side = box.transform.position.x - transform.position.x;
             direction = Input.GetAxis("Horizontal");
@@ -109,10 +120,12 @@ public class PlayerMove : MonoBehaviour {
             if ((side > 0 && direction > 0) || (side < 0 && direction < 0)){
                 push = true;
                 anim.SetBool("pushingBox", true);
+                anim.SetBool("pullingBox", false);
             }
             else{
                 push = false;
                 anim.SetBool("pushingBox", false);
+                anim.SetBool("pullingBox", true);
             }
         }
 
