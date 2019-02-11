@@ -30,23 +30,39 @@ public class StateChangeTrigger : MonoBehaviour {
         {
             if (daytime)
             {
+                if (flowergrow.GetComponent<ChangeToNight>() != null) 
+                {
+                    Destroy(flowergrow.GetComponent<ChangeToNight>());
+                }
 
+                if (flowergrow.GetComponent<ChangeToDay>() == null)
+                {
+                    flowergrow.AddComponent<ChangeToDay>();
+                }
+                
  
-                flowergrow.GetComponent<ChangeToNight>().enabled = false;
-                flowergrow.GetComponent<ChangeToDay>().enabled = true;
-                Debug.Log("test");
-                //flowergrow.GetComponent<ChangeToDay>().enabled = false;
-
+                //flowergrow.GetComponent<ChangeToNight>().enabled = false;
+                //flowergrow.GetComponent<ChangeToDay>().enabled = true;
             }
             else
             {
 
-                flowergrow.GetComponent<ChangeToDay>().enabled = false;
-                flowergrow.GetComponent<ChangeToNight>().enabled = true;
-                Debug.Log("test");
-                //flowergrow.GetComponent<ChangeToNight>().enabled = false;
+                if (flowergrow.GetComponent<ChangeToDay>() != null)
+                {
+                    Destroy(flowergrow.GetComponent<ChangeToDay>());
+                }
+
+                if (flowergrow.GetComponent<ChangeToNight>() == null)
+                {
+                    flowergrow.AddComponent<ChangeToNight>();
+                }
+
+                //flowergrow.GetComponent<ChangeToDay>().enabled = false;
+                //flowergrow.GetComponent<ChangeToNight>().enabled = true;
             }
         }
+
+        Debug.Log("testicle");
 
         stateControl.StateChange(daytime);
 

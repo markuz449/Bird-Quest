@@ -16,7 +16,7 @@ public class ChangeToDay : MonoBehaviour {
 
         startPosition = transform.position;
         location = startPosition;
-        destination = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
+        destination = new Vector3(transform.position.x, transform.position.y + 3.25f, transform.position.z);
 		
 	}
 	
@@ -26,9 +26,9 @@ public class ChangeToDay : MonoBehaviour {
         location = Vector3.Lerp(location, destination, Time.deltaTime * 5);
         transform.position = location;
 
-        if (location == destination) {
-            transform.position = startPosition;
-
-        }		
+        //if (location == destination) {
+        //    transform.position = startPosition;
+        //}		
 	}
+
 }
