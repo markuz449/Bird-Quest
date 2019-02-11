@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{B8816680-4F1F-A3B5-4650-3F66A68695AE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/IgnoreCollision.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Drift.cs">
     <Files>
       <File FileName="Assets/Scripts/ChickFollow.cs" Line="94" Column="57" />
       <File FileName="Assets/Scripts/PlayerMove.cs" Line="90" Column="53" />
@@ -11,7 +11,8 @@
       <File FileName="Assets/Scripts/Spin.cs" Line="15" Column="1" />
       <File FileName="Assets/Scripts/StateChangeTrigger.cs" Line="20" Column="38" />
       <File FileName="Assets/Scripts/DayNight.cs" Line="48" Column="43" />
-      <File FileName="Assets/Scripts/IgnoreCollision.cs" Line="12" Column="66" />
+      <File FileName="Assets/Scripts/IgnoreCollision.cs" Line="32" Column="10" />
+      <File FileName="Assets/Scripts/Drift.cs" Line="23" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
