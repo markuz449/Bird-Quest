@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Drift : MonoBehaviour {
 
+    public float min = -80f;
+    public float max = 80f;
     public float speed = 0.003f;
     Transform[] clouds;
 
@@ -25,8 +27,8 @@ public class Drift : MonoBehaviour {
             position = clouds[i].localPosition;
             position.x -= speed;
             clouds[i].localPosition = position;
-            if(clouds[i].localPosition.x < -80f){
-                position.x = 80f;
+            if(clouds[i].localPosition.x < min){
+                position.x = max;
                 clouds[i].localPosition = position;
             }
         }
