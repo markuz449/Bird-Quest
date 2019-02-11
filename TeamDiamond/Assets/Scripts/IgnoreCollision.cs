@@ -23,4 +23,12 @@ public class IgnoreCollision : MonoBehaviour {
             }
         }
 	}
+
+    private void Awake()
+    {
+        if (GameObject.FindGameObjectWithTag("Chick") != null)
+        {
+            objects = GameObject.FindGameObjectsWithTag("Chick");
+        }
+    }
 }

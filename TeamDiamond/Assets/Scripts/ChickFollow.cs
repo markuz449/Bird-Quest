@@ -21,11 +21,14 @@ public class ChickFollow : MonoBehaviour
     private float slowingDistance = 1f;
     private float stoppingDistance = 0.4f;
     private float tooFar = 10f;
+    private Animator anim;
+    private float animSpeed;
 
     // Use this for initialization
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        anim = GetComponent<Animator>();
     }
 
     // FixedUpdate is called once per frame
@@ -41,6 +44,7 @@ public class ChickFollow : MonoBehaviour
         if (Vector2.Distance(transform.position, target.position) < stayButtonDistance && Input.GetKeyDown(KeyCode.E))
         {
             stay = !stay;
+            anim.SetBool("Sit", stay);
         }
         // Flip the chicks sprite if close to the Mother Bird
         if (xDistance < tooFar && yDistance < stoppingHeight)
@@ -79,13 +83,15 @@ public class ChickFollow : MonoBehaviour
             }
         }
         if(count > 15){
+            anim.SetBool("runBool", false);
             return false;
         }
         return true;
     }
 
     private void Move(float xDistance, float yDistance){
-
+        animSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
+        anim.SetFloat("runSpeed", Mathf.Abs(animSpeed));
         if (yDistance < stoppingHeight && xDistance < tooFar && Ledge())
         {
             // Speed Up Distance
@@ -93,33 +99,37 @@ public class ChickFollow : MonoBehaviour
             if (xDistance > speedUpDistance && xDistance < tooFar - speedUpDistance && !stay)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
-
+                anim.SetBool("runBool", true);
                 // Slowing Distance
                 // Slows down if between speedUpDistance and slowingDistance away from the mother
             }
             else if (xDistance > slowingDistance && xDistance < tooFar - slowingDistance && !stay)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), 0.7f * speed * Time.deltaTime);
-
+                anim.SetBool("runBool", true);
                 // Stopping Distance
                 // Slows down further when less then slowingDistance but more then stoppingDistance from the mother
             }
             else if (xDistance > stoppingDistance && xDistance < tooFar - stoppingDistance && !stay)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), 0.4f * speed * Time.deltaTime);
-
+                anim.SetBool("runBool", false);
             }
             // Stay
             // A button press makes the chick stop following the mother
             else if (stay)
             {
                 transform.position = this.transform.position;
+                anim.SetBool("runBool", false);
             }
         }
         else
         {
             transform.position = this.transform.position;
+            anim.SetBool("runBool", false);
         }
+        animSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
+        anim.SetFloat("runSpeed", Mathf.Abs(animSpeed));
     }
 
     void Flip()

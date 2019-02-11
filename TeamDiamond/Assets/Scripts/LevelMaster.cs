@@ -17,19 +17,23 @@ public class LevelMaster : MonoBehaviour {
     public Text timeTaken;
     private static LevelMaster instance;
     private GameMaster gm;
-    public Sprite star;
 
     private Vector3 player1Nest = new Vector3(1.38f, -0.7920535f, 0);
     private Vector3 ChickNest = new Vector3(70.4f, 0f, 0);
 
-
+    public bool levelComplete;
     public GameObject[] boxes;
     public Vector3[] boxesStart;
     public GameObject[] logs;
     public Vector3[] logsStart;
-    public Image menuChick;
-    public Image menuWorm;
-    public Image menuReset;
+    public GameObject menuChick;
+    public GameObject menuWorm;
+    public GameObject menuReset;
+    public GameObject menuChickStar;
+    public GameObject menuWormStar;
+    public GameObject menuResetStar;
+
+    public bool collectibleFound;
 
 
     private GameObject player;
@@ -133,9 +137,26 @@ public class LevelMaster : MonoBehaviour {
 
     public void LevelFinish()
     {
+
+        levelComplete = true;
+        //menuChick.SetActive(false);
+        menuChickStar.SetActive(true);
+
         Time.timeScale = 0;
 
         int numresets = GetNumResets();
+
+        if (numresets ==0)
+        {
+            //menuReset.SetActive(false);
+            menuResetStar.SetActive(true);
+        }
+
+        if (collectibleFound){
+            //menuWorm.SetActive(false);
+            menuWormStar.SetActive(true);
+
+        }
         numResets.text = "Total Resets: " + numresets.ToString();
         float time = Mathf.Round(Time.timeSinceLevelLoad);
         float timeFirst = Mathf.Floor(time / 60);
@@ -180,6 +201,10 @@ public class LevelMaster : MonoBehaviour {
 
     public void RetryLevel()
     {
+        collectibleFound = false;
+
+        levelComplete = false;
+
         checkpointReached = false;
         ClearReset();
 
@@ -236,6 +261,8 @@ public class LevelMaster : MonoBehaviour {
 
         if (logs.Length == 0 || logs[0] == null)
         {
+            levelComplete = false;
+
             checkpointReached = false;
 
 
@@ -260,10 +287,31 @@ public class LevelMaster : MonoBehaviour {
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
 
+            float time = Mathf.Round(Time.timeSinceLevelLoad);
 
-            //menuChick = GameObject.FindGameObjectWithTag("menuChick").GetComponent<Image>();
-            //menuWorm = GameObject.FindGameObjectWithTag("menuWorm").GetComponent<Image>();
-            //menuReset = GameObject.FindGameObjectWithTag("menureset").GetComponent<Image>();
+            if (menuWormStar != null && levelComplete != true && time <=10){
+
+
+                menuWormStar.SetActive(false);
+                menuChickStar.SetActive(false);
+                menuResetStar.SetActive(false);
+
+            } else if (menuChick == null) {
+
+                menuChick = GameObject.FindGameObjectWithTag("menuChick").GetComponent<GameObject>();
+                menuWorm = GameObject.FindGameObjectWithTag("menuWorm").GetComponent<GameObject>();
+                menuReset = GameObject.FindGameObjectWithTag("menuReset").GetComponent<GameObject>();
+                menuChickStar = GameObject.FindGameObjectWithTag("menuChickStar").GetComponent<GameObject>();
+                menuWormStar = GameObject.FindGameObjectWithTag("menuWormStar").GetComponent<GameObject>();
+                menuResetStar = GameObject.FindGameObjectWithTag("menuResetStar").GetComponent<GameObject>();
+
+            }
+
+
+
+
+
+
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
             player = GameObject.FindGameObjectWithTag("Player");
             chick = GameObject.FindGameObjectWithTag("Chick");
