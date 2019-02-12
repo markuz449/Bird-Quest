@@ -12,6 +12,8 @@ public class MainMenuManager : MonoBehaviour
     public GameObject pauseMenuPanel;
     public GameObject level1Icon;
     public GameObject level2Icon;
+    public GameObject level3Icon;
+
 
     private LevelMaster game;
 
@@ -21,6 +23,9 @@ public class MainMenuManager : MonoBehaviour
     public  bool level1;
 
     public bool level2;
+
+    public bool level3;
+
 
 
 
@@ -55,6 +60,13 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("Level2");
     }
 
+    public void StartChickLevel3()
+    {
+        // Load the "Level" scene
+
+        SceneManager.LoadScene("Level3");
+    }
+
 
     public  void UnlockLevel1(){
         level1 = game.GetLevel1();
@@ -63,6 +75,15 @@ public class MainMenuManager : MonoBehaviour
 
 
 }
+
+    public void UnlockLevel3()
+    {
+        level3 = game.GetLevel3();
+
+
+
+
+    }
 
     public void UnlockLevel2()
     {
@@ -108,6 +129,17 @@ public class MainMenuManager : MonoBehaviour
         else if (!level2)
         {
             level2Icon.SetActive(false);
+
+        }
+
+        if (level3)
+        {
+            level3Icon.SetActive(true);
+
+        }
+        else if (!level3)
+        {
+            level3Icon.SetActive(false);
 
         }
     }

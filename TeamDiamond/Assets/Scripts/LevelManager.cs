@@ -31,26 +31,17 @@ public class LevelManager : MonoBehaviour {
     PauseMenuManager pauseMenu;
     //CompleteLevelManager levelComplete;
 
-    public void CompleteTutorial()
+
+
+
+
+    public void CompleteLevel()
     {
         SceneManager.LoadScene("MainMenu");
         game.ClearReset();
         Time.timeScale = 1f;
 
 
-        game.UnlockLevel1();
-    }
-
-
-
-    public void CompleteLevel1()
-    {
-        SceneManager.LoadScene("MainMenu");
-        game.ClearReset();
-        Time.timeScale = 1f;
-
-
-        //game.UnlockLevel2();
     }
 
     public void LevelFinish(){
