@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MoveNestTut : MonoBehaviour {
 
-    private Vector3 nest1 = new Vector3(-66.6f, -3.6f, 0);
-    private Vector3 nest2 = new Vector3(-3.9f, -3.6f, 0);
-    private Vector3 nest3 = new Vector3(42.2f, -2.9f, 0);
+    private Vector3 nest1 = new Vector3(-66.94f, -3.3f, 0);
+    private Vector3 nest2 = new Vector3(-4.16f, -3.33f, 0);
+    private Vector3 nest3 = new Vector3(41.88f, -2.72f, 0);
 
     private Vector3 player1 = new Vector3(-66.4f, -2.4f, 0);
     private Vector3 player2 = new Vector3(-3.7f, -2.4f, 0);

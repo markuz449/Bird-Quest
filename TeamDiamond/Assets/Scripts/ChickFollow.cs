@@ -41,7 +41,7 @@ public class ChickFollow : MonoBehaviour
         Move(xDistance, yDistance);
 
         // Toggle sitting for the chick
-        if (Vector2.Distance(transform.position, target.position) < stayButtonDistance && Input.GetKeyDown(KeyCode.E))
+        if (Vector2.Distance(transform.position, target.position) < stayButtonDistance && Input.GetKeyDown(KeyCode.C))
         {
             stay = !stay;
             anim.SetBool("Sit", stay);

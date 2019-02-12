@@ -9,10 +9,10 @@ public class Projectile : MonoBehaviour {
     public float duration;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
 
 
-		
+
 	}
 
     // Update is called once per frame
@@ -48,12 +48,7 @@ public class Projectile : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        
-            Destroy(gameObject);
-      
-
-
+        Destroy(gameObject);
     }
 
 
