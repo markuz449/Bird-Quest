@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 251725546859047678}
   - component: {fileID: 61180655319464724}
   m_Layer: 8
-  m_Name: Flower 1 1
+  m_Name: Flower yes_stem
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +256,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2140601021
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3126fe26d9b354c4e9f0c2685ae4ffc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
