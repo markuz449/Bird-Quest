@@ -51,6 +51,8 @@ public class LevelMaster : MonoBehaviour {
 
     public bool Level1;
     public bool Level2;
+    public bool Level3;
+
 
 
     public bool GetLevel1(){
@@ -62,6 +64,13 @@ public class LevelMaster : MonoBehaviour {
     public bool GetLevel2()
     {
         return Level2;
+
+
+    }
+
+    public bool GetLevel3()
+    {
+        return Level3;
 
 
     }
@@ -104,7 +113,13 @@ public class LevelMaster : MonoBehaviour {
         Level2 = true;
     }
 
-    
+    public void UnlockLevel3()
+    {
+
+        Level3 = true;
+    }
+
+
 
 
 
@@ -113,26 +128,17 @@ public class LevelMaster : MonoBehaviour {
         Level1 = true;
     }
 
-    public void CompleteTutorial()
+
+
+
+
+    public void CompleteLevel()
     {
         SceneManager.LoadScene("MainMenu");
         ClearReset();
         Time.timeScale = 1f;
 
 
-        UnlockLevel1();
-    }
-
-
-
-    public void CompleteLevel1()
-    {
-        SceneManager.LoadScene("MainMenu");
-        ClearReset();
-        Time.timeScale = 1f;
-
-
-        //UnlockLevel2();
     }
 
     public void LevelFinish()
@@ -148,12 +154,10 @@ public class LevelMaster : MonoBehaviour {
 
         if (numresets ==0)
         {
-            //menuReset.SetActive(false);
             menuResetStar.SetActive(true);
         }
 
         if (collectibleFound){
-            //menuWorm.SetActive(false);
             menuWormStar.SetActive(true);
 
         }
@@ -168,11 +172,27 @@ public class LevelMaster : MonoBehaviour {
 
         }
 
-        //menuChick.sprite = star;
 
         timeTaken.text = "Time Taken: " + timeFirst + ":" + temp +  timeSeconds;
 
         levelCompletePanel.SetActive(true);
+
+        if(SceneManager.GetActiveScene().name == "Tutorial"){
+            UnlockLevel1();
+
+
+        }
+        else if (SceneManager.GetActiveScene().name == "Level1"){
+            UnlockLevel2();
+
+
+        }
+        else if (SceneManager.GetActiveScene().name == "Level2")
+        {
+            UnlockLevel3();
+
+
+        }
     }
 
     public void ReloadLevel()
