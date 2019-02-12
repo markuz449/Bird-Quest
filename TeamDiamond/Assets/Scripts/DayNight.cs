@@ -11,6 +11,10 @@ public class DayNight : MonoBehaviour {
     FadeObjectInOut fnight;
     public bool dayTime = true;
 
+    public GameObject[] flower_elevator;
+
+    public static bool flag = false;
+
     //FlowerGrowShrink flower;
 
     //jack code
@@ -38,9 +42,27 @@ public class DayNight : MonoBehaviour {
     //    }
     //}
 
-    public void StateChange(bool currentState){
-        if (currentState != dayTime){
-            if (dayTime == true){
+    public void StateChange(bool currentState)
+    {
+        if (currentState != dayTime)
+        {
+            if (dayTime == true)
+            {
+
+                foreach (GameObject flower in flower_elevator)
+                {
+                    if (flower.GetComponent<ChangeToDay>() != null)
+                    {
+                        Destroy(flower.GetComponent<ChangeToDay>());
+                    }
+                    if (flower.GetComponent<ChangeToNight>() == null)
+                    {
+                        flower.AddComponent<ChangeToNight>();
+                    }
+                }
+
+
+
                 //flower.Change();
                 dayTime = false;
                 fday.FadeOut(0.8f);
@@ -48,7 +70,22 @@ public class DayNight : MonoBehaviour {
                 cameraNight.SetActive(true);
                 SetAllCollidersStatus(day, false);
             }
-            else {
+            else
+            {
+                foreach (GameObject flower in flower_elevator)
+                {
+                    if (flower.GetComponent<ChangeToNight>() != null)
+                    {
+                        Destroy(flower.GetComponent<ChangeToNight>());
+                    }
+                    if (flower.GetComponent<ChangeToDay>() == null)
+                    {
+                        flower.AddComponent<ChangeToDay>();
+                    }
+                }
+
+                //System.Threading.Thread.Sleep(2000);
+
                 //flower.Change();
                 dayTime = true;
                 fday.FadeIn(0.6f);
