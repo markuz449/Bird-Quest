@@ -9,13 +9,16 @@ public class MainMenuManager : MonoBehaviour{
     public GameObject level1Icon;
     public GameObject level2Icon;
     public GameObject level3Icon;
+    public GameObject level1Background;
+    public GameObject level2Background;
+    public GameObject level3Background;
 
     private LevelMaster game;
 
     // Reference to panel's script object 
     PauseMenuManager pauseMenu;
 
-    public  bool level1;
+    public bool level1;
     public bool level2;
     public bool level3;
 
@@ -88,6 +91,8 @@ public class MainMenuManager : MonoBehaviour{
 
         if(level2){
             level2Icon.SetActive(true);
+            level2Background.SetActive(true);
+            level1Background.SetActive(false);
         } 
         else if (!level2){
             level2Icon.SetActive(false);
@@ -95,6 +100,8 @@ public class MainMenuManager : MonoBehaviour{
 
         if (level3){
             level3Icon.SetActive(true);
+            level3Background.SetActive(true);
+            level2Background.SetActive(false);
         } 
         else if (!level3){
             level3Icon.SetActive(false);
