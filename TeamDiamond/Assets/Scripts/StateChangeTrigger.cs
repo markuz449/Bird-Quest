@@ -10,6 +10,7 @@ public class StateChangeTrigger : MonoBehaviour {
     Flower[] flower;
     public GameObject[] flowerGrowShrinks;
     public bool daytime;
+    public bool movingPlatform = false;
 
     public Vector3 currentPosition;
     public Vector3 destination;
@@ -25,45 +26,44 @@ public class StateChangeTrigger : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-
-        foreach (GameObject flowergrow in flowerGrowShrinks)
+        if (movingPlatform)
         {
-            if (daytime)
+            foreach (GameObject flowergrow in flowerGrowShrinks)
             {
-                if (flowergrow.GetComponent<ChangeToNight>() != null) 
+                if (daytime)
                 {
-                    Destroy(flowergrow.GetComponent<ChangeToNight>());
-                }
+                    if (flowergrow.GetComponent<ChangeToNight>() != null)
+                    {
+                        Destroy(flowergrow.GetComponent<ChangeToNight>());
+                    }
 
-                if (flowergrow.GetComponent<ChangeToDay>() == null)
+                    if (flowergrow.GetComponent<ChangeToDay>() == null)
+                    {
+                        flowergrow.AddComponent<ChangeToDay>();
+                    }
+
+
+                    //flowergrow.GetComponent<ChangeToNight>().enabled = false;
+                    //flowergrow.GetComponent<ChangeToDay>().enabled = true;
+                }
+                else
                 {
-                    flowergrow.AddComponent<ChangeToDay>();
-                }
-                
- 
-                //flowergrow.GetComponent<ChangeToNight>().enabled = false;
-                //flowergrow.GetComponent<ChangeToDay>().enabled = true;
-            }
-            else
-            {
 
-                if (flowergrow.GetComponent<ChangeToDay>() != null)
-                {
-                    Destroy(flowergrow.GetComponent<ChangeToDay>());
-                }
+                    if (flowergrow.GetComponent<ChangeToDay>() != null)
+                    {
+                        Destroy(flowergrow.GetComponent<ChangeToDay>());
+                    }
 
-                if (flowergrow.GetComponent<ChangeToNight>() == null)
-                {
-                    flowergrow.AddComponent<ChangeToNight>();
-                }
+                    if (flowergrow.GetComponent<ChangeToNight>() == null)
+                    {
+                        flowergrow.AddComponent<ChangeToNight>();
+                    }
 
-                //flowergrow.GetComponent<ChangeToDay>().enabled = false;
-                //flowergrow.GetComponent<ChangeToNight>().enabled = true;
+                    //flowergrow.GetComponent<ChangeToDay>().enabled = false;
+                    //flowergrow.GetComponent<ChangeToNight>().enabled = true;
+                }
             }
         }
-
-        Debug.Log("testicle");
-
         stateControl.StateChange(daytime);
 
 
