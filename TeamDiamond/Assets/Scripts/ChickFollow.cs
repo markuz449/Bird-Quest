@@ -22,6 +22,7 @@ public class ChickFollow : MonoBehaviour
     private float stoppingDistance = 0.4f;
     private float tooFar = 10f;
     private Animator anim;
+    private float animSpeed;
 
     // Use this for initialization
     void Start()
@@ -89,7 +90,8 @@ public class ChickFollow : MonoBehaviour
     }
 
     private void Move(float xDistance, float yDistance){
-
+        animSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
+        anim.SetFloat("runSpeed", Mathf.Abs(animSpeed));
         if (yDistance < stoppingHeight && xDistance < tooFar && Ledge())
         {
             // Speed Up Distance
@@ -118,12 +120,16 @@ public class ChickFollow : MonoBehaviour
             else if (stay)
             {
                 transform.position = this.transform.position;
+                anim.SetBool("runBool", false);
             }
         }
         else
         {
             transform.position = this.transform.position;
+            anim.SetBool("runBool", false);
         }
+        animSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
+        anim.SetFloat("runSpeed", Mathf.Abs(animSpeed));
     }
 
     void Flip()

@@ -9,10 +9,10 @@ public class Projectile : MonoBehaviour {
     public float duration;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
 
 
-		
+
 	}
 
     // Update is called once per frame

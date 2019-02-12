@@ -7,17 +7,18 @@ public class FlowerGrowShrink : MonoBehaviour
 
     DayNight state;
     public bool tempState;
-    Vector3 destination;
+    public Vector3 destination;
+    public Vector3 currentPosition;
 
     // Use this for initialization
     void Start()
     {
 
-        Vector3 dest = transform.position + new Vector3(0, 2, 0);
+        //Vector3 dest = transform.position + new Vector3(0, 2, 0);
 
-        state = new DayNight();
+        //state = new DayNight();
 
-        transform.position = Vector3.Lerp(transform.position, dest, 0.01f);
+        //transform.position = Vector3.Lerp(transform.position, dest, 0.01f);
 
         //tempState = state.GetState();
 
@@ -51,11 +52,12 @@ public class FlowerGrowShrink : MonoBehaviour
 
     public void GrowShrink()
     {
-
+        Vector3 currentPosition = transform.position;
         if (GameObject.FindGameObjectWithTag("Night"))
         {
             destination = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
-            Vector3.Lerp(transform.position, destination, 0.1f);
+            currentPosition = Vector3.Lerp(currentPosition, destination, Time.deltaTime);
+            transform.position = currentPosition;
             //transform.Translate(Vector3.down * Time.deltaTime);
             //transform.position += new Vector3(0, -2, 0);
 
@@ -64,7 +66,8 @@ public class FlowerGrowShrink : MonoBehaviour
         if (!GameObject.FindGameObjectWithTag("Night"))
         {
             destination = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
-            Vector3.Lerp(transform.position, destination, 0.1f);
+            currentPosition = Vector3.Lerp(currentPosition, destination, Time.deltaTime);
+            transform.position = currentPosition;
             //transform.Translate(Vector3.up * Time.deltaTime);
             //transform.position += new Vector3(0, 2, 0);
         }
