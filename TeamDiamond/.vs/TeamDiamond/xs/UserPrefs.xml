@@ -1,12 +1,16 @@
 ﻿<Properties StartupConfiguration="{B8816680-4F1F-A3B5-4650-3F66A68695AE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Projectile.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Spin.cs">
     <Files>
-      <File FileName="Assets/Scripts/ChickFollow.cs" Line="94" Column="57" />
+      <File FileName="Assets/Scripts/ChickFollow.cs" Line="95" Column="73" />
       <File FileName="Assets/Scripts/DayNight.cs" Line="48" Column="43" />
-      <File FileName="Assets/Scripts/StateChangeTrigger.cs" Line="66" Column="9" />
+      <File FileName="Assets/Scripts/StateChangeTrigger.cs" Line="29" Column="28" />
       <File FileName="Assets/Scripts/ChangeToDay.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Projectile.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Projectile.cs" Line="43" Column="1" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="146" Column="1" />
+      <File FileName="Assets/Scripts/ChickReturned.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/CollectibleFound.cs" Line="21" Column="1" />
+      <File FileName="Assets/Scripts/Spin.cs" Line="7" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
