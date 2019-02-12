@@ -24,41 +24,28 @@ public class StateChangeTrigger : MonoBehaviour {
 
    
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (movingPlatform)
-        {
-            foreach (GameObject flowergrow in flowerGrowShrinks)
-            {
-                if (daytime)
-                {
-                    if (flowergrow.GetComponent<ChangeToNight>() != null)
-                    {
+    public void OnTriggerEnter2D(Collider2D collision){
+        if (movingPlatform){
+            foreach (GameObject flowergrow in flowerGrowShrinks){
+                if (daytime){
+                    if (flowergrow.GetComponent<ChangeToNight>() != null){
                         Destroy(flowergrow.GetComponent<ChangeToNight>());
                     }
 
-                    if (flowergrow.GetComponent<ChangeToDay>() == null)
-                    {
+                    if (flowergrow.GetComponent<ChangeToDay>() == null){
                         flowergrow.AddComponent<ChangeToDay>();
                     }
-
-
                     //flowergrow.GetComponent<ChangeToNight>().enabled = false;
                     //flowergrow.GetComponent<ChangeToDay>().enabled = true;
                 }
-                else
-                {
-
-                    if (flowergrow.GetComponent<ChangeToDay>() != null)
-                    {
+                else {
+                    if (flowergrow.GetComponent<ChangeToDay>() != null){
                         Destroy(flowergrow.GetComponent<ChangeToDay>());
                     }
 
-                    if (flowergrow.GetComponent<ChangeToNight>() == null)
-                    {
+                    if (flowergrow.GetComponent<ChangeToNight>() == null){
                         flowergrow.AddComponent<ChangeToNight>();
                     }
-
                     //flowergrow.GetComponent<ChangeToDay>().enabled = false;
                     //flowergrow.GetComponent<ChangeToNight>().enabled = true;
                 }
@@ -68,15 +55,15 @@ public class StateChangeTrigger : MonoBehaviour {
 
 
 
-        //if (daytime == true){
-        //    foreach (Flower bloom in flower){
-        //        bloom.Bloom();
-        //    }
-        //} else{
-        //    foreach (Flower bloom in flower){
-        //        bloom.Debloom();
-        //    }
-        //}
+        if (daytime == true){
+            foreach (Flower bloom in flower){
+                bloom.Bloom();
+            }
+        } else{
+            foreach (Flower bloom in flower){
+                bloom.Debloom();
+            }
+        }
 
     }
 
