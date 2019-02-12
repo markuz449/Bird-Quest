@@ -911,8 +911,10 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 431316168}
   level1Icon: {fileID: 481368523}
   level2Icon: {fileID: 1841671386}
+  level3Icon: {fileID: 1089219988}
   level1: 0
   level2: 0
+  level3: 0
 --- !u!114 &715054081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1959,6 +1961,7 @@ MonoBehaviour:
   resets: 0
   Level1: 0
   Level2: 0
+  Level3: 0
 --- !u!4 &1483387604
 Transform:
   m_ObjectHideFlags: 0
