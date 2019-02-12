@@ -67,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1014975871291330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.88, y: -2.24, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalPosition: {x: -17.51, y: -3.38, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4002439229873718}
   m_Father: {fileID: 0}
@@ -86,9 +86,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.7198114, y: 0.08415818}
+  m_Offset: {x: -1.1015701, y: -0.20805633}
   serializedVersion: 2
-  m_Radius: 1.8792033
+  m_Radius: 0.55839264
 --- !u!58 &58593384531827264
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -101,9 +101,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.4874654, y: -2.8356948}
+  m_Offset: {x: 0.86275196, y: -0.69668484}
   serializedVersion: 2
-  m_Radius: 3.1554399
+  m_Radius: 0.7475929
 --- !u!61 &61716929456644150
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -116,7 +116,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.26930737, y: 0.033663273}
+  m_Offset: {x: 0.093037605, y: -1.380654}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -127,7 +127,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.635654, y: 2.4811912}
+  m_Size: {x: 1.2927151, y: 0.82141066}
   m_EdgeRadius: 0
 --- !u!70 &70440031412414592
 CapsuleCollider2D:
@@ -141,8 +141,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05518887, y: -0.19983725}
-  m_Size: {x: 6.896307, y: 2.4499836}
+  m_Offset: {x: -0.041171324, y: -0.3167216}
+  m_Size: {x: 2.0525935, y: 0.6265896}
   m_Direction: 1
 --- !u!114 &114120672444052150
 MonoBehaviour:
@@ -189,9 +189,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 364700129
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: f89f2ec1b724148f3860757be871a96a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae818bb30f6024b55a88f7b5389a094b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

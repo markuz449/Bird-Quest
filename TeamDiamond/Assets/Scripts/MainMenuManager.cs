@@ -2,11 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class MainMenuManager : MonoBehaviour
-{
-   
-
-
+public class MainMenuManager : MonoBehaviour{
 
     // Reference to UI panel that is our pause menu
     public GameObject pauseMenuPanel;
@@ -14,84 +10,55 @@ public class MainMenuManager : MonoBehaviour
     public GameObject level2Icon;
     public GameObject level3Icon;
 
-
     private LevelMaster game;
 
     // Reference to panel's script object 
     PauseMenuManager pauseMenu;
 
     public  bool level1;
-
     public bool level2;
-
     public bool level3;
 
 
-
-
-
-
-
-
-    public void StartNestLevel()
-    {
+    public void StartNestLevel(){
         // Load the "Level" scene
         SceneManager.LoadScene("Tutorial");
     }
 
-    public void MainMenuOpen()
-    {
-
+    public void MainMenuOpen(){
         // Load the "Level" scene
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void StartChickLevel1()
-    {
+    public void StartChickLevel1(){
         // Load the "Level" scene
         SceneManager.LoadScene("Level1");
 
     }
 
-    public void StartChickLevel2()
-    {
+    public void StartChickLevel2(){
         // Load the "Level" scene
 
         SceneManager.LoadScene("Level2");
     }
 
-    public void StartChickLevel3()
-    {
+    public void StartChickLevel3(){
         // Load the "Level" scene
 
         SceneManager.LoadScene("Level3");
     }
 
 
-    public  void UnlockLevel1(){
+    public void UnlockLevel1(){
         level1 = game.GetLevel1();
-
-
-
-
-}
-
-    public void UnlockLevel3()
-    {
-        level3 = game.GetLevel3();
-
-
-
-
     }
 
-    public void UnlockLevel2()
-    {
+    public void UnlockLevel3() {
+        level3 = game.GetLevel3();
+    }
+
+    public void UnlockLevel2(){
         level2 = game.GetLevel2();
-
-
-
-
     }
 
     public void OpenPauseMenu(){
@@ -99,8 +66,7 @@ public class MainMenuManager : MonoBehaviour
 
     }
 
-    private void Start()
-    {
+    private void Start(){
         game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
 
         // Initialise the reference to the script object, which is a
@@ -109,40 +75,29 @@ public class MainMenuManager : MonoBehaviour
         pauseMenu.Hide();
     }
 
-    private void Update()
-    {
+    private void Update(){
         level1 = game.GetLevel1();
         level2 = game.GetLevel2();
 
         if (level1){
-
             level1Icon.SetActive(true);
-        } else if(!level1){
-
+        } 
+        else if(!level1){
             level1Icon.SetActive(false);
         }
 
         if(level2){
             level2Icon.SetActive(true);
-
-        }
-        else if (!level2)
-        {
+        } 
+        else if (!level2){
             level2Icon.SetActive(false);
-
         }
 
-        if (level3)
-        {
+        if (level3){
             level3Icon.SetActive(true);
-
-        }
-        else if (!level3)
-        {
+        } 
+        else if (!level3){
             level3Icon.SetActive(false);
-
         }
     }
-
-
 }
