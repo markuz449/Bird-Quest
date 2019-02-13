@@ -23,12 +23,15 @@ public class ChickFollow : MonoBehaviour
     private float tooFar = 10f;
     private Animator anim;
     private float animSpeed;
+    private AudioSource chirp;
+    private int chirpCount = 1;
 
     // Use this for initialization
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         anim = GetComponent<Animator>();
+        chirp = GetComponent<AudioSource>();
     }
 
     // FixedUpdate is called once per frame
@@ -45,6 +48,7 @@ public class ChickFollow : MonoBehaviour
         {
             stay = !stay;
             anim.SetBool("Sit", stay);
+            chirp.Play();
         }
         // Flip the chicks sprite if close to the Mother Bird
         if (xDistance < tooFar && yDistance < stoppingHeight)
@@ -84,8 +88,13 @@ public class ChickFollow : MonoBehaviour
         }
         if(count > 15){
             anim.SetBool("runBool", false);
+            while(chirpCount != 0){
+                chirpCount--;
+                chirp.Play();
+            }
             return false;
         }
+        chirpCount = 1;
         return true;
     }
 
@@ -122,11 +131,12 @@ public class ChickFollow : MonoBehaviour
                 transform.position = this.transform.position;
                 anim.SetBool("runBool", false);
             }
-        }
-        else
-        {
+        }else {
             transform.position = this.transform.position;
             anim.SetBool("runBool", false);
+        }
+        if (!Ledge()){
+
         }
         animSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
         anim.SetFloat("runSpeed", Mathf.Abs(animSpeed));
