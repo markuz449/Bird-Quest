@@ -2,20 +2,16 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelMaster.cs">
     <Files>
-      <File FileName="Assets/Scripts/ChickFollow.cs" Line="94" Column="57" />
-      <File FileName="Assets/Scripts/DayNight.cs" Line="48" Column="10" />
-      <File FileName="Assets/Scripts/StateChangeTrigger.cs" Line="60" Column="1" />
-      <File FileName="Assets/Scripts/ChangeToDay.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Projectile.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/FlowerGrowShrink.cs" Line="53" Column="15" />
-      <File FileName="Assets/Scripts/Flower.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ChangeToNight.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MoveNestTut.cs" Line="7" Column="54" />
-      <File FileName="Assets/Scripts/MainMenuManager.cs" Line="107" Column="41" />
-      <File FileName="Assets/Scripts/LevelMaster.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelMaster.cs" Line="320" Column="17" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="37" Column="5" />
+      <File FileName="Assets/Scripts/MoveNestTut.cs" Line="43" Column="6" />
+      <File FileName="Assets/Scripts/CollectibleFound.cs" Line="15" Column="32" />
+      <File FileName="Assets/Scripts/start.cs" Line="15" Column="13" />
+      <File FileName="Assets/Scripts/PlayerMove.cs" Line="73" Column="56" />
+      <File FileName="Assets/Scripts/MainMenuManager.cs" Line="26" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
