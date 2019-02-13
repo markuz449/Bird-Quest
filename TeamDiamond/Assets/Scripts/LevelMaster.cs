@@ -26,6 +26,14 @@ public class LevelMaster : MonoBehaviour {
     private Vector3 player1Nest2 = new Vector3(-13.11f, -27.74f, 0);
     private Vector3 ChickNest2 = new Vector3(6.52f, -28.44f, 0);
 
+    //Level2 reset paramaters
+    private Vector3 player1Nest3 = new Vector3(-5.711733f, -2.168116f, 0);
+    private Vector3 ChickNest3 = new Vector3(57.57903f, 4.717887f, 0);
+
+    //Level2 reset paramaters
+    private Vector3 player1Nest4 = new Vector3(-2.274214f, -0.7405658f, 0);
+    private Vector3 ChickNest4 = new Vector3(38.90522f, 2.157887f, 0);
+
     public bool levelComplete;
     public GameObject[] boxes;
     public Vector3[] boxesStart;
@@ -57,6 +65,7 @@ public class LevelMaster : MonoBehaviour {
     public bool Level1;
     public bool Level2;
     public bool Level3;
+    public bool Level4;
 
 
 
@@ -76,6 +85,13 @@ public class LevelMaster : MonoBehaviour {
     public bool GetLevel3()
     {
         return Level3;
+
+
+    }
+
+    public bool GetLevel4()
+    {
+        return Level4;
 
 
     }
@@ -124,6 +140,11 @@ public class LevelMaster : MonoBehaviour {
         Level3 = true;
     }
 
+    public void UnlockLevel4()
+    {
+
+        Level4 = true;
+    }
 
 
 
@@ -256,6 +277,10 @@ public class LevelMaster : MonoBehaviour {
     private void Start()
     {
         Level1 = false;
+        Level2 = false;
+        Level3 = false;
+        Level4 = false;
+
         hasreset = false;
         boxes = GameObject.FindGameObjectsWithTag("Box");
         logs = GameObject.FindGameObjectsWithTag("Log");
@@ -275,20 +300,32 @@ public class LevelMaster : MonoBehaviour {
         pauseMenu = pauseMenuPanel.GetComponent<PauseMenuManager>();
     }
 
+
+
+
+
     void Update()
     {
 
-       
 
-        if (logs.Length == 0 || logs[0] == null)
-        {
-            levelComplete = false;
 
+
+
+        if(SceneManager.GetActiveScene().name == "MainMenu"){
             checkpointReached = false;
 
+        }
 
 
-    boxes = GameObject.FindGameObjectsWithTag("Box");
+
+        float time = Mathf.Round(Time.timeSinceLevelLoad);
+
+        if (time < 2)
+        {
+
+
+
+            boxes = GameObject.FindGameObjectsWithTag("Box");
             logs = GameObject.FindGameObjectsWithTag("Log");
             boxesStart = new Vector3[boxes.Length];
             logsStart = new Vector3[logs.Length];
@@ -305,10 +342,33 @@ public class LevelMaster : MonoBehaviour {
             }
 
         }
+
+        if((logs.Length != 0 && logs[0] == null) || (boxes.Length != 0 && boxes[0] == null))
+        {
+            boxes = GameObject.FindGameObjectsWithTag("Box");
+            logs = GameObject.FindGameObjectsWithTag("Log");
+            boxesStart = new Vector3[boxes.Length];
+            logsStart = new Vector3[logs.Length];
+            boxesStart = new Vector3[boxes.Length];
+            logsStart = new Vector3[logs.Length];
+
+            for (int i = 0; i < logs.Length; i++)
+            {
+                logsStart[i] = logs[i].transform.position;
+            }
+            for (int i = 0; i < boxes.Length; i++)
+            {
+                boxesStart[i] = boxes[i].transform.position;
+            }
+
+        }
+
+
+
+
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
 
-            float time = Mathf.Round(Time.timeSinceLevelLoad);
 
             if (menuWormStar != null && levelComplete != true && time <=10){
 
@@ -347,6 +407,16 @@ public class LevelMaster : MonoBehaviour {
             {
                 gm.lastCheckpointPos = player1Nest2;
                 gm.chickLastCheckpoint = ChickNest2;
+            }
+            else if (SceneManager.GetActiveScene().name == "Level3" && hasreset == false && checkpointReached == false)
+            {
+                gm.lastCheckpointPos = player1Nest3;
+                gm.chickLastCheckpoint = ChickNest3;
+            }
+            else if (SceneManager.GetActiveScene().name == "Level4" && hasreset == false && checkpointReached == false)
+            {
+                gm.lastCheckpointPos = player1Nest4;
+                gm.chickLastCheckpoint = ChickNest4;
             }
 
             if (timeTaken == null){

@@ -158,4 +158,13 @@ public class LevelManager : MonoBehaviour {
         pauseMenu = pauseMenuPanel.GetComponent<PauseMenuManager>();
         //pauseMenu.Hide();
     }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            pauseMenu.ShowPause();
+
+        }
+    }
 }
