@@ -43,6 +43,7 @@ public class ChickFollow : MonoBehaviour
         // Toggle sitting for the chick
         if (Vector2.Distance(transform.position, target.position) < stayButtonDistance && Input.GetKeyDown(KeyCode.C))
         {
+            /////// sitting sound
             stay = !stay;
             anim.SetBool("Sit", stay);
         }
@@ -127,6 +128,9 @@ public class ChickFollow : MonoBehaviour
         {
             transform.position = this.transform.position;
             anim.SetBool("runBool", false);
+        }
+        if (!Ledge()){
+            //////////marcus
         }
         animSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
         anim.SetFloat("runSpeed", Mathf.Abs(animSpeed));
