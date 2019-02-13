@@ -278,15 +278,7 @@ public class LevelMaster : MonoBehaviour {
     void Update()
     {
 
-        if(SceneManager.GetActiveScene().name == "Level1" && hasreset == false && checkpointReached == false){
-            gm.lastCheckpointPos = player1Nest;
-            gm.chickLastCheckpoint = ChickNest;
-
-        }else if(SceneManager.GetActiveScene().name == "Level2" && hasreset == false && checkpointReached == false)
-        {
-            gm.lastCheckpointPos = player1Nest2;
-            gm.chickLastCheckpoint = ChickNest2;
-        }
+       
 
         if (logs.Length == 0 || logs[0] == null)
         {
@@ -344,7 +336,20 @@ public class LevelMaster : MonoBehaviour {
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
             player = GameObject.FindGameObjectWithTag("Player");
             chick = GameObject.FindGameObjectWithTag("Chick");
-            if(timeTaken == null){
+
+            if (SceneManager.GetActiveScene().name == "Level1" && hasreset == false && checkpointReached == false)
+            {
+                gm.lastCheckpointPos = player1Nest;
+                gm.chickLastCheckpoint = ChickNest;
+
+            }
+            else if (SceneManager.GetActiveScene().name == "Level2" && hasreset == false && checkpointReached == false)
+            {
+                gm.lastCheckpointPos = player1Nest2;
+                gm.chickLastCheckpoint = ChickNest2;
+            }
+
+            if (timeTaken == null){
                 //levelCompletePanel.SetActive(true);
 
                 timeTaken = GameObject.FindGameObjectWithTag("TimeTakenText").GetComponent<Text>();
