@@ -15,7 +15,6 @@ public class Flower : MonoBehaviour {
         // Initialise the reference to the Animator and rigidbody component
         anim = GetComponent<Animator>();
         body = transform.GetComponent<Rigidbody2D>();
-        anim.SetTrigger("Bloom");
         //bloomed = true;
     }
 	

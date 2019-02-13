@@ -29923,23 +29923,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4217172308557434, guid: 01a9933bac83b47c288765a479a9b032,
     type: 2}
   m_PrefabInternal: {fileID: 680302500}
---- !u!1 &680302502 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1716463927528386, guid: 01a9933bac83b47c288765a479a9b032,
-    type: 2}
-  m_PrefabInternal: {fileID: 680302500}
---- !u!114 &680302503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 680302502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02acfc4d2ea154cb7821544b9556d514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 150
 --- !u!1 &681705118
 GameObject:
   m_ObjectHideFlags: 0
@@ -121031,6 +121014,7 @@ MonoBehaviour:
   night: {fileID: 286909124}
   cameraNight: {fileID: 1459884528}
   dayTime: 1
+  flower_elevator: []
 --- !u!4 &833301316
 Transform:
   m_ObjectHideFlags: 0
@@ -123455,23 +123439,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4217172308557434, guid: 01a9933bac83b47c288765a479a9b032,
     type: 2}
   m_PrefabInternal: {fileID: 1498840041}
---- !u!1 &1498840043 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1716463927528386, guid: 01a9933bac83b47c288765a479a9b032,
-    type: 2}
-  m_PrefabInternal: {fileID: 1498840041}
---- !u!114 &1498840044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1498840043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02acfc4d2ea154cb7821544b9556d514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 150
 --- !u!1 &1513927547
 GameObject:
   m_ObjectHideFlags: 0
@@ -126821,23 +126788,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4219865609287828, guid: b9eedac15c5b84322a8d935283398015,
     type: 2}
   m_PrefabInternal: {fileID: 2124139293}
---- !u!1 &2124139295 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1456570178855038, guid: b9eedac15c5b84322a8d935283398015,
-    type: 2}
-  m_PrefabInternal: {fileID: 2124139293}
---- !u!114 &2124139296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2124139295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02acfc4d2ea154cb7821544b9556d514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 150
 --- !u!1 &2127267381
 GameObject:
   m_ObjectHideFlags: 0

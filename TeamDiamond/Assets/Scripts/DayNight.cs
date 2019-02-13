@@ -48,16 +48,18 @@ public class DayNight : MonoBehaviour {
         {
             if (dayTime == true)
             {
-
-                foreach (GameObject flower in flower_elevator)
+                if (flower_elevator != null)
                 {
-                    if (flower.GetComponent<ChangeToDay>() != null)
+                    foreach (GameObject flower in flower_elevator)
                     {
-                        Destroy(flower.GetComponent<ChangeToDay>());
-                    }
-                    if (flower.GetComponent<ChangeToNight>() == null)
-                    {
-                        flower.AddComponent<ChangeToNight>();
+                        if (flower.GetComponent<ChangeToDay>() != null)
+                        {
+                            Destroy(flower.GetComponent<ChangeToDay>());
+                        }
+                        if (flower.GetComponent<ChangeToNight>() == null)
+                        {
+                            flower.AddComponent<ChangeToNight>();
+                        }
                     }
                 }
 
