@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class IgnoreCollision : MonoBehaviour {
 
+    public new string tag;
+
     private GameObject[] objects;
 
 	// Use this for initialization
 	void Start () {
-        if(GameObject.FindGameObjectWithTag("Chick") != null){
-            objects = GameObject.FindGameObjectsWithTag("Chick");
+        if(GameObject.FindGameObjectWithTag(tag) != null){
+            objects = GameObject.FindGameObjectsWithTag(tag);
         }
         
 	}
@@ -26,9 +28,9 @@ public class IgnoreCollision : MonoBehaviour {
 
     private void Awake()
     {
-        if (GameObject.FindGameObjectWithTag("Chick") != null)
+        if (GameObject.FindGameObjectWithTag(tag) != null)
         {
-            objects = GameObject.FindGameObjectsWithTag("Chick");
+            objects = GameObject.FindGameObjectsWithTag(tag);
         }
     }
 }

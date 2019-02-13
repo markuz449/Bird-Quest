@@ -38,7 +38,7 @@ public class MoveNestTut : MonoBehaviour {
         player.transform.position = player1;
         chick.transform.position = chick1;
 	}
-
+    
     private void FixedUpdate()
     {
         if(section == 1 && setLocation){

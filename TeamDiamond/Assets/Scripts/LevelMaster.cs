@@ -275,20 +275,32 @@ public class LevelMaster : MonoBehaviour {
         pauseMenu = pauseMenuPanel.GetComponent<PauseMenuManager>();
     }
 
+
+
+
+
     void Update()
     {
 
-       
 
-        if (logs.Length == 0 || logs[0] == null)
-        {
-            levelComplete = false;
 
+
+
+        if(SceneManager.GetActiveScene().name == "MainMenu"){
             checkpointReached = false;
 
+        }
 
 
-    boxes = GameObject.FindGameObjectsWithTag("Box");
+
+        float time = Mathf.Round(Time.timeSinceLevelLoad);
+
+        if (time < 2)
+        {
+
+
+
+            boxes = GameObject.FindGameObjectsWithTag("Box");
             logs = GameObject.FindGameObjectsWithTag("Log");
             boxesStart = new Vector3[boxes.Length];
             logsStart = new Vector3[logs.Length];
@@ -305,10 +317,33 @@ public class LevelMaster : MonoBehaviour {
             }
 
         }
+
+        if((logs.Length != 0 && logs[0] == null) || (boxes.Length != 0 && boxes[0] == null))
+        {
+            boxes = GameObject.FindGameObjectsWithTag("Box");
+            logs = GameObject.FindGameObjectsWithTag("Log");
+            boxesStart = new Vector3[boxes.Length];
+            logsStart = new Vector3[logs.Length];
+            boxesStart = new Vector3[boxes.Length];
+            logsStart = new Vector3[logs.Length];
+
+            for (int i = 0; i < logs.Length; i++)
+            {
+                logsStart[i] = logs[i].transform.position;
+            }
+            for (int i = 0; i < boxes.Length; i++)
+            {
+                boxesStart[i] = boxes[i].transform.position;
+            }
+
+        }
+
+
+
+
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
 
-            float time = Mathf.Round(Time.timeSinceLevelLoad);
 
             if (menuWormStar != null && levelComplete != true && time <=10){
 

@@ -1300,8 +1300,9 @@ Prefab:
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 61042648969504024, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
-    - {fileID: 61247130343853204, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 114570762534403762, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &272114277 stripped
@@ -1309,6 +1310,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4067253472082052, guid: 0d01bd735a7b04283931d761dd65df21,
     type: 2}
   m_PrefabInternal: {fileID: 272114276}
+--- !u!1 &272114278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1708147789720792, guid: 0d01bd735a7b04283931d761dd65df21,
+    type: 2}
+  m_PrefabInternal: {fileID: 272114276}
+--- !u!114 &272114279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 272114278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7809550e3c7de4e18bcc56204658c9d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tag: StateChange
 --- !u!4 &273827639 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4217172308557434, guid: 01a9933bac83b47c288765a479a9b032,
@@ -3579,8 +3597,8 @@ Prefab:
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 61042648969504024, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
-    - {fileID: 61247130343853204, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &698847975 stripped
@@ -3705,25 +3723,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4963678226774956, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212676530776141828, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 212676530776141828, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1764332247
-      objectReference: {fileID: 0}
-    - target: {fileID: 212676530776141828, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1542198564743338, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0, type: 2}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -19451,46 +19450,7 @@ Prefab:
       propertyPath: m_Name
       value: Box (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 61669853575077860, guid: 0d01bd735a7b04283931d761dd65df21,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -0.0030446053
-      objectReference: {fileID: 0}
-    - target: {fileID: 61669853575077860, guid: 0d01bd735a7b04283931d761dd65df21,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.5737562
-      objectReference: {fileID: 0}
-    - target: {fileID: 4413892755097716, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.385
-      objectReference: {fileID: 0}
-    - target: {fileID: 4413892755097716, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.144
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423255624402568, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.152
-      objectReference: {fileID: 0}
-    - target: {fileID: 50855690666224892, guid: 0d01bd735a7b04283931d761dd65df21,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: f07e15d5c00ce41c5afdb2097785fd61, type: 2}
-    - target: {fileID: 58341184965501768, guid: 0d01bd735a7b04283931d761dd65df21,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 58504430792760406, guid: 0d01bd735a7b04283931d761dd65df21,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 61042648969504024, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
-    - {fileID: 61247130343853204, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d01bd735a7b04283931d761dd65df21, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1125562474
