@@ -282,6 +282,10 @@ public class LevelMaster : MonoBehaviour {
     void Update()
     {
 
+
+
+
+
         if(SceneManager.GetActiveScene().name == "MainMenu"){
             checkpointReached = false;
 
