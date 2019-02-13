@@ -57,6 +57,7 @@ public class LevelMaster : MonoBehaviour {
     public bool Level1;
     public bool Level2;
     public bool Level3;
+    public bool Level4;
 
 
 
@@ -76,6 +77,13 @@ public class LevelMaster : MonoBehaviour {
     public bool GetLevel3()
     {
         return Level3;
+
+
+    }
+
+    public bool GetLevel4()
+    {
+        return Level4;
 
 
     }
@@ -124,6 +132,11 @@ public class LevelMaster : MonoBehaviour {
         Level3 = true;
     }
 
+    public void UnlockLevel4()
+    {
+
+        Level4 = true;
+    }
 
 
 
@@ -256,6 +269,10 @@ public class LevelMaster : MonoBehaviour {
     private void Start()
     {
         Level1 = false;
+        Level2 = false;
+        Level3 = false;
+        Level4 = false;
+
         hasreset = false;
         boxes = GameObject.FindGameObjectsWithTag("Box");
         logs = GameObject.FindGameObjectsWithTag("Log");
@@ -281,6 +298,10 @@ public class LevelMaster : MonoBehaviour {
 
     void Update()
     {
+
+
+
+
 
         if(SceneManager.GetActiveScene().name == "MainMenu"){
             checkpointReached = false;
