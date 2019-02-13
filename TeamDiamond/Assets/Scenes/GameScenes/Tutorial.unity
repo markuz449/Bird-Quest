@@ -122750,6 +122750,10 @@ Prefab:
       propertyPath: m_Name
       value: nest
       objectReference: {fileID: 0}
+    - target: {fileID: 1869526597627902, guid: c48123226f16d4a1faf48b05917e2c95, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c48123226f16d4a1faf48b05917e2c95, type: 2}
   m_IsPrefabAsset: 0
