@@ -6,6 +6,8 @@ public class DayNight : MonoBehaviour {
     public GameObject day;
     public GameObject night;
     public GameObject cameraNight;
+    public AudioSource dayBGM;
+    public AudioSource nightBGM;
     //public float stateTime; 
     FadeObjectInOut fday;
     FadeObjectInOut fnight;
@@ -17,7 +19,6 @@ public class DayNight : MonoBehaviour {
 
     //FlowerGrowShrink flower;
 
-    //jack code
     //public GameObject[] nightObjects = GameObject.FindGameObjectsWithTag("Night");
     //public GameObject[] dayObjects = GameObject.FindGameObjectsWithTag("Day"); 
 
@@ -25,7 +26,8 @@ public class DayNight : MonoBehaviour {
         fday = day.AddComponent<FadeObjectInOut>();
         fnight = day.AddComponent<FadeObjectInOut>();
         fday.FadeIn();
-        //StartCoroutine(DayTime());
+        dayBGM.Play();
+        nightBGM.Stop();
         //flower = new FlowerGrowShrink();
     }
 
@@ -34,36 +36,19 @@ public class DayNight : MonoBehaviour {
         return dayTime;
     }
 
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.N))
-    //    {
-    //        StateChange(!dayTime);
-    //    }
-    //}
-
-    public void StateChange(bool currentState)
-    {
-        if (currentState != dayTime)
-        {
-            if (dayTime == true)
-            {
-                if (flower_elevator != null)
-                {
-                    foreach (GameObject flower in flower_elevator)
-                    {
-                        if (flower.GetComponent<ChangeToDay>() != null)
-                        {
+    public void StateChange(bool currentState){
+        if (currentState != dayTime){
+            if (dayTime == true){
+                if (flower_elevator != null){
+                    foreach (GameObject flower in flower_elevator){
+                        if (flower.GetComponent<ChangeToDay>() != null){
                             Destroy(flower.GetComponent<ChangeToDay>());
                         }
-                        if (flower.GetComponent<ChangeToNight>() == null)
-                        {
+                        if (flower.GetComponent<ChangeToNight>() == null){
                             flower.AddComponent<ChangeToNight>();
                         }
                     }
                 }
-
-
 
                 //flower.Change();
                 dayTime = false;
@@ -71,17 +56,15 @@ public class DayNight : MonoBehaviour {
                 night.SetActive(true);
                 cameraNight.SetActive(true);
                 SetAllCollidersStatus(day, false);
+                dayBGM.Stop();
+                nightBGM.Play();
             }
-            else
-            {
-                foreach (GameObject flower in flower_elevator)
-                {
-                    if (flower.GetComponent<ChangeToNight>() != null)
-                    {
+            else{
+                foreach (GameObject flower in flower_elevator){
+                    if (flower.GetComponent<ChangeToNight>() != null){
                         Destroy(flower.GetComponent<ChangeToNight>());
                     }
-                    if (flower.GetComponent<ChangeToDay>() == null)
-                    {
+                    if (flower.GetComponent<ChangeToDay>() == null){
                         flower.AddComponent<ChangeToDay>();
                     }
                 }
@@ -94,6 +77,8 @@ public class DayNight : MonoBehaviour {
                 night.SetActive(false);
                 cameraNight.SetActive(false);
                 SetAllCollidersStatus(day, true);
+                dayBGM.Play();
+                nightBGM.Stop();
             }
         }
     }
@@ -104,13 +89,4 @@ public class DayNight : MonoBehaviour {
             c.enabled = active;
         }
     }
-
-    //IEnumerator DayTime()
-    //{
-    //    StateChange();
-    //    yield return new WaitForSecondsRealtime(stateTime);
-    //    StateChange();
-    //    yield return new WaitForSecondsRealtime(stateTime);
-    //    StartCoroutine(DayTime());
-    //}
 }
