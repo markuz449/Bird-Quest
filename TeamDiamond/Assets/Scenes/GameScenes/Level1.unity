@@ -89613,6 +89613,8 @@ MonoBehaviour:
   day: {fileID: 1128242734}
   night: {fileID: 1274223675}
   cameraNight: {fileID: 428060314}
+  dayBGM: {fileID: 0}
+  nightBGM: {fileID: 0}
   dayTime: 1
   flower_elevator: []
 --- !u!4 &621391685
@@ -135773,7 +135775,7 @@ Prefab:
     - target: {fileID: 114122969518837228, guid: c7257dd0ce91b4c03b9fcfed15373fe4,
         type: 2}
       propertyPath: groundLayer.m_Bits
-      value: 3328
+      value: 3360
       objectReference: {fileID: 0}
     - target: {fileID: 1573658595293280, guid: c7257dd0ce91b4c03b9fcfed15373fe4, type: 2}
       propertyPath: m_Layer
