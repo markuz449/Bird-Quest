@@ -1037,6 +1037,7 @@ MonoBehaviour:
   level2Icon: {fileID: 1841671386}
   level3Icon: {fileID: 1089219988}
   level4Icon: {fileID: 225196395}
+  Tutorial: {fileID: 1474800853}
   level1Background: {fileID: 735822828}
   level2Background: {fileID: 951171659}
   level3Background: {fileID: 2052627001}
@@ -1203,7 +1204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &735822829
 SpriteRenderer:
   m_ObjectHideFlags: 0
