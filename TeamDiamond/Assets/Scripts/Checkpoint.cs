@@ -32,4 +32,14 @@ public class Checkpoint : MonoBehaviour {
 
 
     }
+
+    private void Update()
+    {
+        if(gm.lastCheckpointPos == transform.position){
+            transform.GetComponent<Collider2D>().enabled = false;
+        }else
+        {
+            transform.GetComponent<Collider2D>().enabled = true;
+        }
+    }
 }
