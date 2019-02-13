@@ -11,6 +11,7 @@ public class MainMenuManager : MonoBehaviour{
     public GameObject level3Icon;
     public GameObject level4Icon;
 
+    public GameObject Tutorial;
     public GameObject level1Background;
     public GameObject level2Background;
     public GameObject level3Background;
@@ -103,6 +104,8 @@ public class MainMenuManager : MonoBehaviour{
 
         if (level1){
             level1Icon.SetActive(true);
+            level1Background.SetActive(true);
+            Tutorial.SetActive(false);
         } 
         else if(!level1){
             level1Icon.SetActive(false);
