@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212918588485374332}
   - component: {fileID: 58064921251364748}
   - component: {fileID: 114636852047357718}
+  - component: {fileID: 114948345522039394}
   m_Layer: 5
   m_Name: Day_stone
   m_TagString: StateChange
@@ -69,9 +70,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   day: {fileID: 0}
-  night: {fileID: 0}
   stateControl: {fileID: 0}
+  flowerGrowShrinks: []
   daytime: 1
+  movingPlatform: 0
+  currentPosition: {x: 0, y: 0, z: 0}
+  destination: {x: 0, y: 0, z: 0}
+  wait: 0
+--- !u!114 &114948345522039394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456570178855038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02acfc4d2ea154cb7821544b9556d514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 150
 --- !u!212 &212918588485374332
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -105,7 +122,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 364700129
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 20cc88221189b4250bce734eea3c9e9c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

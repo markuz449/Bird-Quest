@@ -16,9 +16,9 @@ public class ChangeToNight : MonoBehaviour
     void Start()
     {
 
-        startPosition = transform.position;
-        location = startPosition;
-        destination = new Vector3(transform.position.x, transform.position.y - 3.25f, transform.position.z);
+        //startPosition = transform.position;
+        //location = startPosition;
+        //destination = new Vector3(transform.position.x, transform.position.y - 3.25f, transform.position.z);
 
     }
 
@@ -26,8 +26,8 @@ public class ChangeToNight : MonoBehaviour
     void Update()
     {
 
-        location = Vector3.Lerp(location, destination, Time.deltaTime * 5);
-        transform.position = location;
+        //location = Vector3.Lerp(location, destination, Time.deltaTime);
+        //transform.position = location;
 
         //if (location == destination)
         //{

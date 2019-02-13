@@ -8,6 +8,8 @@ public class ChangeToDay : MonoBehaviour {
     Vector3 location;
     Vector3 destination;
 
+    //public DayNight dayNight = new DayNight();
+
     //StateChangeTrigger stopper = new StateChangeTrigger();
 
 
@@ -16,19 +18,20 @@ public class ChangeToDay : MonoBehaviour {
 
         startPosition = transform.position;
         location = startPosition;
-        destination = new Vector3(transform.position.x, transform.position.y + 3.25f, transform.position.z);
+        destination = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z);
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        location = Vector3.Lerp(location, destination, Time.deltaTime * 5);
+        location = Vector3.Lerp(location, destination, Time.deltaTime * 2);
         transform.position = location;
 
-        //if (location == destination) {
-        //    transform.position = startPosition;
-        //}		
+        if (location.y > destination.y * 0.9f) {
+            transform.position = startPosition;
+            DayNight.flag = true;
+        }		
 	}
 
 }

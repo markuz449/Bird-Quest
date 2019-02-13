@@ -117,7 +117,7 @@ public class PlayerMove : MonoBehaviour {
             side = box.transform.position.x - transform.position.x;
             direction = Input.GetAxis("Horizontal");
             //Setting push/pull animation here - Marcus
-            if ((side > 0 && direction > 0) || (side < 0 && direction < 0)){
+            if ((side > 0f && direction > 0f) || (side < 0f && direction < 0f)){
                 push = true;
                 anim.SetBool("pushingBox", true);
                 anim.SetBool("pullingBox", false);
@@ -138,7 +138,7 @@ public class PlayerMove : MonoBehaviour {
             return 0;
         // Attaches the box to the player if not jumping and on the ground
         }else if (hit.collider != null && (hit.collider.gameObject.tag == "Box" || hit.collider.gameObject.tag == "Log") 
-                  && IsGrounded() && !push)
+                  && IsGrounded() && !push && !connected)
         {
             box = hit.collider.gameObject;
             connected = true;
