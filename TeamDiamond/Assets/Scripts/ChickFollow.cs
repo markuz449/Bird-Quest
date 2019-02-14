@@ -73,12 +73,12 @@ public class ChickFollow : MonoBehaviour
         Vector2 direction = new Vector2(0, -raylength);
         RaycastHit2D hit = Physics2D.Raycast(position, direction, raylength, groundLayer);
 
-        float range = -0.1f;
+        float range = -0.2f;
         if(facingRight){
-            range = 0.1f;
+            range = 0.2f;
         }
 
-        for (float i = -0.25f + range; i < 0.25f + range; i += 0.02f){
+        for (float i = -0.5f + range; i < 0.5f + range; i += 0.02f){
             position = new Vector2(transform.position.x + i, transform.position.y);
             Debug.DrawRay(position, direction, Color.green);
             hit = Physics2D.Raycast(position, direction, raylength, groundLayer);
@@ -86,7 +86,7 @@ public class ChickFollow : MonoBehaviour
                 count++;
             }
         }
-        if(count > 15){
+        if(count > 24){
             anim.SetBool("runBool", false);
             while(chirpCount != 0){
                 chirpCount--;

@@ -26,6 +26,14 @@ public class LevelMaster : MonoBehaviour {
     private Vector3 player1Nest2 = new Vector3(-13.11f, -27.74f, 0);
     private Vector3 ChickNest2 = new Vector3(6.52f, -28.44f, 0);
 
+    //Level2 reset paramaters
+    private Vector3 player1Nest3 = new Vector3(-5.711733f, -2.168116f, 0);
+    private Vector3 ChickNest3 = new Vector3(57.57903f, 4.717887f, 0);
+
+    //Level2 reset paramaters
+    private Vector3 player1Nest4 = new Vector3(-2.274214f, -0.7405658f, 0);
+    private Vector3 ChickNest4 = new Vector3(38.90522f, 2.157887f, 0);
+
     public bool levelComplete;
     public GameObject[] boxes;
     public Vector3[] boxesStart;
@@ -399,6 +407,16 @@ public class LevelMaster : MonoBehaviour {
             {
                 gm.lastCheckpointPos = player1Nest2;
                 gm.chickLastCheckpoint = ChickNest2;
+            }
+            else if (SceneManager.GetActiveScene().name == "Level3" && hasreset == false && checkpointReached == false)
+            {
+                gm.lastCheckpointPos = player1Nest3;
+                gm.chickLastCheckpoint = ChickNest3;
+            }
+            else if (SceneManager.GetActiveScene().name == "Level4" && hasreset == false && checkpointReached == false)
+            {
+                gm.lastCheckpointPos = player1Nest4;
+                gm.chickLastCheckpoint = ChickNest4;
             }
 
             if (timeTaken == null){
