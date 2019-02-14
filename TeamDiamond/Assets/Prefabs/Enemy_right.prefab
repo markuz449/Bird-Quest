@@ -35,13 +35,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1855972256111164}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -7.05, y: 1.88, z: -0.14507529}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
+  m_LocalPosition: {x: 23.67, y: -6.96, z: 0}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!114 &114533926671396842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cdca0d1ddb84779a5eb76ea70c2740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPrefab: {fileID: 0}
+  shotPrefab: {fileID: 4579757598151686, guid: 163153317d0d24d7f88f89865050648e, type: 2}
   autoShootProbability: 1
   fireCooldownTime: 2
 --- !u!212 &212060175095631790
@@ -102,7 +102,7 @@ SpriteRenderer:
   m_SortingLayerID: 364700129
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 843164efd0cde466dabf5858231186fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3df787cb9eb1443a18228a4e583904ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
