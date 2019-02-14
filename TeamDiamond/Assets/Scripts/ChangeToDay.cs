@@ -18,7 +18,7 @@ public class ChangeToDay : MonoBehaviour {
 
         startPosition = transform.position;
         location = startPosition;
-        destination = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z);
+        destination = new Vector3(transform.position.x, transform.position.y + 3.5f, transform.position.z);
 		
 	}
 	
