@@ -25,7 +25,7 @@ public class ChangeToDay : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        location = Vector3.Lerp(location, destination, Time.deltaTime * 2);
+        location = Vector3.Lerp(location, destination, Time.deltaTime);
         transform.position = location;
 
         if (location.y > destination.y * 0.9f) {
