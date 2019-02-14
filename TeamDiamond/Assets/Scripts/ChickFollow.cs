@@ -7,6 +7,7 @@ public class ChickFollow : MonoBehaviour
 
     public float speed = 5f;
     public float jumpSpeed = 5f;
+    public float chirpTime = 3f;
 
     public float raylength = 1f;
     public LayerMask groundLayer;
@@ -90,7 +91,7 @@ public class ChickFollow : MonoBehaviour
             anim.SetBool("runBool", false);
             while(chirpCount != 0){
                 chirpCount--;
-                chirp.Play();
+                StartCoroutine(LedgeChirp());
             }
             return false;
         }
@@ -135,9 +136,6 @@ public class ChickFollow : MonoBehaviour
             transform.position = this.transform.position;
             anim.SetBool("runBool", false);
         }
-        if (!Ledge()){
-
-        }
         animSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
         anim.SetFloat("runSpeed", Mathf.Abs(animSpeed));
     }
@@ -148,6 +146,11 @@ public class ChickFollow : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    IEnumerator LedgeChirp(){
+        chirp.Play();
+        yield return new WaitForSecondsRealtime(chirpTime);
     }
 
 }

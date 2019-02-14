@@ -94,7 +94,7 @@ public class PlayerMove : MonoBehaviour {
                 anim.SetBool("pullingBox", false);
                 pushCollider.SetActive(false);
             }
-            runAudio.Play();
+            //runAudio.Play();
             anim.SetFloat("runSpeed", Mathf.Abs(h));
         }
 
