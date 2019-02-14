@@ -26,6 +26,7 @@ public class ChickFollow : MonoBehaviour
     private float animSpeed;
     private AudioSource chirp;
     private int chirpCount = 1;
+    private bool timePassed = true;
 
     // Use this for initialization
     void Start()
@@ -149,8 +150,12 @@ public class ChickFollow : MonoBehaviour
     }
 
     IEnumerator LedgeChirp(){
-        chirp.Play();
+        if (timePassed){
+            chirp.Play();
+        }
+        timePassed = false;
         yield return new WaitForSecondsRealtime(chirpTime);
+        timePassed = true;
     }
 
 }

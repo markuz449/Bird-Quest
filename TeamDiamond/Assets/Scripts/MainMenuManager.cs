@@ -11,10 +11,12 @@ public class MainMenuManager : MonoBehaviour{
     public GameObject level3Icon;
     public GameObject level4Icon;
 
+    //Background maps
     public GameObject Tutorial;
     public GameObject level1Background;
     public GameObject level2Background;
     public GameObject level3Background;
+    public GameObject level4Background;
 
     private LevelMaster game;
 
@@ -132,14 +134,13 @@ public class MainMenuManager : MonoBehaviour{
         if (level4)
         {
             level4Icon.SetActive(true);
-            //level4Background.SetActive(true);
-            //level3Background.SetActive(false);
+            level4Background.SetActive(true);
+            level3Background.SetActive(false);
         }
         else if (!level3)
         {
             level4Icon.SetActive(false);
         }
-
 
     }
 }
