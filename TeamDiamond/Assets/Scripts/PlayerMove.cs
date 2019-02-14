@@ -17,6 +17,10 @@ public class PlayerMove : MonoBehaviour {
     public float jumpRayLength = 0.6f;
     public bool facingRight = true;
 
+    //Other public variables
+    public AudioSource jumpAudio;
+    public AudioSource runAudio;
+
     //public variables for pushing box
     public GameObject pushCollider;
 
@@ -47,6 +51,8 @@ public class PlayerMove : MonoBehaviour {
         //Set start animation
         anim = GetComponent<Animator>();
         anim.SetTrigger("Idle");
+        //jumpAudio = GetComponent<AudioSource>();
+        //runAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -74,6 +80,7 @@ public class PlayerMove : MonoBehaviour {
             {
                 body.velocity = new Vector2(0, jumpPower);
                 anim.SetTrigger("Jump");
+                jumpAudio.Play();
                 anim.SetBool("pushingBox", false);
                 anim.SetBool("pullingBox", false);
                 pushCollider.SetActive(false);
@@ -87,6 +94,7 @@ public class PlayerMove : MonoBehaviour {
                 anim.SetBool("pullingBox", false);
                 pushCollider.SetActive(false);
             }
+            //runAudio.Play();
             anim.SetFloat("runSpeed", Mathf.Abs(h));
         }
 
