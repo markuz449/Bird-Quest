@@ -70,6 +70,11 @@ public class MainMenuManager : MonoBehaviour{
         level1 = game.GetLevel1();
     }
 
+    public void UnlockLevel2()
+    {
+        level2 = game.GetLevel2();
+    }
+
     public void UnlockLevel3() {
         level3 = game.GetLevel3();
     }
@@ -77,10 +82,6 @@ public class MainMenuManager : MonoBehaviour{
     public void UnlockLevel4()
     {
         level4 = game.GetLevel4();
-    }
-
-    public void UnlockLevel2(){
-        level2 = game.GetLevel2();
     }
 
     public void OpenPauseMenu(){
@@ -137,7 +138,7 @@ public class MainMenuManager : MonoBehaviour{
             level4Background.SetActive(true);
             level3Background.SetActive(false);
         }
-        else if (!level3)
+        else if (!level4)
         {
             level4Icon.SetActive(false);
         }
