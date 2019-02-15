@@ -13,7 +13,6 @@ public class Start : MonoBehaviour {
         if(Input.anyKey){
             SceneManager.LoadScene("MainMenu");
 
-            SceneManager.LoadScene("Tutorial");
 
 
         }
