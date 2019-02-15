@@ -72,17 +72,26 @@ TagManager:
   - name: Background
     uniqueID: 665690765
     locked: 0
+  - name: Clouds
+    uniqueID: 1435844881
+    locked: 0
+  - name: Caves
+    uniqueID: 1344731737
+    locked: 0
   - name: Foreground
     uniqueID: 2234660817
+    locked: 0
+  - name: Enemy
+    uniqueID: 3367983405
     locked: 0
   - name: Ground
     uniqueID: 2154366275
     locked: 0
+  - name: checkpoints
+    uniqueID: 1130090045
+    locked: 0
   - name: Items
     uniqueID: 364700129
-    locked: 0
-  - name: Enemy
-    uniqueID: 3367983405
     locked: 0
   - name: Player
     uniqueID: 2530635049
