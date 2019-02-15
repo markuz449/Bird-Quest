@@ -22,10 +22,12 @@ public class ChickFollow : MonoBehaviour
     private float slowingDistance = 1f;
     private float stoppingDistance = 0.4f;
     private float tooFar = 7f;
+
     private Animator anim;
     private float animSpeed;
     private AudioSource chirp;
     private int chirpCount = 1;
+    private bool chirpBool = true;
     private bool timePassed = true;
 
     // Use this for initialization
@@ -105,6 +107,11 @@ public class ChickFollow : MonoBehaviour
         anim.SetFloat("runSpeed", Mathf.Abs(animSpeed));
         if (yDistance < stoppingHeight && xDistance < tooFar && Ledge())
         {
+            if (chirpBool)
+            {
+                chirp.Play();
+                chirpBool = false;
+            }
             // Speed Up Distance
             // Moves at base speed when this far away
             if (xDistance > speedUpDistance && xDistance < tooFar - speedUpDistance && !stay)
@@ -136,6 +143,10 @@ public class ChickFollow : MonoBehaviour
                 anim.SetBool("runBool", false);
             }
         }else {
+            if (Ledge())
+            {
+                chirpBool = true;
+            }
             transform.position = this.transform.position;
             anim.SetBool("runBool", false);
         }
