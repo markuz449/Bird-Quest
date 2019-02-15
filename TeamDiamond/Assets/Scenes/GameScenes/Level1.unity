@@ -2113,7 +2113,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You are a Mother Bird and your Chick has wandered off. Find you Chick and
+  m_Text: You are a Mother Bird and your Chick has wandered off. Find your Chick and
     bring him home.
 --- !u!222 &406146701
 CanvasRenderer:
