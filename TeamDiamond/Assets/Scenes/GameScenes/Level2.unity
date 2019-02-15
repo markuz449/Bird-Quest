@@ -1769,7 +1769,7 @@ MonoBehaviour:
   cameraNight: {fileID: 1678821287}
   dayBGM: {fileID: 1068896971}
   nightBGM: {fileID: 622242412}
-  dayTime: 0
+  dayTime: 1
   flower_elevator: []
 --- !u!1 &363438934
 GameObject:
@@ -3090,11 +3090,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4217172308557434, guid: 01a9933bac83b47c288765a479a9b032, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -13.285261
+      value: -13.44
       objectReference: {fileID: 0}
     - target: {fileID: 4217172308557434, guid: 01a9933bac83b47c288765a479a9b032, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -28.109632
+      value: -28.52
       objectReference: {fileID: 0}
     - target: {fileID: 4217172308557434, guid: 01a9933bac83b47c288765a479a9b032, type: 2}
       propertyPath: m_LocalPosition.z
@@ -47819,8 +47819,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeDelay: 0
   fadeTime: 0.5
-  fadeInOnStart: 0
-  fadeOutOnStart: 1
+  fadeInOnStart: 1
+  fadeOutOnStart: 0
 --- !u!1 &1291080342
 GameObject:
   m_ObjectHideFlags: 0
@@ -48372,11 +48372,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4963678226774956, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -13.13
+      value: -13.26
       objectReference: {fileID: 0}
     - target: {fileID: 4963678226774956, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -28.25
+      value: -28.33
       objectReference: {fileID: 0}
     - target: {fileID: 4963678226774956, guid: 8f610bdcbc2f1459c866ea3a9f75bcf0, type: 2}
       propertyPath: m_LocalPosition.z
