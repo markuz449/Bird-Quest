@@ -8,11 +8,15 @@ public class PauseMenuManager : MonoBehaviour {
     bool pauseGame;
     bool helpMenu;
 
+    private LevelMaster lm;
+
+    public bool mute;
 
     public GameObject helpMenuPanel;
 
 
 
+  
 
 
     public void ShowPause()
@@ -57,6 +61,10 @@ public class PauseMenuManager : MonoBehaviour {
 
     }
 
+
+  
+
+
     // Hide the menu panel
     public void Hide()
     {
@@ -75,6 +83,9 @@ public class PauseMenuManager : MonoBehaviour {
 
     private void Update()
     {
+        lm = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
+
+
         if (pauseGame)
         {
             Time.timeScale = 0;
