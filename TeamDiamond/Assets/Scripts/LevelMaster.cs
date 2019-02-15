@@ -23,16 +23,16 @@ public class LevelMaster : MonoBehaviour {
     private Vector3 ChickNest = new Vector3(70.4f, 0f, 0);
 
     //Level2 reset paramaters
-    private Vector3 player1Nest2 = new Vector3(-13.11f, -27.74f, 0);
-    private Vector3 ChickNest2 = new Vector3(6.52f, -28.44f, 0);
+    private Vector3 player1Nest2 = new Vector3(-13.11f, -28.25f, 0);
+    private Vector3 ChickNest2 = new Vector3(6.35f, -28.34f, 0);
 
     //Level2 reset paramaters
-    private Vector3 player1Nest3 = new Vector3(-5.711733f, -2.168116f, 0);
-    private Vector3 ChickNest3 = new Vector3(57.57903f, 4.717887f, 0);
+    private Vector3 player1Nest3 = new Vector3(-5.7f, -1.94f, 0);
+    private Vector3 ChickNest3 = new Vector3(57.57903f, 4.921473f, 0);
 
     //Level2 reset paramaters
-    private Vector3 player1Nest4 = new Vector3(-2.274214f, -0.7405658f, 0);
-    private Vector3 ChickNest4 = new Vector3(38.90522f, 2.157887f, 0);
+    private Vector3 player1Nest4 = new Vector3(-14.53f, -0.82f, 0);
+    private Vector3 ChickNest4 = new Vector3(38.51f, -0.79f, 0);
 
     public bool levelComplete;
     public GameObject[] boxes;

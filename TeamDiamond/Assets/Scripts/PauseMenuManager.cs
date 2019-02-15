@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenuManager : MonoBehaviour {
 
     bool pauseGame;
-    bool optionMenu;
+    bool helpMenu;
 
     public GameObject optionsMenuPanel;
 
@@ -14,13 +14,19 @@ public class PauseMenuManager : MonoBehaviour {
 
 
 
+
+
     public void ShowPause()
     {
-        // Pause the game
-        pauseGame = true;
 
-        // Show the panel
-        gameObject.SetActive(true);
+        if (!helpMenu)
+        {
+            // Pause the game
+            pauseGame = true;
+
+            // Show the panel
+            gameObject.SetActive(true);
+        }
 
     }
 
@@ -29,7 +35,6 @@ public class PauseMenuManager : MonoBehaviour {
     public void ShowOptions()
     {
 
-        optionMenu = true;
         // Show the panel
 
         gameObject.SetActive(false);
@@ -41,7 +46,7 @@ public class PauseMenuManager : MonoBehaviour {
     public void ShowHelp()
     {
 
-       
+        helpMenu = true;
         gameObject.SetActive(false);
 
         helpMenuPanel.SetActive(true);
@@ -51,21 +56,13 @@ public class PauseMenuManager : MonoBehaviour {
     public void BackButton()
     {
 
-        if(optionMenu){
-            optionsMenuPanel.SetActive(false);
-            gameObject.SetActive(true);
-            optionMenu = false;
-
-
-
-        }
-        else {
-
+        if(helpMenu){
             helpMenuPanel.SetActive(false);
             gameObject.SetActive(true);
 
 
         }
+
 
 
     }
@@ -82,7 +79,7 @@ public class PauseMenuManager : MonoBehaviour {
 
     public void QuitApplication(){
 
-        Application.Quit();
+        SceneManager.LoadScene("StartScreen");
     }
 
 
