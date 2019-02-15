@@ -1,24 +1,22 @@
 ﻿<Properties StartupConfiguration="{B8816680-4F1F-A3B5-4650-3F66A68695AE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChickReturned.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/end.cs">
     <Files>
-      <File FileName="Assets/Scripts/LevelMaster.cs" Line="267" Column="13" />
+      <File FileName="Assets/Scripts/LevelMaster.cs" Line="137" Column="10" />
       <File FileName="Assets/Scripts/LevelManager.cs" Line="43" Column="6" />
-      <File FileName="Assets/Scripts/MoveNestTut.cs" Line="28" Column="32" />
+      <File FileName="Assets/Scripts/MoveNestTut.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Checkpoint.cs" Line="13" Column="1" />
-      <File FileName="Assets/Scripts/MainMenuManager.cs" Line="84" Column="35" />
+      <File FileName="Assets/Scripts/MainMenuManager.cs" Line="3" Column="34" />
       <File FileName="Assets/Scripts/PauseMenuManager.cs" Line="65" Column="3" />
-      <File FileName="Assets/Scripts/PlayerMove.cs" Line="72" Column="47" />
+      <File FileName="Assets/Scripts/PlayerMove.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ChickReturned.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Start.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/end.cs" Line="22" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/scratch/jmcmullan/teamdiamond/TeamDiamond/Assets/Scripts/ChickReturned.cs" relfile="Assets/Scripts/ChickReturned.cs" line="21" column="1" />
-      <Breakpoint file="/scratch/jmcmullan/teamdiamond/TeamDiamond/Assets/Scripts/ChickReturned.cs" relfile="Assets/Scripts/ChickReturned.cs" line="23" column="1" />
-      <Breakpoint file="/scratch/jmcmullan/teamdiamond/TeamDiamond/Assets/Scripts/ChickReturned.cs" relfile="Assets/Scripts/ChickReturned.cs" line="19" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
