@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject pauseMenuPanel;
     public GameObject levelCompletePanel;
     public Text numResets;
+
     private LevelMaster game;
 
     private GameMaster gm;
@@ -31,7 +32,25 @@ public class LevelManager : MonoBehaviour {
     PauseMenuManager pauseMenu;
     //CompleteLevelManager levelComplete;
 
+    public void Mute()
+    {
+        game.mute = true;
+        AudioListener.pause = true;
+        AudioListener.volume = 0;
 
+
+
+    }
+
+    public void UnMute()
+    {
+        game.mute = false;
+        AudioListener.pause = false;
+        AudioListener.volume = 1;
+
+
+
+    }
 
 
 
@@ -106,7 +125,11 @@ public class LevelManager : MonoBehaviour {
 
     private void Start(){
 
-        
+
+
+
+
+
 
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -138,9 +161,7 @@ public class LevelManager : MonoBehaviour {
 
 
 
-        game.menuChick = GameObject.FindGameObjectWithTag("menuChick");
-        game.menuWorm = GameObject.FindGameObjectWithTag("menuWorm");
-        game.menuReset = GameObject.FindGameObjectWithTag("menuReset");
+
         game.menuChickStar = GameObject.FindGameObjectWithTag("menuChickStar");
         game.menuWormStar = GameObject.FindGameObjectWithTag("menuWormStar");
         game.menuResetStar = GameObject.FindGameObjectWithTag("menuResetStar");
