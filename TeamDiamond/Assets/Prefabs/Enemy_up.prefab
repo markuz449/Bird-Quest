@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212463151482547956}
   - component: {fileID: 114239817231977412}
   - component: {fileID: 114778100182632888}
+  - component: {fileID: 58661139512260382}
   m_Layer: 0
   m_Name: Enemy_up
   m_TagString: Untagged
@@ -35,13 +36,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1534600171252374}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.267, y: -10.82, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -40.234917, y: -10.992, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58661139512260382
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1534600171252374}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000059604645, y: -0.03248453}
+  serializedVersion: 2
+  m_Radius: 5.4279327
 --- !u!114 &114239817231977412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,8 +115,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 364700129
-  m_SortingLayer: 5
+  m_SortingLayerID: -926983891
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3df787cb9eb1443a18228a4e583904ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -124,6 +124,8 @@ public class ChickFollow : MonoBehaviour
             else if (xDistance > stoppingDistance && xDistance < tooFar - stoppingDistance && !stay)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), 0.4f * speed * Time.deltaTime);
+                anim.SetBool("runBool", true);
+            }else if (xDistance <= stoppingDistance && !stay){
                 anim.SetBool("runBool", false);
             }
             // Stay
