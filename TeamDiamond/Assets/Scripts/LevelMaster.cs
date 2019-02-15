@@ -164,6 +164,11 @@ public class LevelMaster : MonoBehaviour {
         else if (SceneManager.GetActiveScene().name == "Level2"){
             UnlockLevel3();
         }
+
+        else if (SceneManager.GetActiveScene().name == "Level3")
+        {
+            UnlockLevel4();
+        }
     }
 
     public void ReloadLevel(){
@@ -285,9 +290,9 @@ public class LevelMaster : MonoBehaviour {
                 menuResetStar.SetActive(false);
             } 
             else if (menuChick == null) {
-                menuChick = GameObject.FindGameObjectWithTag("menuChick").GetComponent<GameObject>();
-                menuWorm = GameObject.FindGameObjectWithTag("menuWorm").GetComponent<GameObject>();
-                menuReset = GameObject.FindGameObjectWithTag("menuReset").GetComponent<GameObject>();
+                //menuChick = GameObject.FindGameObjectWithTag("menuChick").GetComponent<GameObject>();
+                //menuWorm = GameObject.FindGameObjectWithTag("menuWorm").GetComponent<GameObject>();
+                //menuReset = GameObject.FindGameObjectWithTag("menuReset").GetComponent<GameObject>();
                 menuChickStar = GameObject.FindGameObjectWithTag("menuChickStar").GetComponent<GameObject>();
                 menuWormStar = GameObject.FindGameObjectWithTag("menuWormStar").GetComponent<GameObject>();
                 menuResetStar = GameObject.FindGameObjectWithTag("menuResetStar").GetComponent<GameObject>();
