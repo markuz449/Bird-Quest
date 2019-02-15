@@ -56,9 +56,18 @@ public class LevelManager : MonoBehaviour {
 
     public void CompleteLevel()
     {
-        SceneManager.LoadScene("MainMenu");
-        game.ClearReset();
-        Time.timeScale = 1f;
+        if (SceneManager.GetActiveScene().name == "Level4")
+        {
+            SceneManager.LoadScene("EndScreen");
+            game.ClearReset();
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
+            game.ClearReset();
+            Time.timeScale = 1f;
+        }
 
 
     }

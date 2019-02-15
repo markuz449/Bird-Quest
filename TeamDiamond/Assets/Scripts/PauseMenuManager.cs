@@ -53,6 +53,7 @@ public class PauseMenuManager : MonoBehaviour {
         if(helpMenu){
             helpMenuPanel.SetActive(false);
             gameObject.SetActive(true);
+            helpMenu = false;
 
 
         }
