@@ -21,11 +21,14 @@ public class Flower : MonoBehaviour {
     public void Bloom(){
         anim.SetBool("Bloomed", true);
         //moveColliders(true);
+        Debug.Log("ooga bloom");
     }
 
     public void Debloom(){
         anim.SetBool("Bloomed", false);
         //moveColliders(false);
+        Debug.Log("ooga DEbloom");
+
     }
 
 

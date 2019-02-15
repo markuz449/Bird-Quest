@@ -26,7 +26,31 @@ public class StateChangeTrigger : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collision){
         //if (movingPlatform){
-            foreach (GameObject flowergrow in flowerGrowShrinks){
+
+
+        stateControl.StateChange(daytime);
+
+        //System.Threading.Thread.Sleep(1000);
+
+        if (daytime == true)
+        {
+            foreach (Flower bloom in flower)
+            {
+                Debug.Log("blooming");
+                bloom.Bloom();
+            }
+        }
+        else
+        {
+            foreach (Flower bloom in flower)
+            {
+                Debug.Log("DE-blooming");
+                bloom.Debloom();
+            }
+        }
+
+
+        foreach (GameObject flowergrow in flowerGrowShrinks){
                 if (daytime){
                     if (flowergrow.GetComponent<ChangeToNight>() != null){
                         Destroy(flowergrow.GetComponent<ChangeToNight>());
@@ -56,20 +80,7 @@ public class StateChangeTrigger : MonoBehaviour {
                 }
             }
         //}
-        stateControl.StateChange(daytime);
 
-        //System.Threading.Thread.Sleep(1000);
-
-        if (daytime == true){
-            foreach (Flower bloom in flower){
-                Debug.Log("testetstestsetest");
-                bloom.Bloom();
-            }
-        } else{
-            foreach (Flower bloom in flower){
-                bloom.Debloom();
-            }
-        }
 
     }
 
