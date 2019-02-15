@@ -32,7 +32,25 @@ public class LevelManager : MonoBehaviour {
     PauseMenuManager pauseMenu;
     //CompleteLevelManager levelComplete;
 
+    public void Mute()
+    {
+        game.mute = true;
+        AudioListener.pause = true;
+        AudioListener.volume = 0;
 
+
+
+    }
+
+    public void UnMute()
+    {
+        game.mute = false;
+        AudioListener.pause = false;
+        AudioListener.volume = 1;
+
+
+
+    }
 
 
 
