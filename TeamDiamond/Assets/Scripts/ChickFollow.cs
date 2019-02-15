@@ -21,7 +21,7 @@ public class ChickFollow : MonoBehaviour
     private float speedUpDistance = 2f;
     private float slowingDistance = 1f;
     private float stoppingDistance = 0.4f;
-    private float tooFar = 10f;
+    private float tooFar = 7f;
     private Animator anim;
     private float animSpeed;
     private AudioSource chirp;
@@ -46,7 +46,7 @@ public class ChickFollow : MonoBehaviour
         Move(xDistance, yDistance);
 
         // Toggle sitting for the chick
-        if (Vector2.Distance(transform.position, target.position) < stayButtonDistance && Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) && Vector2.Distance(transform.position, target.position) < stayButtonDistance)
         {
             stay = !stay;
             anim.SetBool("Sit", stay);
