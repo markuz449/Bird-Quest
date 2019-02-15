@@ -11,10 +11,12 @@ public class MainMenuManager : MonoBehaviour{
     public GameObject level3Icon;
     public GameObject level4Icon;
 
+    //Background maps
     public GameObject Tutorial;
     public GameObject level1Background;
     public GameObject level2Background;
     public GameObject level3Background;
+    public GameObject level4Background;
 
     private LevelMaster game;
 
@@ -68,6 +70,11 @@ public class MainMenuManager : MonoBehaviour{
         level1 = game.GetLevel1();
     }
 
+    public void UnlockLevel2()
+    {
+        level2 = game.GetLevel2();
+    }
+
     public void UnlockLevel3() {
         level3 = game.GetLevel3();
     }
@@ -75,10 +82,6 @@ public class MainMenuManager : MonoBehaviour{
     public void UnlockLevel4()
     {
         level4 = game.GetLevel4();
-    }
-
-    public void UnlockLevel2(){
-        level2 = game.GetLevel2();
     }
 
     public void OpenPauseMenu(){
@@ -132,14 +135,13 @@ public class MainMenuManager : MonoBehaviour{
         if (level4)
         {
             level4Icon.SetActive(true);
-            //level4Background.SetActive(true);
-            //level3Background.SetActive(false);
+            level4Background.SetActive(true);
+            level3Background.SetActive(false);
         }
-        else if (!level3)
+        else if (!level4)
         {
             level4Icon.SetActive(false);
         }
-
 
     }
 }

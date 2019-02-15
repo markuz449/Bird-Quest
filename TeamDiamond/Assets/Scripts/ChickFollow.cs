@@ -7,6 +7,7 @@ public class ChickFollow : MonoBehaviour
 
     public float speed = 5f;
     public float jumpSpeed = 5f;
+    public float chirpTime = 3f;
 
     public float raylength = 1f;
     public LayerMask groundLayer;
@@ -25,6 +26,7 @@ public class ChickFollow : MonoBehaviour
     private float animSpeed;
     private AudioSource chirp;
     private int chirpCount = 1;
+    private bool timePassed = true;
 
     // Use this for initialization
     void Start()
@@ -73,12 +75,12 @@ public class ChickFollow : MonoBehaviour
         Vector2 direction = new Vector2(0, -raylength);
         RaycastHit2D hit = Physics2D.Raycast(position, direction, raylength, groundLayer);
 
-        float range = -0.1f;
+        float range = -0.2f;
         if(facingRight){
-            range = 0.1f;
+            range = 0.2f;
         }
 
-        for (float i = -0.25f + range; i < 0.25f + range; i += 0.02f){
+        for (float i = -0.5f + range; i < 0.5f + range; i += 0.02f){
             position = new Vector2(transform.position.x + i, transform.position.y);
             Debug.DrawRay(position, direction, Color.green);
             hit = Physics2D.Raycast(position, direction, raylength, groundLayer);
@@ -86,11 +88,11 @@ public class ChickFollow : MonoBehaviour
                 count++;
             }
         }
-        if(count > 15){
+        if(count > 24){
             anim.SetBool("runBool", false);
             while(chirpCount != 0){
                 chirpCount--;
-                chirp.Play();
+                StartCoroutine(LedgeChirp());
             }
             return false;
         }
@@ -122,6 +124,8 @@ public class ChickFollow : MonoBehaviour
             else if (xDistance > stoppingDistance && xDistance < tooFar - stoppingDistance && !stay)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), 0.4f * speed * Time.deltaTime);
+                anim.SetBool("runBool", true);
+            }else if (xDistance <= stoppingDistance && !stay){
                 anim.SetBool("runBool", false);
             }
             // Stay
@@ -135,9 +139,6 @@ public class ChickFollow : MonoBehaviour
             transform.position = this.transform.position;
             anim.SetBool("runBool", false);
         }
-        if (!Ledge()){
-
-        }
         animSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
         anim.SetFloat("runSpeed", Mathf.Abs(animSpeed));
     }
@@ -148,6 +149,15 @@ public class ChickFollow : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    IEnumerator LedgeChirp(){
+        if (timePassed){
+            chirp.Play();
+        }
+        timePassed = false;
+        yield return new WaitForSecondsRealtime(chirpTime);
+        timePassed = true;
     }
 
 }

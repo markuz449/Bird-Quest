@@ -18,14 +18,14 @@ public class ChangeToDay : MonoBehaviour {
 
         startPosition = transform.position;
         location = startPosition;
-        destination = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z);
+        destination = new Vector3(transform.position.x, transform.position.y + 3.5f, transform.position.z);
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        location = Vector3.Lerp(location, destination, Time.deltaTime * 2);
+        location = Vector3.Lerp(location, destination, Time.deltaTime);
         transform.position = location;
 
         if (location.y > destination.y * 0.9f) {

@@ -48,11 +48,9 @@ public class LevelMaster : MonoBehaviour {
 
     public bool collectibleFound;
 
-
     private GameObject player;
     private GameObject chick;
      
-
     //private GameObject text1;
 
     // Reference to panel's script object 
@@ -68,108 +66,64 @@ public class LevelMaster : MonoBehaviour {
     public bool Level4;
 
 
-
     public bool GetLevel1(){
         return Level1;
-
-
     }
 
-    public bool GetLevel2()
-    {
+    public bool GetLevel2(){
         return Level2;
-
-
     }
 
-    public bool GetLevel3()
-    {
+    public bool GetLevel3(){
         return Level3;
-
-
     }
 
-    public bool GetLevel4()
-    {
+    public bool GetLevel4(){
         return Level4;
-
-
     }
-
-
 
     public void PlayerReset(){
-
         hasreset = true;
         resets++;
-
     }
 
-
-
     public int GetNumResets(){
-
         return resets;
-
     }
 
     public void ClearReset(){
-
         hasreset = false;
         resets = 0;
-
     }
 
-
-    public bool GetReset()
-    {
+    public bool GetReset(){
         return hasreset;
-
-
     }
 
-    public void UnlockLevel2()
-    {
-
+    public void UnlockLevel2(){
         Level2 = true;
     }
 
-    public void UnlockLevel3()
-    {
-
+    public void UnlockLevel3(){
         Level3 = true;
     }
 
-    public void UnlockLevel4()
-    {
-
+    public void UnlockLevel4(){
         Level4 = true;
     }
 
-
-
-
     public void UnlockLevel1(){
-
         Level1 = true;
     }
 
 
-
-
-
-    public void CompleteLevel()
-    {
+    public void CompleteLevel(){
         SceneManager.LoadScene("MainMenu");
         ClearReset();
         Time.timeScale = 1f;
-
-
     }
 
-    public void LevelFinish()
-    {
-
+    public void LevelFinish(){
         levelComplete = true;
         //menuChick.SetActive(false);
         menuChickStar.SetActive(true);
@@ -193,11 +147,8 @@ public class LevelMaster : MonoBehaviour {
         float timeSeconds = time % 60;
         string temp = "";
         if (timeSeconds < 10){
-
             temp = "0";
-
         }
-
 
         timeTaken.text = "Time Taken: " + timeFirst + ":" + temp +  timeSeconds;
 
@@ -206,27 +157,17 @@ public class LevelMaster : MonoBehaviour {
         if(SceneManager.GetActiveScene().name == "Tutorial"){
             UnlockLevel1();
 
-
         }
         else if (SceneManager.GetActiveScene().name == "Level1"){
             UnlockLevel2();
-
-
         }
-        else if (SceneManager.GetActiveScene().name == "Level2")
-        {
+        else if (SceneManager.GetActiveScene().name == "Level2"){
             UnlockLevel3();
-
-
         }
     }
 
-    public void ReloadLevel()
-    {
-
-
-        if (logs != null && boxes != null && logsStart != null && boxesStart != null)
-        {
+    public void ReloadLevel(){
+        if (logs != null && boxes != null && logsStart != null && boxesStart != null){
             for (int i = 0; i < logs.Length; i++)
             {
                 logs[i].transform.position = logsStart[i];
@@ -239,14 +180,10 @@ public class LevelMaster : MonoBehaviour {
         player.transform.localPosition = gm.PlayerCoords();
         chick.transform.localPosition = gm.ChickCoords();
 
-
-
         PlayerReset();
-
     }
 
-    public void RetryLevel()
-    {
+    public void RetryLevel(){
         collectibleFound = false;
 
         levelComplete = false;
@@ -261,21 +198,18 @@ public class LevelMaster : MonoBehaviour {
         SceneManager.LoadScene(currentSceneName);
     }
 
-    public void MainMenuOpen()
-    {
+    public void MainMenuOpen(){
         ClearReset();
         // Load the "Level" scene
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void OpenPauseMenu()
-    {
+    public void OpenPauseMenu(){
         pauseMenu.ShowPause();
 
     }
 
-    private void Start()
-    {
+    private void Start(){
         Level1 = false;
         Level2 = false;
         Level3 = false;
@@ -296,35 +230,17 @@ public class LevelMaster : MonoBehaviour {
             boxesStart[i] = boxes[i].transform.position;
         }
 
-     
         pauseMenu = pauseMenuPanel.GetComponent<PauseMenuManager>();
     }
 
-
-
-
-
-    void Update()
-    {
-
-
-
-
-
+    void Update(){
         if(SceneManager.GetActiveScene().name == "MainMenu"){
             checkpointReached = false;
-
         }
-
-
 
         float time = Mathf.Round(Time.timeSinceLevelLoad);
 
-        if (time < 2)
-        {
-
-
-
+        if (time < 2){
             boxes = GameObject.FindGameObjectsWithTag("Box");
             logs = GameObject.FindGameObjectsWithTag("Log");
             boxesStart = new Vector3[boxes.Length];
@@ -343,8 +259,7 @@ public class LevelMaster : MonoBehaviour {
 
         }
 
-        if((logs.Length != 0 && logs[0] == null) || (boxes.Length != 0 && boxes[0] == null))
-        {
+        if((logs.Length != 0 && logs[0] == null) || (boxes.Length != 0 && boxes[0] == null)){
             boxes = GameObject.FindGameObjectsWithTag("Box");
             logs = GameObject.FindGameObjectsWithTag("Log");
             boxesStart = new Vector3[boxes.Length];
@@ -360,25 +275,16 @@ public class LevelMaster : MonoBehaviour {
             {
                 boxesStart[i] = boxes[i].transform.position;
             }
-
         }
 
-
-
-
-        if (GameObject.FindGameObjectWithTag("Player") != null)
-        {
-
+        if (GameObject.FindGameObjectWithTag("Player") != null){
 
             if (menuWormStar != null && levelComplete != true && time <=10){
-
-
                 menuWormStar.SetActive(false);
                 menuChickStar.SetActive(false);
                 menuResetStar.SetActive(false);
-
-            } else if (menuChick == null) {
-
+            } 
+            else if (menuChick == null) {
                 menuChick = GameObject.FindGameObjectWithTag("menuChick").GetComponent<GameObject>();
                 menuWorm = GameObject.FindGameObjectWithTag("menuWorm").GetComponent<GameObject>();
                 menuReset = GameObject.FindGameObjectWithTag("menuReset").GetComponent<GameObject>();
@@ -387,11 +293,6 @@ public class LevelMaster : MonoBehaviour {
                 menuResetStar = GameObject.FindGameObjectWithTag("menuResetStar").GetComponent<GameObject>();
 
             }
-
-
-
-
-
 
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
             player = GameObject.FindGameObjectWithTag("Player");
@@ -444,34 +345,18 @@ public class LevelMaster : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-
-
             ReloadLevel();
-         
-
         }
     }
 
-
-
-
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-
+    private void Awake(){
+        if (instance == null){
             instance = this;
             DontDestroyOnLoad(instance);
         }
-        else
-        {
-
+        else{
             Destroy(gameObject);
         }
     }
-
-
-
 
 }
