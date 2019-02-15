@@ -3377,8 +3377,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1698877184}
-  - {fileID: 1308387186}
   - {fileID: 1125562475}
+  - {fileID: 1308387186}
   - {fileID: 622242411}
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -19900,7 +19900,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 635688322}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &1125562476
 TilemapCollider2D:
@@ -48252,7 +48252,7 @@ Transform:
   - {fileID: 322329242}
   - {fileID: 1795897977}
   m_Father: {fileID: 635688322}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1341485669
 GameObject:
