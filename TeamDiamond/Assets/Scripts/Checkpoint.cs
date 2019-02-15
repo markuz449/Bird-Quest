@@ -6,18 +6,20 @@ public class Checkpoint : MonoBehaviour {
 
     private GameMaster gm;
     private LevelMaster lm;
+    private AudioSource reached;
 
     private void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         lm = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
+        reached = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter2D(Collider2D other){
 
         if(other.CompareTag("Player")){
             lm.checkpointReached = true;
-
+            reached.Play();
             gm.lastCheckpointPos = transform.position;
 
         } else if(other.CompareTag("Chick") )
