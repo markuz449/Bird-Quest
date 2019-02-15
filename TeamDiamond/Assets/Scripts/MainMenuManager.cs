@@ -89,8 +89,30 @@ public class MainMenuManager : MonoBehaviour{
 
     }
 
+    public void Mute()
+    {
+        game.mute = true;
+        AudioListener.pause = true;
+        AudioListener.volume = 0;
+
+
+
+    }
+
+    public void UnMute()
+    {
+        game.mute = false;
+        AudioListener.pause = false;
+        AudioListener.volume = 1;
+
+
+
+    }
+
     private void Start(){
         game = GameObject.FindGameObjectWithTag("LM").GetComponent<LevelMaster>();
+
+
 
         // Initialise the reference to the script object, which is a
         // component of the pause menu panel game object

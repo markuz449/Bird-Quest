@@ -39,12 +39,14 @@ public class LevelMaster : MonoBehaviour {
     public Vector3[] boxesStart;
     public GameObject[] logs;
     public Vector3[] logsStart;
-    public GameObject menuChick;
-    public GameObject menuWorm;
-    public GameObject menuReset;
+
     public GameObject menuChickStar;
     public GameObject menuWormStar;
     public GameObject menuResetStar;
+
+    public GameObject muteButton;
+    public GameObject soundButton;
+
 
     public bool collectibleFound;
 
@@ -64,6 +66,8 @@ public class LevelMaster : MonoBehaviour {
     public bool Level2;
     public bool Level3;
     public bool Level4;
+
+    public bool mute;
 
 
     public bool GetLevel1(){
@@ -220,6 +224,12 @@ public class LevelMaster : MonoBehaviour {
         Level3 = false;
         Level4 = false;
 
+        mute = false;
+
+        muteButton = GameObject.FindGameObjectWithTag("MuteButton");
+        soundButton = GameObject.FindGameObjectWithTag("SoundButton");
+
+
         hasreset = false;
         boxes = GameObject.FindGameObjectsWithTag("Box");
         logs = GameObject.FindGameObjectsWithTag("Log");
@@ -239,13 +249,38 @@ public class LevelMaster : MonoBehaviour {
     }
 
     void Update(){
-        if(SceneManager.GetActiveScene().name == "MainMenu"){
+
+        if (muteButton == null || soundButton == null)
+        {
+            muteButton = GameObject.FindGameObjectWithTag("MuteButton");
+            soundButton = GameObject.FindGameObjectWithTag("SoundButton");
+
+        }
+        if (!mute && (SceneManager.GetActiveScene().name != "StartScreen")){
+            soundButton.SetActive(true);
+            muteButton.SetActive(false);
+
+
+        }
+        else if (mute && (SceneManager.GetActiveScene().name != "StartScreen"))
+        {
+
+            soundButton.SetActive(false);
+            muteButton.SetActive(true);
+
+
+        }
+
+        if (SceneManager.GetActiveScene().name == "MainMenu"){
             checkpointReached = false;
         }
 
         float time = Mathf.Round(Time.timeSinceLevelLoad);
 
         if (time < 2){
+
+
+
             boxes = GameObject.FindGameObjectsWithTag("Box");
             logs = GameObject.FindGameObjectsWithTag("Log");
             boxesStart = new Vector3[boxes.Length];
@@ -289,7 +324,7 @@ public class LevelMaster : MonoBehaviour {
                 menuChickStar.SetActive(false);
                 menuResetStar.SetActive(false);
             } 
-            else if (menuChick == null) {
+            else if (menuChickStar == null) {
                 //menuChick = GameObject.FindGameObjectWithTag("menuChick").GetComponent<GameObject>();
                 //menuWorm = GameObject.FindGameObjectWithTag("menuWorm").GetComponent<GameObject>();
                 //menuReset = GameObject.FindGameObjectWithTag("menuReset").GetComponent<GameObject>();
