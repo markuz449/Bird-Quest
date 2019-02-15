@@ -121,10 +121,23 @@ public class LevelMaster : MonoBehaviour {
     }
 
 
+
+
     public void CompleteLevel(){
-        SceneManager.LoadScene("MainMenu");
-        ClearReset();
-        Time.timeScale = 1f;
+
+        if (SceneManager.GetActiveScene().name == "Level4")
+        {
+            SceneManager.LoadScene("EndScreen");
+            ClearReset();
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
+            ClearReset();
+            Time.timeScale = 1f;
+        }
+
     }
 
     public void LevelFinish(){
@@ -256,13 +269,14 @@ public class LevelMaster : MonoBehaviour {
             soundButton = GameObject.FindGameObjectWithTag("SoundButton");
 
         }
-        if (!mute && (SceneManager.GetActiveScene().name != "StartScreen")){
+        if (!mute && (SceneManager.GetActiveScene().name != "StartScreen") && (SceneManager.GetActiveScene().name != "EndScreen"))
+        {
             soundButton.SetActive(true);
             muteButton.SetActive(false);
 
 
         }
-        else if (mute && (SceneManager.GetActiveScene().name != "StartScreen"))
+        else if (mute && (SceneManager.GetActiveScene().name != "StartScreen") && (SceneManager.GetActiveScene().name != "EndScreen"))
         {
 
             soundButton.SetActive(false);
