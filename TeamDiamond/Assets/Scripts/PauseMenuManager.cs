@@ -8,7 +8,6 @@ public class PauseMenuManager : MonoBehaviour {
     bool pauseGame;
     bool helpMenu;
 
-    public GameObject optionsMenuPanel;
 
     public GameObject helpMenuPanel;
 
@@ -32,16 +31,7 @@ public class PauseMenuManager : MonoBehaviour {
 
 
 
-    public void ShowOptions()
-    {
-
-        // Show the panel
-
-        gameObject.SetActive(false);
-
-        optionsMenuPanel.SetActive(true);
-
-    }
+   
 
     public void ShowHelp()
     {
