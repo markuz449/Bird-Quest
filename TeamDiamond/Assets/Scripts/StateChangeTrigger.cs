@@ -16,20 +16,12 @@ public class StateChangeTrigger : MonoBehaviour {
     public Vector3 destination;
 
     public static bool quit;
-
     public float wait;
-
-
-
-
-   
+    public bool destroy = false;
 
     public void OnTriggerEnter2D(Collider2D collision){
         //if (movingPlatform){
-
-
         stateControl.StateChange(daytime);
-
         //System.Threading.Thread.Sleep(1000);
 
         if (daytime == true)
@@ -48,7 +40,6 @@ public class StateChangeTrigger : MonoBehaviour {
                 bloom.Debloom();
             }
         }
-
 
         foreach (GameObject flowergrow in flowerGrowShrinks){
                 if (daytime){
@@ -79,11 +70,12 @@ public class StateChangeTrigger : MonoBehaviour {
                     //flowergrow.GetComponent<ChangeToNight>().enabled = true;
                 }
             }
+
+        if(destroy == true){
+            Destroy(gameObject);
+        }
         //}
-
-
     }
-
 
     private void Awake(){
         flower = day.GetComponentsInChildren<Flower>();
